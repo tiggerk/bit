@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>논리 연산자</title>
+<style>
+  input {
+    width: 100px;
+  }
+</style>
+</head>
+
+<body>
+
+  <!-- 논리 연산자
+    !   (not)   ex) !true =  false
+    &&  (AND; 둘다 true일 때만 true) true && true = true
+    ||  (OR; 둘 중 하나라도 true면 true) true || false = true
+  -->
+  
+	<script>
+		"use strict";
+		
+		console.log("!true", !true);
+		console.log("!false", !false);
+		console.log("true && true", true && true);
+		console.log("true && false", true && false);
+		console.log("false && true", false && true);
+		console.log("false && false", false && false);
+		console.log("true || true", true || true);
+    console.log("true || false", true || false);
+    console.log("false || true", false || true);
+    console.log("false || false", false || false);
+    console.log("---------------------------------");
+    
+    /* 
+	    => &&와 ||는 앞의 값에 따라 결과를 예측할 수 있다면 뒤의 문장을 수행안함.
+	    => &와 |는 앞의 값에 상관없이 두의 문장 수행.
+      1) &&와 &의 차이점
+        && : 앞의 값이 참일 경우에만 뒤의 문장을 수행.
+        & : 앞의 결과와 상관없이 뒤의 문장 수행.
+      2) ||와 |의 차이점
+       || : 앞의 값이 참이면 뒤의 문장을 수행안함.
+       |  : 앞의 결과와 상관없이 두의 문장을 수행.
+    */
+    
+    var a = true;
+    var b = false;
+    var r = 0;
+    
+    var x = a & (r = 30);
+    console.log(r); // r = 30;
+    
+    r = 0;
+    var x = a && (r = 30);
+    console.log(r); // r = 30;
+    
+    r = 0;
+    var x = b & (r = 30);
+    console.log(r); // r = 30;
+    
+    r = 0;
+    var x = b && (r = 30);
+    console.log(r); // r = 0;
+    
+    r = - 100;
+    b && (r = 30;) // 앞에 있는 조건이 참일 경우에만 실행하도록 만듦.
+    /* 
+    if(조건) {      // 조건이 참일 경우에만 실행
+    	r = 30;
+    } */
+    
+    console.log("r =", r);
+		
+	</script>
+	
+</body>
+</html>
