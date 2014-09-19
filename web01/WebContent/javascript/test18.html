@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>조건문</title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		/*
+		  조건문 : 조건에 따라 실행할 명령어를 선택		  
+	  */
+	 	  
+	  var a = 11;
+		if (a <= 10)
+			console.log("a <= 10");  // if에 종속됨. if는 첫번째 ';'를 만나면 끝남.
+		  console.log("오호라..."); // if에 종속된 명령이 아님.
+		  
+	  if (a <= 10) {   // 중괄호를 사용하여 여러 개의 명령을 묶음.
+		  console.log("{a <= 10}");
+      console.log("{오호라...}");		  
+	  }
+		 
+		console.log("----------------------------");
+	  var age = 58;
+	  if (age < 14) {
+		  console.log("어린이입니다.");
+	  } else {
+		  console.log("어른입니다.");
+	  }
+	  /*
+	   if (age < 14)
+		   console.log("어린이입니다.");
+	   else
+		   console.log("어른입니다.");
+	  */
+	  
+	  
+	  console.log("----------------------------");
+	  if (age < 8)
+		  console.log("유아!");
+	  else {
+		  if (age < 18)
+			  console.log("어린이");
+		  else {
+			  if (age < 35)
+				  console.log("청년");
+			  else {
+				  if (age < 50)
+					  console.log("장년");
+				  else {
+					  if (age < 60)
+						  console.log("중년");
+					  else {
+						  console.log("노인");
+					  }
+				  }
+			  }
+		  }
+	  }
+	  
+	  
+	  console.log("----------------------------");
+	    if (age < 8)
+	      console.log("유아!");
+	    else if (age < 18)
+        console.log("어린이");
+      else if (age < 35)
+        console.log("청년");
+      else if (age < 50)
+        console.log("장년");
+      else if (age < 60)
+        console.log("중년");
+      else 
+        console.log("노인");
+	    
+	    console.log("----------------------------");
+	      if (age < 8) {
+	        console.log("유아!");
+	      } else if (age < 18) {
+	        console.log("어린이");
+	      } else if (age < 35) {
+	        console.log("청년");
+	      } else if (age < 50) {
+	        console.log("장년");
+	      } else if (age < 60) {
+	        console.log("중년");
+	      } else 
+	        console.log("노인");
+	   
+		  
+		  
+	</script>
+	
+</body>
+</html>
