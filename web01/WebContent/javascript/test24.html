@@ -15,12 +15,13 @@
 			console.log("**-----------**");
 		}
 		
-		// 파라미터: 0, 리턴값: X
+		// 파라미터: O, 리턴값: X
 		// 파라미터(parameter)란? 함수를 호출할 때 넘어오는 값을 담는 변수
 		// 아규먼트(argument)란? 함수를 호출할 때 넘겨주는 값.
 		// 현업에서는 파라미터와 아규먼트를 그냥 막 쓴다.
 		// 분석/설계에서는 구분하여 사용한다.
 		
+		//function displayScore(score==>파라미터) 
 		function displayScore(score) {
 			console.log("이름:", score[0]);
 	    console.log("국어:", score[1]);
@@ -40,6 +41,7 @@
 			score[6] = sum;
 		}
 		
+		// 파라미터 : O, 리턴값: O
 		function computeAverage(sum, count) {
 			return sum / count;			
 		}

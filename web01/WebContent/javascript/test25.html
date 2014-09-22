@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 실행순서1</title>
+<script>
+	console.log("111111");
+</script>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		console.log("222222");
+		/* 자바스크립트 실행
+		  => 1) 태그가 선언된 순서대로 실행한다.
+		        하나의 태그가 완전히 실행완료해야 다음 태그로 간다.
+		  예)
+		  < script > A < /script >
+		  < script > B < /script >
+		  
+		  A자바스크립트가 모두 실행완료한 후에 B자바스크립트를 실행한다.
+		*/				 
+	</script>
+	
+	<script>
+	 console.log("333333");
+	</script>
+	
+	<script>
+	 console.log("444444");
+	</script>
+	
+</body>
+</html>

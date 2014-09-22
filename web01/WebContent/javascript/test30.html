@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클로저</title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		// 클로저 : 내부 함수
+		function getInterestComputer(type) {
+			if (type == "보통예금") {
+				  return function(money) {return money * 0.021;};
+				} else if (type == "정기예금") {
+					return function(money) {return money * 0.035;};
+				} else {
+					return function(money) {return money * 0.008;};
+				}
+			}
+		
+		var func1 = getInterestComputer("보통예금");
+		var func2 = getInterestComputer("정기예금");
+		var func3 = getInterestComputer("기타");
+		console.log("보통예금 이자 :", func1(1000000));
+		console.log("정기예금 이자 :", func2(1000000));
+		console.log("기타 기본이자 :", func3(1000000));
+		console.log('------------------------')
+		
+		
+		// 클로저를 사용하지 않고 만든 계산기
+		var result = 0;
+		function compute(op, v1) {
+			if (op == '+') {
+				result += v1;				
+			} else if (op == '-') {
+				result -= v1;
+			} else if (op == '*') {
+				result *= v1;
+			} else if (op == '/') {
+				result /= v1;
+			}
+		}
+		
+		// 식1 : 10 + 20 * 2 - 7 / 5 =
+		// 식2 : 7 * 3 - 5 =
+		compute('+', 10);
+		//compute('+', 7); // 독자적인 계산 불가! 순차적으로 계산해야 함.
+		compute('+', 20);
+		compute('*', 2);
+		compute('-', 7);
+		compute('/', 5);
+		console.log('result =', result);
+		
+		
+		
+		// 클로저를 사용하여 독자적인 계산기 만들기
+		function makeComputer() {
+			// 클로저가 사용할 로컬 변수를 지정
+			// 클로저는 로컬 변수를 복제하여 자신만의 영역(클로저 영역)
+			var result = 0;  // 기억!! 함수 안에 선언된 변수(로컬 변수)는 
+			                 // 함수 호출이 끝나면 제거됨. => 매번 함수 호출 때마다 생성됨.
+			
+			// 클로저 생성 및 리턴
+			// => 같은 함수를 여러 개 만들어서 사용해야 하는 이유?
+			//    답 : 클로저의 작업 결과를 별도로 관리하기 위해.
+			function compute2(op, v1) {
+	      if (op == '+') {
+	        result += v1;       
+	      } else if (op == '-') {
+	        result -= v1;
+	      } else if (op == '*') {
+	        result *= v1;
+	      } else if (op == '/') {
+	        result /= v1;
+	      }
+	      return result;
+			}
+			
+			// 클로저 리턴
+			return compute2;
+		}		
+		
+		var c1 = makeComputer();
+		var c2 = makeComputer();
+		
+		// 식1 : 10 * 7 - 5 = ?
+		// 식2 : 18 - 5 / 3 = ?
+		// 식1과 식2를 동시에 계산하기
+		console.log("-------------------");
+		c1('+', 10); // 식1 계산 : 0 + 10
+		c2('+', 18); // 식2 계산 : 0 + 18
+		
+		c1('*', 7); // 식1 계산 : 0 + 10 * 7
+		c2('-', 5); // 식1 계산 : 0 + 18 * 5
+		
+		console.log( c1('-', 5)); // 식1 계산 : 0 + 10 * 7 - 5 = ?
+    console.log( c2('/', 3)); // 식1 계산 : 0 + 18 * 5 / 3 = ?
+		  
+	</script>
+	
+</body>
+</html>
