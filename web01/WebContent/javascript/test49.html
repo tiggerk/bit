@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> String()의 기타 함수들 </title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		// anchor(value) 함수 : 문자열에 <a> 태그를 붙인다.
+		// <a name="value"> 문자열 </a>
+		var str1 = "다음카카오";
+		document.write(str1.anchor('daumLink'));
+		
+		// link(url) => <a href="url"> 문자열 </a>
+		document.write(str1.link('http://www.daum.net'));
+		
+		// strike() => <strike> 문자열 </strike> : 취소선 문자열 태그 생성
+		document.write(str1.strike());
+		
+		// trim() : 문자열 양쪽 공백을 제거
+	    var str1 = "      okok    nono    ";
+	    console.log("[" + str1.trim() + "]");
+	    console.log("[" + str1.trimLeft() + "]");
+	    console.log("[" + str1.trimRight() + "]");
+				
+	</script>
+		
+</body>
+</html>
+
+
+

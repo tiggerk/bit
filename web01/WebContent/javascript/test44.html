@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> create() </title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		// Object.create()를 사용하여 객체 생성
+		var obj1 = Object.create({}, {
+			name: {value:'홍길동', writable: true, enumerable: true},
+			kor: {value:100, writable: true, enumerable: true},
+			eng: {value:100, writable: true, enumerable: true},
+			math: {value:100, writable: true, enumerable: true}
+		});
+				
+		console.log(obj1.name);
+    console.log(obj1.kor);
+    console.log(obj1.eng);
+    console.log(obj1.math);
+    
+    obj1.eng = 90;  
+    obj1.math = 90;
+    
+    console.log(obj1.name);
+    console.log(obj1.kor);
+    console.log(obj1.eng);
+    console.log(obj1.math);
+    
+    console.log("---------------------------------");    
+    for (var key in obj1) {
+      console.log(key);
+    }
+    
+    
+	</script>
+		
+</body>
+</html>

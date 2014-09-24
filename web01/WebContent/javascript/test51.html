@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 기타 함수들 </title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		// JSON.parse(JSON형식의 문자열) : 자바스크립트 객체를 만들어 리턴한다.
+		// JSON 형식의 규칙 :
+			// 1) 키는 반드시 인용부호("키")로 표현해야 한다.
+			// 2) 문자열은 반드시 인용부호("문자열")로 표현해야 한다.
+			// 3) 작은 따옴표는 사용하면 안된다.
+		var jsonString = '{"name":"홍길동","kor":100, "eng":100, "math":100}';
+		
+		// 문자열로 된 자바스크립트 명령어를 실행하기
+		// eval() 사용 =>
+		// 객체를 생성하는 문장 실행 => 반드시 양쪽에 괄호를 붙여야 한다.
+		var obj1 = eval('(' + jsonString + ')');
+		console.log(obj1.name);
+		
+		//eval()은 모든 자바스크립트 문자를 실행
+		eval('var v = prompt("당신의 나이는?"); alert(v);');
+		
+		
+		// 등장! 자바스크립트의 객체 생성 문장을 전문적으로 실행하는 메서드가 추가됨.
+		// JSON.parse(JSON문자열)
+		var obj2 = JSON.parse(jsonString);
+		console.log(obj2.name);
+		
+		// JSON 형식이 아닌 일반 자바스크립트 명령은 실행할 수 없다.
+		// JSON.parse('var v = prompt("당신의 나이는?"); arlert(v);'); // 오류!
+		
+		// JSON.stringify() : 객체를 JSON 형식의 문자열로 만들어 리턴한다.
+		console.log("-----------------------");
+		var obj2 = {
+				name : "홍길동",
+				kor : 100,
+				eng : 100,
+				math : 100,
+				female : true
+		};
+		
+		var jsonString2 = JSON.stringify(obj2);
+		console.log(jsonString2);
+		
+		
+				
+	</script>
+		
+</body>
+</html>
+
+
+

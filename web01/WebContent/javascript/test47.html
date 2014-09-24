@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 기본 객체 : Object(), Number(), String() </title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		var student = {
+			name : "홍길동",
+			kor : 100,
+		  eng : 100,
+		  math : 80,
+		  toString: function() {  // 기존에 등록된 함수를 재정의한다.
+			  return this.name + "," + this.kor + "," + this.eng + ',' + this.math;
+		  }
+		};
+		
+		console.log( typeof student); // object
+		
+		// Object.prototype.hasOwnProperty("프로퍼티명")
+		// => 객체에 지정된 이름을 갖는 프로퍼티가 있는지 조사하는 함수
+		console.log( student.hasOwnProperty('kor') );
+		console.log( student.hasOwnProperty('age') );
+		
+		// Object.prototype.toString()
+		// => 객체에 대해 문자열로 설명
+		console.log( student.toString() );
+		console.log( student );
+		
+		console.log("-------------------");
+		// Number()
+		var n1 = 20;
+		var n2 = new Number(30);
+		
+		console.log( typeof n1 ); // number
+		console.log( typeof n2 ); // object
+		
+		var n3 = n1 - n2;
+		console.log(n3, typeof n3); // -10, number
+		
+		// 자바스크립트의 모든 생성자는 꼭대기에 Object와 연결되어 있다.
+    // 자바스크립트의 모든 객체는 Object()에 의해서 초기화 됨.
+    // instanceof => 해당 객체가 지정된 생성자로 초기화되었는지 조사한다.    
+		console.log(n2 instanceof Object);  // true
+		console.log(n2 instanceof Number);  // true  ===> 체인관계. Object가 최상위 객체이기 때문에(상속구조와 비슷)
+	  
+		console.log(n1 instanceof Object);  // false
+		console.log(n1 instanceof Number);  // false
+		
+		console.log(n2.toFixed());  // 30
+		// n1(number) => Number() 생성자의 함수를 호출할 수 있다.
+		// Number의 함수를 호출하는 순간 (순수한 상수였지만->)Number 객체로 다룬다.
+		console.log(n1.toFixed());  // 20
+		console.log(typeof n1);  // number
+		
+		// 변수가 숫자인지 알아내고자 할 때
+		// constructor로 비교하라.
+		console.log(n1.constructor); // Number
+		console.log(n2.constructor); // Number
+		
+		if (n1.constructor == Number) {
+			console.log('n1은 숫자이다.');
+		}
+		
+		if (n2.constructor == Number) {
+		      console.log('n2은 숫자이다.');
+		    }
+		
+		console.log(Number.MAX_VALUE);  // 1.7976931348623157e+308 
+		console.log(Number.MIN_VALUE);  // 5e-324
+		
+	</script>
+		
+</body>
+</html>
+
+

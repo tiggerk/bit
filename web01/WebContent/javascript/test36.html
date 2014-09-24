@@ -18,15 +18,9 @@
 					// 같은 객체에 소속된 멤버를 가리킬 때는 this를 사용한다.
 					this.result += value;
 					},   
-				"minus" : function(value) {
-					this.result -= value;
-					},
-				"multiple" : function(value) {
-					this.result *= value
-					},  // 문장의 끝이 확실하면 ; 안찍어도됨.
-				"divide" : function(value) {
-					this.result /= value
-					}				
+				"minus" : function(value) {this.result -= value;},
+				"multiple" : function(value) {this.result *= value},  // 문장의 끝이 확실하면 ; 안찍어도됨.
+				"divide" : function(value) {this.result /= value}				
 		};
 		
 		calcObj.plus(10);

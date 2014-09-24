@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 브라우저 객체들 : navigator </title>
+</head>
+
+<body>
+
+	<script>
+		"use strict";
+		
+		// 브라우저에게 제공하는 객체들
+		// window
+		//    L location
+		//    L navigator
+		//    L history
+		//    L screen
+		//    L document
+		
+		// navigator 객체에 들어있는 모든 값 출력
+		/*
+		for (var key in navigator) {
+			console.log(key, " --->", navigator[key]);
+		}
+		*/
+		
+		// appCodeName : 브라우저 코드명
+		console.log(navigator.appCodeName);
+		
+		// appName : 브라우저 이름
+		console.log(navigator.appName);
+		
+		// appVersion : 브라우저 버젼
+		console.log(navigator.appVersion);
+		
+		// platform : 현재 운영체제 정보
+		console.log(navigator.platform);
+		
+		// userAgent : 브라우저 전체 정보
+		console.log(navigator.userAgent);
+				
+	</script>
+		
+</body>
+</html>
+
+
+
