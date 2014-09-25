@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 처리 : keyEvent </title>
+</head>
+
+<body>
+
+  <input id="input1" type="text" onkeydown="nextFocus(input2)"><br>
+  <input id="input2" type="text" onkeydown="nextFocus(input1)"><br>
+  
+  
+	<script>
+		"use strict";
+		
+		// console.log(keyCode);   // key의 코드값
+		
+		// change 이벤트 : 포커스를 잃었을 때, 기존 값과 다르면 이벤트 발생.
+		
+		
+		// 입력폼에서 엔터키를 누르면 다음칸으로 이동!
+		function nextFocus(where) {
+			if(event.keyCode == 13)
+				where.focus();
+		}		
+		
+		
+		/*
+	  document.getElementById('input1').inkeydown = function(event) {
+			console.log(event.constructor);
+			console.log(event.key);  //DOM Level 3
+			console.log(event.code);  //DOM Level 3
+			console.log(event.char); // only IE
+			console.log(event.charcode); //deprecated
+			console.log(event.keycode); //deprecated
+			console.log(event.which); //deprecated
+			if (event.keycod == 13) {
+				// 포커스를 input2로 옮긴다.
+				// 
+			}
+			
+			
+		}
+		*/
+		
+  </script>		
+
+		
+</body>
+</html>
+
+
+

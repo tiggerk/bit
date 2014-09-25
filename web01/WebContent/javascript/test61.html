@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 리스너 등록 : addEventListener()/removeEventListener() </title>
+<style>
+	div {
+	 border: 1px solid red;
+	}
+	p {
+	 border: 1px dashed blue;
+	}
+	span {
+	 border: 3px dotted black;
+	}
+</style>
+</head>
+
+<body>
+<div id="d1">d1
+  <div id="d11">d11<p id="p1">비트 <span id="s1">강남</span>교육센터</p></div>
+  <div id="d12">d12<p id="p2">비트 <span id="s2">종로</span>교육센터</p></div>
+</div>
+<div id="d2">d2
+  <div id="d21">d21<p id="p3">비트 <span id="s3">대전</span>교육센터</p></div>
+  <div id="d22">d22<p id="p4">비트 <span id="s4">부산</span>교육센터</p></div>
+</div>
+
+    
+	<script>
+		"use strict";
+		
+		// stopPropagation() : 이벤트의 버블릿 중단!
+		document.getElementById('d1').onclick = function(event) {
+			console.log('d1....');
+		}
+		
+		document.getElementById('d11').onclick = function(event) {
+		      console.log('d11....');
+		    }   
+		
+		document.getElementById('d12').onclick = function(event) {
+		      console.log('d12....');
+		    }   
+		
+		document.getElementById('p1').onclick = function(event) {
+		      console.log('pppppp1....');
+		    }   
+		
+		document.getElementById('p2').onclick = function(event) {
+	          console.log('pppppp2....');	          
+	        }   
+		
+		var e1 = document.getElementById('s1'); 
+		// 리스너를 등록한 순서대로 호출된다.		
+		e1.addEventListener('click', function(event) {
+			console.log('(1)=> s111111');  
+		});
+		
+		e1.onclick = function(event) {
+            console.log('(2)=> s111111');           
+            //event.stopPropagation(); // 부모로 버블하지 말라!
+            event.stopImmediatePropagation(); //즉시 이벤트 전달을 멈춰라!
+          }
+		
+		e1.addEventListener('click', function(event) {
+		      console.log('(3)=> s111111');  
+		    });
+		
+		if (e1.attachEvent) {
+			// <= IE8 이하일 경우
+			e1.attachEvent('onclick', function(){
+				var event = window.event;
+			});
+		}
+	    
+    document.getElementById('s2').onclick = function(event) {
+            console.log('s222222');
+          }
+			
+  </script>		
+
+		
+</body>
+</html>
+
+
+
