@@ -5,117 +5,110 @@
 <title>Board</title>
 <style>
 form th {
-   text-align: right;
-   }
-   </style>
+	text-align: right;
+}
+</style>
 </head>
 <body>
-  <h1>Board List</h1>
-  <table border="1">
-  <tr>
-    <th>No</th>
-    <th>Title</th>
-    <th>Wirter</th>
-    <th>Date</th>
-    <th>count</th>
-  </tr>
-  <tr>
-	 <td>3</td>
-	 <td>aaaa</td>
-	 <td>hong</td>
-	 <td>2014-1-1</td>
-	 <td>6</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td>aaaa</td>
-   <td>hong</td>
-   <td>2014-1-1</td>
-   <td>6</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td>aaaa</td>
-   <td>hong</td>
-   <td>2014-1-1</td>
-   <td>6</td>
-  </tr>
- </table>
- 
- <hr>
- <h2>Board Detail</h2>
- <form>
-  <table>
-    <tr>
-      <th>Title</th>
-      <td><input type="text" id="title"></td>
-    </tr>
-    <tr>
-      <th>Content</th>
-      <td><textarea id="content"></textarea></td>
-    </tr>
-    <tr>
-      <th>Writer</th>
-      <td><input type="text" id="writer"></input></td>
-    </tr>
-    <tr>
-      <th>Password</th>
-      <td><input type="password" id="password"></input></td>      
-    </tr>
-  </table>
-  <button id="btnAdd" type="button">Add</button>
-  <button id="btnCancel" type="reset">Cancel</button>
- </form>
- 
+	<h1>Board List</h1>
+	<table border="1">
+		<tr>
+			<th>No</th>
+			<th>Title</th>
+			<th>Writer</th>
+			<th>Date</th>
+			<th>count</th>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>aaaa</td>
+			<td>hong</td>
+			<td>2014-1-1</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>aaaa</td>
+			<td>hong</td>
+			<td>2014-1-1</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>aaaa</td>
+			<td>hong</td>
+			<td>2014-1-1</td>
+			<td>6</td>
+		</tr>
+	</table>
+
+	<hr>
+	<h2>Board Detail</h2>
+	<form>
+		<table>
+			<tr>
+				<th>Title</th>
+				<td><input type="text" id="title"></td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td><textarea id="content"></textarea></td>
+			</tr>
+			<tr>
+				<th>Writer</th>
+				<td><input type="text" id="writer"></input></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" id="password"></input></td>
+			</tr>
+		</table>
+		<button id="btnAdd" type="button">Add</button>
+		<button id="btnCancel" type="reset">Cancel</button>
+	</form>
+
 </body>
 
 <script>
-"use strict"
+	"use strict"
 
-function Board(title, content, writer, password){
-	this.title = title;
-	this.content = content;
-	this.writer = writer;
-	this.password = password;
-	this.date = new Date();
-	this.count = 0;
-}
+	function Board(title, content, writer, password) {
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.password = password;
+		this.date = new Date();
+		this.count = 0;
+	}
 
-function resetForm() {
-	var event = new MouseEvent('click', {	
-	});
-	document.getElementById('btnCancel').dispatchEvent(event);
-}
+	function resetForm() {
+		var event = new MouseEvent('click', {});
+		document.getElementById('btnCancel').dispatchEvent(event);
+	}
+	var boardList = [];
 
-var boardList = [];
+	document.getElementById('btnAdd').onclick = function(event) {
+		var board = new Board(document.getElementById('title').value, document
+				.getElementById('content').value, document
+				.getElementById('writer').value, document
+				.getElementById('password').value);
 
-document.getElementById('btnAdd').onclick = function(event) {
-	var board = new Board(
-			document.getElementById('title').value,
-			document.getElementById('content').value,
-			document.getElementById('writer').value,
-			document.getElementById('password').value);
-	
-	boardList.push(board);
-	
-	resetForm();
-	 		
-	outputBoardList();
-};
+		boardList.push(board);
 
-function outputBoardList() {
-	console.log('---------------------------');
-	for (var i in boardList) {
-		console.log(boardList[i].title,
-				boardList[i].content,
-				boardList[i].writer,
-				boardList[i].password,
-				boardList[i].date,
-				boardList[i].count);
+		resetForm();
+
+		outputBoardList();
 	};
-}
 
-
+	function outputBoardList() {
+		console.log('---------------------------');
+		for ( var i in boardList) {
+			console.log(boardList[i].title, boardList[i].content,
+					boardList[i].writer, boardList[i].password,
+					boardList[i].date, boardList[i].count);
+		}
+		;
+	}
 </script>
 
 </html>

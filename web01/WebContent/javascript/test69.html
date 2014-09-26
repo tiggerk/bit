@@ -2,152 +2,90 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 게시판 </title>
+<title>게시판</title>
 <style>
-#table1 {
-  border-collapse: collapse;
-  width: 500px;
+#boardTable {
+	border-collapse: collapse;
+	width: 500px;
 }
- #table1 tr, #table1 th {
-  border: 1px solid black;
+
+#boardTable tr, #boardTable th {
+	border: 1px solid black;
 }
-#table1 tr, #table1 td {
-  border: 1px solid black;
-  height: 30px;
+
+#boardTable tr, #boardTable td {
+	border: 1px solid black;
+	height: 30px;
 }
-#table1 td {
-  text-align: center;
-} 
+
+#boardTable td {
+	text-align: center;
+}
+
 form th {
-  text-align: left;
+	text-align: left;
+}
+
+#thDate {
+	width: 100px;
 }
 </style>
 </head>
 
 <body>
-  <!-- 게시판 목록 -->
-  <h1>Board List</h1>
-  <table id="table1">
-    <tr>
-      <th>No</th>
-      <th>Title</th>
-      <th>Writer</th>
-      <th>Date</th>
-      <th>count</th>
-    </tr>
-    <!-- <tr>
-      <td>4</td>
-      <td>ohora</td>
-      <td>hongkildong</td>
-      <td>2014-9-25</td>
-      <td>0</td>
-    </tr> -->
-    <tr>
-      <td>3</td>
-      <td>aaaaaa</td>
-      <td>hong</td>
-      <td>2014-1-1</td>
-      <td>6</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>aaaaaa</td>
-      <td>hong</td>
-      <td>2014-1-1</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>aaaaaa</td>
-      <td>hong</td>
-      <td>2014-1-1</td>
-      <td>6</td>
-    </tr>    
-  </table>
-  
-  <hr size="2" align="left" width=500 color="black">  
-  
-  <h2>Board Detail</h2>
-  <form>
-  <table id="table2">
-  <tr>
-	  <th><label>Title </label></th>
-	  <td><input type="text" id="title"><td>
-  </tr>
-  <tr>
-	  <th><label>Content </label></th>
-	  <td><textarea id="content" rows="10"></textarea></td>
-  </tr>
-  <tr>
-    <th><label>Writer </label></th>
-    <td><input type="text" id="writer"></td>
-   </tr>
-   <tr>
-    <th><label>Password </label></th>
-    <td><input type="password" id="password"></td>
-   </tr>
-  </table>
-  <button id="btnAdd" type="button">Add</button>
-  <button id='btnCancel' type='reset'>Cancel</button>
-  </form>
-  
-  <script>
-  "use strict"
-  
-  // 게시글을 저장하는 객체 생성자 함수
-  function Board(title, content, writer, password) {
-	  this.title = title;
-	  this.content = content;
-	  this.wirter = writer;
-	  this.password = password;
-	  this.date = new Date();
-	  this.count = 0;
-  }
-  
-  function resetForm() {
-	  // reset 버튼에게 click 이벤트를 전달.
-	  // 1) MouseEvent 객체 생성
-	  var event = new MouseEvent('click',{
-		 /*  'view': window,
-		  'bubbles': true,
-		  'cancelable': true */
-	  });
-	  
-	  // 2) reset 버튼에게 이벤트 전달
-	  document.getElementById('btnCancel').dispatchEvent(event);	  
-  }
-  
-  function outputBoardList() {
-	  console.log('---------------------');
-	  for (var i in boardList) {
-		  console.log(boardList[i].title,
-				  boardList[i].content,
-				  boardList[i].writer,
-				  boardList[i].password,
-				  boardList[i].date,
-				  boardList[i].count
-		  );
-	  };
-  }
-  var boardList = [];
-  
-  document.getElementById('btnAdd').onclick = function(event) {
-	  var board = new Board(
-  		document.getElementById('title').value,
-	    document.getElementById('content').value,
-	    document.getElementById('writer').value,
-	    document.getElementById('password').value);
-	  
-	  boardList.push(board);
-	  
-	  resetForm();
-	  
-	  outputBoardList();
-  };
-  
-  
-  </script>  
+	<!-- 게시판 목록 -->
+	<h1>Board List</h1>
+	<table id="boardTable">
+		<tr>
+			<th>No</th>
+			<th>Title</th>
+			<th>Writer</th>
+			<th id="thDate">Date</th>
+			<th>count</th>
+		</tr>
+	</table>
+
+	<hr size="2" align="left" width=500 color="black">
+
+	<h2>Board Detail</h2>
+	<form>
+		<table>
+			<tr class="detail">
+				<th><label>No </label></th>
+				<td><input type="text" id="no"></td>
+			</tr>
+			<tr>
+				<th><label>Title </label></th>
+				<td><input type="text" id="title"></td>
+			</tr>
+			<tr>
+				<th><label>Content </label></th>
+				<td><textarea id="content" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<th><label>Writer </label></th>
+				<td><input type="text" id="writer"></td>
+			</tr>
+			<tr class="create">
+				<th><label>Password </label></th>
+				<td><input type="password" id="password"></td>
+			</tr>
+			<tr class="detail">
+				<th><label>Date </label></th>
+				<td><input type="text" id="date"></td>
+			</tr>
+		</table>
+		<button id="btnAdd" type="button" class='create'>Add</button>
+		<button id="btnChange" type="button" class='detail'>Change</button>
+		<button id="btnDelete" type="button" class='detail'>Delete</button>
+		<button id='btnCancel' type='reset'>Cancel</button>
+	</form>
 	
+	<!-- 목표 : 자바스크립트와 HTML 소스 분리 -->
+	<script src='test69_common.js'></script>
+	<!-- 순서바뀌면 안됨 --> 
+	<script src='test69.js'></script>
+
 </body>
 </html>
 
