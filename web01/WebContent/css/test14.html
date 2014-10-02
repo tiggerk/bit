@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS 분리하기</title>
+<link href="common.css" rel="stylesheet" type="text/css">
+<link href="generalpage.css" rel="stylesheet" type="text/css">
+<link href="test14.css" rel="stylesheet" type="text/css">
+<!-- 
+레이아웃 => 위치 이동
+1) float 
+    => 출력될 현재 위치에서 오른쪽 또는 왼쪽으로 이동 
+    => 기본 출력 순서에서 제외됨
+    * 기본 출력 순서 => 웹 브라우저는 콘텐츠를 출력할 때 항상 좌 -> 우, 
+      위 -> 아래 출력한다.
+    사용법 => float: left 또는 right;
+      예) float: left;
+      예) float: right;
+           
+2) absolute
+3) relative
+    => 기본 출력 순서를 고수하면서, 위치를 상/하/좌/우로 움직이고 싶을 때 사용.
+4) fixed
+
+* div 와 span
+1) div => 블록 타입(라인 점유). UI 객체를 묶어서 다루고자 할 때.
+2) span => 인라인 타입(라인에 포함됨). 내용을 구분하고자 할 때.
+
+ -->
+</head>
+<body>
+<div id='main'>
+<div id='header'>
+<img id='logo' src='http://dummyimage.com/140x50/ffff00/f00.png&text=BIT+Talk'>
+<div id='menubar'>
+  <a href='#'>공지사항</a>
+  <a href='#'>자료실</a>
+  <a href='#'>수업</a>
+  <a href='#'>로그아웃</a>
+</div>
+</div>
+
+<div id='sidebar'> 
+<div id='user'>
+  <img src='user.png'> 
+  <span id='userName'>홍길동</span>
+</div>
+<h1>알림</h1>
+<ul>
+  <li>출석률이 저조합니....</li>
+  <li>과제 제출하세요</li>
+  <li>수당지급 연기되었습...</li>
+</ul>
+
+<h1>소식</h1>
+<p>와우~~ 우리가 이길거야..헐..</p>
+<p>내일 공모전 안한답니다. (뻥ㅋㅋ)</p>
+<p>책 공동구매하려 합니다. 참여하실분..</p>
+</div>
+
+<div id='content'>
+<div id='breadcrumb'>공지사항</div>
+<h1>곤욕 치른 애플, iOS8 상위버전 준비 끝</h1>
+<p>애플이 말 많고 탈 많은 iOS8 초기버전의 혼란을 잠재울 상위버전 준비를 마치고 업데이트를 제공할 예정이라고 29일(현지시간) IT 전문매체 나인투파이브맥이 업계 소식통을 인용해 보도했다.
+<br> 
+현재 iOS8은 새로운 기능을 제공함에도 와이파이 신호 수신에서 때때로 문제가 발생하는 등 일부 오류(버그)가 나타나 사용자들이 불편을 겪고 있다.
+<br> 
+애플은 이를 해결하고 사용자들에게 안정화된 환경을 제공하기 위해 iOS8.1은 물론 8.2와 8.3도 이미 준비를 거의 끝마친 것으로 전해졌다. 이는 애플이 그 동안 준비한 업데이트 속도와 비교하면 상당히 빠른 것이라는 평가다.<p>
+</div>
+
+<div id='footer'>
+<p>비트교육센터 자바63기</p>
+</div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

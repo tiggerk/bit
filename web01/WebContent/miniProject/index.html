@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+<meta charset="utf-8">
+<title>ROCK PAPER SCISSORS</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="no">
+   <span id="title">ROCK PAPER SCISSORS</span>
+    <table id="throwTable">
+      <tr id="tr01" >
+        <td></td>
+        <td id="throw">Shoot</td>
+        <td></td>        
+      </tr>
+      <tr id="tr02" >
+        <td>너너너</td>       
+        <td></td>
+        <td class="tdFont"><b>나나나</b></td>        
+      </tr>
+    </table>
+  </div>
+
+  <div id="main1">
+   <img src="images/Rock-paper-scissors_(rock).png" width="300px" name=img>
+   <span class="vsFont">VS</span>
+   <img class="rotate90" src="images/2.png" name="img2">
+  </div>
+  
+	<div id='main'>
+		<!-- 폼 이름 game 여기에 그림말을 추가함 -->
+		<form name='game' id="gameDiv">
+		<div align="center">
+		  <a href="javascript:void(0);" onClick="gawibawibo(1);"><img class="rotate" src="images/1_on.png"></a>
+      <a href="javascript:void(0);" onClick="gawibawibo(2);"><img class="rotate" src="images/2_on.png"></a>
+      <a href="javascript:void(0);" onClick="gawibawibo(3);"><img class="rotate" src="images/3_on.png"></a>		
+		</div>	
+		
+			<table align="center">				
+				<tr>					
+					<td style="line-height:50px;"><b>
+						 ▶ Win! : <input type=text name=win readonly value="0" size="2" class="result">/ 
+						 ▶ Lose.. : <input type=text name=loss readonly value="0" size="2" class="result">/ 
+	  				 ▶ Draw : <input type=text name=draw readonly value="0" size="2" class="result">/ <br>
+	  				 ▶ Game : <input type=text name=gameSum readonly value="0" size="2" class="result">/
+	  				 ▶ Winning Rate : <input type=text name=winRate readonly value="0" size="2" class="result">%
+  				</b></td>
+				</tr>
+			</table>
+			<div>
+       <input type=text name=msg size="30" class="result">
+      </div>
+			<div id="img"></div>
+			<input type=reset value="RESET" id="btn">
+		</form>
+	</div>
+
+	
+</div>
+
+<script src="common.js"></script>
+</body>
+</html>

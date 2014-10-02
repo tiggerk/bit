@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+
+.alertWindow {
+	position: fixed;
+	left: 400px;
+	top: 0px;
+	padding-right: 22px; 
+}
+
+#btnClose {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.ad {
+  position: absolute; /* 기준은 조상 중에서 absolute인 조상을 기준으로 위치지정*/
+  top: 30px; /* 위쪽에서 20픽셀 떨어져라.*/
+  right: 0px; /* 오른쪽에서 0픽셀 떨어져라.*/
+}
+
+.adText {
+	font-size: 30px;
+	font-weight: bold;
+	color: blue;
+	border: 1px solid darkgray;
+	background-color: #e0ffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
