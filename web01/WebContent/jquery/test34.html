@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>리스너 등록 단축함수: click()</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+  /* click() => 클릭 이벤트 리스너 등록
+      
+  */
+	$(function() {
+		
+		$('#btn1').click(function(event){
+			$('<img>').attr('src','img5.jpg')
+			   .css('width', '100px')
+			   .css('border', '5px solid green')
+			   .appendTo('body');
+		});
+		
+	});
+</script>
+
+</head>
+
+<body>
+  <button id='btn1'>이미지추가</button>
+  <img id="img1" src='img1.jpg' width='150'>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

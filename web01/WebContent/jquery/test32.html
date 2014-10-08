@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>on()</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+
+  /* on() => 이벤트 리스너 등록.
+    $().on(이벤트명, 함수); // bind()와 같다.
+  */
+	$(function() {
+		// DOM 트리에서 img 태그를 찾아 리스너를 추가하라!
+		$('img').on('click', function(event){
+			console.log($(this).attr('src'));
+		});
+		
+		// DOM 트리에서 btn1 아이디의 태그를 찾아 리스너를 추가하라.
+		$('#btn1').on('click', function(event){
+			$('<img>').attr('src','img5.jpg')
+			   .css('width', '100px')
+			   .css('border', '5px solid green')
+			   .on('click', function(event){
+			      console.log($(this).attr('src'));
+			    })  
+			   .appendTo('body');
+		});
+		
+	});
+</script>
+
+</head>
+
+<body>
+  <button id='btn1'>이미지추가</button><br>
+  <img id="img1" src='img1.jpg' width='150'>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

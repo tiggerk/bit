@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 추가하기</title>
+<style>
+.selected {
+	background-color: blue;
+	color: white;
+}
+
+.head {
+	background-color: black;
+	color: white;
+}
+
+.no {
+	background-color: yellow;
+}
+</style>
+<script src="jquery-1.11.1.js"></script>
+<script>
+	/*
+	  $(자식).appendTo(부모) => 부모의 막내 자식으로 추가
+	  $(자식).prependTo(부모) => 부모의 첫째 자식으로 추가
+	  $(엘리먼트).insertAfter(형제) => 엘리먼트를 형제 다음에 추가
+	  $(엘리먼트).insertBefore(형제) => 엘리먼트를 형제 전에 추가
+	  $(부모).append(자식) => 해당 부모의 막내 자식으로 추가
+	  $(부모).prepend(자식) => 해당 부모의 첫째 자식으로 추가
+	  $(형제).after(엘리먼트) => 형제의 바로 다음 동생으로 엘리먼트 추가
+	  $(형제).before(엘리먼트) => 형제의 바로 위 형으로 엘리먼트 추가
+  */
+
+	$(function() {
+		$('<h1>1111</h1>').appendTo('body');
+		$('<h1>2222</h1>').prependTo('body');
+		$('<h1>3333</h1>').insertAfter('#d1');
+		$('<h1>4444</h1>').insertBefore('#d2');
+		$('#d1').append('<h2>55555</h2>');
+		$('#d1').prepend('<h2>66666666</h2>');
+		$('#d1').after('<h2>777777</h2>');
+		$('#d1').before('<h2>888888</h2>');
+	});
+</script>
+</head>
+
+<body>
+	<h1>000000</h1>
+	<div id="d1">
+		<h2>aaaaa</h2>
+	</div>
+	<div id="d2">
+		<h2>bbbbbb</h2>
+	</div>
+</body>
+</html>

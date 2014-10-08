@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>엘리먼트 이동하기</title>
+<style>
+.selected {
+	background-color: blue;
+	color: white;
+}
+
+.head {
+	background-color: black;
+	color: white;
+}
+
+.no {
+	background-color: yellow;
+}
+</style>
+<script src="jquery-1.11.1.js"></script>
+<script>	
+	$(function() {
+		setInterval(function() {
+			$('img:first').appendTo('body');
+		}, 500);
+	});
+</script>
+</head>
+
+<body>
+	<img src="img1.jpg" width="150">
+	<img src="img2.jpg" width="150">
+	<img src="img3.jpg" width="150">
+	<img src="img4.jpg" width="150">
+	<img src="img5.jpg" width="150">
+</body>
+</html>

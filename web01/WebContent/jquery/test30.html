@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트 리스너 해제</title>
+<script src='jquery-1.11.1.js'></script>
+<script>
+  /* unbind() => 이벤트 리스너 등록
+     $().unbind(이벤트명); // 모든 리스너 제거
+     $().unbind(이벤트명, 함수); // 특정 리스너만 제거
+  */
+  var listener1, listener2, listener3;
+     
+	$(function() {
+		$('#img1').bind('click', listener1 = function(event){
+			console.log('11111');
+		});
+		
+		$('#img1').bind('click', listener2 = function(event){
+      console.log('22222');
+    });
+		
+		$('#img1').bind('click', listener3 = function(event){
+      console.log('33333');
+    });
+		
+		// 버튼을 클릭하면 listener2를 이벤트 리스너 목록에서 제거하라.
+		$('#btn1').bind('click', function(event){
+			// 특정 리스너만 해제하기
+			//$('#img1').unbind('click', listener2);
+			
+			//모든 리스너 해제하기
+			$('#img1').unbind('click');
+		});
+		
+	});
+</script>
+
+</head>
+
+<body>
+  <button id='btn1'>이벤트 처리 해제</button><br>
+  <img id="img1" src='img1.jpg' width='150'>
+  <img id='img2' src='img4.jpg' width='150'>
+  <img id='img3' src='img5.jpg' width='150'> 
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

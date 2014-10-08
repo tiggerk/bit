@@ -1,0 +1,79 @@
+<!-- 마우스 커서가 셀 위에 있을 때 색상 변경 -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타일</title>
+<style>
+#main {
+  border: 1px solid black;
+  margin: 0px auto;
+  width: 600px;
+  height: 600px;
+}
+
+#tileTable {
+  border: 1px solid red;
+  border: 1px solid gray;
+  margin: 100px auto;
+  padding: 2px;
+}
+
+.cell {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  background-color: #006400;
+}
+
+.cellOver {
+  background-color: #008000;
+}
+
+</style>
+<script src='../jquery-1.11.1.js'></script>
+</head>
+<body>
+<div id='main'>
+<div id='tileTable'>
+</div>
+</div>
+
+<script>
+var tileTable = $('#tileTable');
+var quizLength = 2;
+var totalCellCount = quizLength * quizLength;
+var tableSize = quizLength * 54;
+
+$('#tileTable')
+  .css('width', tableSize + 'px')
+  .css('height', tableSize + 'px');
+
+for (var i = 0; i < totalCellCount; i++) {
+  $('<div>').attr('id', 'cell' + i)
+    .addClass('cell')
+    .appendTo(tileTable);
+}
+
+$('#tileTable').on('mouseenter', '.cell', function(event){
+  $(this).addClass('cellOver');
+}).on('mouseleave', '.cell', function(event){
+	$(this).removeClass('cellOver');
+});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

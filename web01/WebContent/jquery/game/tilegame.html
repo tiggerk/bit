@@ -1,0 +1,129 @@
+<!-- 퀴즈를 내는 동안에는 셀을 선택하지 못하게 한다. -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타일</title>
+<style>
+#main {
+  border: 1px solid black;
+  margin: 0px auto;
+  width: 600px;
+  height: 600px;
+}
+
+#tileTable {
+  border: 1px solid red;
+  border: 1px solid gray;
+  margin: 100px auto;
+  padding: 2px;
+}
+
+.cell {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  background-color: #006400;
+}
+
+.cellOver {
+  background-color: #008000;
+}
+
+.cellSelected {
+  background-color: greenyellow;
+}
+
+.cellFailure {
+  background-color: red;
+}
+</style>
+<script src='../jquery-1.11.1.js'></script>
+</head>
+<body>
+<div id='main'>
+<div id='tileTable'>
+</div>
+</div>
+
+<script>
+var tileTable = $('#tileTable');
+var quizLength = 2;
+var totalCellCount = quizLength * quizLength;
+var tableSize = quizLength * 54;
+var randomNoCount = 2;
+var quizNoMap;
+var userClickedCount = 0;
+
+$('#tileTable')
+  .css('width', tableSize + 'px')
+  .css('height', tableSize + 'px');
+
+for (var i = 0; i < totalCellCount; i++) {
+  $('<div>').attr('id', 'cell' + i)
+    .addClass('cell')
+    .appendTo(tileTable);
+}
+
+$('#tileTable').on('mouseenter', '.cell', function(event){
+  $(this).addClass('cellOver');
+}).on('mouseleave', '.cell', function(event){
+  $(this).removeClass('cellOver');
+});
+
+function onClickCell(event){
+	var cellNo = $(this).attr('id').substring(4);
+	if (cellNo in quizNoMap) {
+		$(this).addClass('cellSelected');
+		delete quizNoMap[cellNo];
+	} else {
+		$(this).addClass('cellFailure');
+	}
+	
+	if (++userClickedCount == randomNoCount) {
+		if (Object.keys(quizNoMap).length > 0) {
+			alert("안타깝습니다. 실패했습니다!");
+		} else {
+			alert("와우~~ 성공입니다!");
+		}
+	}
+}
+
+quizNoMap = {};
+$('.cell').removeClass('cellSelected cellFailure');
+
+var randomNo;
+for (var i = 0; i < randomNoCount; i++) {
+  randomNo = Math.floor(Math.random() * totalCellCount);
+  console.log(randomNo);
+  if (randomNo in quizNoMap) {
+    i--; 
+    continue;
+  } 
+  quizNoMap[randomNo] = false;
+}
+console.log(quizNoMap);
+for (var key in quizNoMap) {
+  $('#cell' + key).addClass('cellSelected');
+}
+
+setTimeout(function(){
+  $('.cell').removeClass('cellSelected');
+  $('#tileTable').on('click', '.cell', onClickCell);
+}, 1000);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
