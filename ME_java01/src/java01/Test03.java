@@ -8,9 +8,9 @@
  * 만약 클래스가 특정 패키지에 소속된 멤버라면,
  * - java -classpath [패키지가 있는 경로] [패키지명.클래스명]
  * 
- *  -classpath 대신 -cp 라고 해도 된다.
+ * -classpath 대신 -cp 라고 해도 된다.
  *  
- *  패키지명.클래스명 = Fully Qualified Name(QName)
+ * 패키지명.클래스명 = Fully Qualified Name(QName)
  */
 
 package java01;
