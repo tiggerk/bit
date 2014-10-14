@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script>
+// 배열 생성1
+// 배열을 만들라! 기본 3개 미리 생성.
+var scores = new Array(3); 
+scores[0] = 100;
+scores[1] = 100;
+scores[2] = 90;
+scores[3] = 80; // 언제든 추가할 수 있다.
+scores[7] = 50; // 인덱스를 건너 뛰며 값을 넣을 수 있다.
+
+for (var i = 0; i < scores.length; i++) {
+	console.log(scores[i]);
+}
+
+
+// 배열 생성2
+var scores = [100, 90, 100];
+console.log(scores);
+
+
+// 배열 생성3
+// 배열에 다양한 값을 넣을 수 있다. => 동적 바인딩이기 때문에
+// 실제 자바의 Array 객체와 사용법이 비슷하다.
+var student = ["홍길동", 100, 100, 90, 290, new Date()];
+console.log(student);
+
+</script>
+
+</body>
+</html>
