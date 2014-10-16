@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test27</title>
+</head>
+<body>
+
+<script>
+
+// global variables(글로벌 변수) => window객체에 소속된다.
+var v1; //window.v1과 같다!!
+var v2;
+var op;
+var result;
+
+v1 =parseInt(prompt('첫번째 값을 입력하시오'));
+v2 =parseInt(prompt('두번째 값을 입력하시오'));
+op =prompt('연산자 입력하시오');
+
+compute();
+displayResult();
+
+function compute() {
+	switch(op) {
+	case "+" : result = v1 + v2; break;
+	case "-" : result = v1 - v2; break;
+	case "*" : result = v1 * v2; break;
+	case "/" : result = v1 / v2; break;
+	}
+};
+
+function displayResult() {
+	console.log("---------------------------");
+	console.log(v1, op, v2, '=', result);
+	console.log("---------------------------");
+}
+	
+</script>
+
+</body>
+</html>
