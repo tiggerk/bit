@@ -4,7 +4,7 @@
        
    - 그러나 import 문을 사용하여 미리 클래스의 정보를
      컴파일러에게 알려 줄 수 있다.
-      예) import java.util.Array;
+      예) import java.util.ArrayList;
        
    - 또는 클래스가 소속되어 있는 패키지 이름을 알려줄 수 있다.
       예) import java.util.*;	(*:와일드카드)
