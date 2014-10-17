@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test39</title>
+</head>
+<body>
+
+<script>
+
+function plus(var a, var b) {
+	return a + b;
+}
+
+function plus(var a) {
+	return a + a;
+}
+
+// 다음의 함수는 위의 어떤 함수를 호출하는가?
+var result = plus(10, 20, 30);
+// 답: 구분할 수 없다.
+// 이유? 자바스크립트의 함수를 호출할 때 파라미터 값의 전달이 자유롭기 때문이다.
+// 즉, 두개를 던지든지 세개를 던지든지 구분하지 않고 모두 허용하기 때문에!!
+// 그래서 자바스크립트는 오버로딩 문법을 지원하지 않는다.
+// 물리적으로 안됨!!!
+	
+</script>
+
+</body>
+</html>
