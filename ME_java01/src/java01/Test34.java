@@ -27,7 +27,7 @@ public class Test34 {
 
 		// 상수가 아닌 경우는 값을 l-value에 넣을 수 있다 하더라도
 		// 허락하지 않는다.
-		// byte b2 = i;  // 오류!!
+		//  byte b2 = i;  // 오류!!
 
 		// 해결책!
 		// r-value를 강제로 l-value에 넣는 방법

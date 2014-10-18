@@ -31,10 +31,11 @@ public class Test35 {
 		// int와 int의 연산결과는 int이다.
 		int x = 5;
 		int y = 2;
-		//System.out.println(x / y);
-		//System.out.println((float)x / (float)y);
-		System.out.println((float)x / y);
+		System.out.println("int와 int의 연산결과는 int값 : " +(x / y));
+		System.out.println("float과 float의 연산결과는 float값 : " + (float)x / (float)y);
+		System.out.println("float과 int의 연산결과는 float값 : " + (float)x / y);
 		System.out.println(x / (float)y);
+		System.out.println(f / d);
 		
 		//boolean bool1 = true + false;
 		System.out.println(b);
