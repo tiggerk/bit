@@ -21,12 +21,14 @@ import java.util.Properties;
 
 public class Test04 {
 	public static void main(String[] args) throws Exception {
-		String iteratorClassName = System.getProperty("iterator");
+		// System.getProperty("환경변수명") 도구가 하는일
+		// => -D 옵션으로 넘어온 값 및 JVM 환경변수 값을 꺼낸다.
+		String iteratorClassName = System.getProperty("iterator"); // 이름(iterator)의 값을 리턴.(-Diterator(이름)=값)
 		
 		//System.out.println(iteratorClassName);
 		
 		// 클래스 이름(패키지명 포함)으로 객체 생성하기
-		// 1) 클래스를 로딩하라
+		// 1) 클래스를 로딩하라 (forName=> 마지막에 있는 iterator클래스를 Method area 영역에 로딩함)
 		Class clazz = Class.forName(iteratorClassName);
 		
 		// 2) Class객체를 사용하여 인스턴스 생성

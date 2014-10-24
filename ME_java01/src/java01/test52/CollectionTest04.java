@@ -41,15 +41,20 @@ public class CollectionTest04 {
 
 	/* 스태틱 블록에서는 오로지 클래스 변수 및 클래스 메서드만 사용할 수 있다.
 	   - 이유?
+	     static이 붙으면 클래스 이름으로 직접 접근할 수 있다.
+	     static이 안붙으면 인스턴스 없이 호출할 수 없다.
+	     따라서 인스턴스를 먼저 생성해야한다.
+	     
 	     class A {
 	      int value;
 
-	      void print() { System.out.println(value); }
+	      void print() { System.out.println(value); }  // 인스턴스 주소 없이는 호출이 불가능하다.
 
-	      static void test() {
+	      static void test() { // static 메소드는 this라는 히든변수가 없다.
 	      	print(); // 호출가능하다면 어떤 일이 벌어질까?
 	      }
 	     } 
+	     
 
 	 */
 	public static void main(String[] args) {
