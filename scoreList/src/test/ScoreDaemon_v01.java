@@ -1,4 +1,4 @@
-package java02;
+package test;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

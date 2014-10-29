@@ -1,4 +1,4 @@
-package java02;
+package test;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -10,7 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import java02.ScoreManager.Score;
+import test.ScoreManager.Score;
 
 public class ScoreDaemon {
 	

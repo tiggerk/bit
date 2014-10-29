@@ -1,5 +1,5 @@
 
-package java02;
+package test;
 
 import java.io.FileOutputStream;
 
