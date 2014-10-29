@@ -1,136 +1,108 @@
 package java02;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import java02.ScoreManager.Score;
+
 public class ScoreDaemon {
-	
-	static final int HELP = 0;
-	static final int LIST = 1;
-	static final int VIEW = 2;
-	static final int ADD = 3;
-	static final int DELETE = 4;
-	static final int UPDATE = 5;
-	static final int EXIT = 6;
 	
 	public static void main(String[] args) throws Exception{
 		
-		ScoreManager manager = new ScoreManager();
+		FileInputStream in = new FileInputStream("score.dat");
+		ObjectInputStream in2 = new ObjectInputStream(in);
 		
+		ScoreManager.record = (ArrayList<Score>) in2.readObject();
+		
+		
+		/*
+		FileReader fr = new FileReader("score.dat");
+		BufferedReader br = new BufferedReader(fr);
+		
+		String s = null;
+		
+		while((s=br.readLine()) != null) {
+			
+		}
+		*/
+		ScoreManager man = new ScoreManager();
+
 		while(true){
-			switch(manager.startDaemon()){
-			case HELP:
-				manager.displayHelp();
-				break;
-			case LIST:
-				manager.displayList();
-				break;
-			case VIEW:
-				manager.selectView(ScoreManager.index);
-				break;
-			case ADD:
-				manager.addScore();
-				break;
-			case DELETE:
-				manager.deleteScore(ScoreManager.index);
-				break;
-			case UPDATE:
-				manager.updateScore(ScoreManager.index);
-				break;
-			case EXIT:
-				manager.exitDaemon();
-				
-				System.out.println("프로그램을 종료합니다.");
-				System.exit(0);
+			switch(man.start()){
+			case "help": man.help(); break;
+			case "list": man.list(); break;
+			case "view": man.view(ScoreManager.index); break;
+			case "add": man.add(); break;
+			case "delete": man.delete(ScoreManager.index); break;
+			case "update": man.update(ScoreManager.index); break;
+			case "exit": man.exit();
+			System.out.println("프로그램을 종료합니다.");
+			System.exit(0);
+			break;
+			default:
 			}
 		}
 	}
-
 }
 
 class ScoreManager{
 	
-	// Score 클래스가 같은 패키지에 있어서 일단 내부에 넣었다.
-	static class Score{
-		String name;
-		int kor;
-		int eng;
-		int math;
-		int sum;
-		float average;
+	static class Score implements Serializable {
 		
-		public Score(){}
-		public Score(String name, int kor, int eng, int math){
-			this.name = name;
-			this.kor = kor;
-			this.eng = eng;
-			this.math = math;
-			this.sum = kor + eng + math;
-			this.average = sum / 3;
+		private static final long serialVersionUID = 1L;
+		
+		String name;
+		int kor, eng, math, sum;
+		float average;
+
+		public Score(String n, int k, int e, int m){
+			name = n;
+			kor = k;
+			eng = e;
+			math = m;
+			sum = k + e + m;
+			average = sum / 3;
 		}
 	}
-	
+
 	static int index;
-	
-	ArrayList<Score> record = new ArrayList<Score>();
-	Scanner scanner = new Scanner(System.in);
+
+	static ArrayList<Score> record = new ArrayList<Score>();
+	Scanner s = new Scanner(System.in);
 	Score score;
-	
-	int startDaemon(){
+
+	String start(){
 		System.out.print("명령> ");
-		
-		int menuNo = 0;
-		
-		String[] menu = scanner.nextLine().split(" ");
-		
-		if (menu.length == 5 && menu[0].equals("add")) {
+		String[] menu = s.nextLine().split(" ");
+
+		if (menu.length == 5) {
+			if (!menu[0].equals("add"))
+				return "";
 			score = new Score(menu[1], Integer.parseInt(menu[2]),
-			Integer.parseInt(menu[3]), Integer.parseInt(menu[4]));
-			
+					Integer.parseInt(menu[3]), Integer.parseInt(menu[4]));
+
 		} else if (menu.length == 2) {
 			index = Integer.parseInt(menu[1]);
 			if (!(menu[0].equals("view") || menu[0].equals("delete") || menu[0].equals("update"))) {
-				startDaemon();
+				return "";
 			}
-			
+
 		} else if (menu.length == 1) {
 			if(!(menu[0].equals("help") || menu[0].equals("list") 
 					|| menu[0].equals("exit")))
-				startDaemon();
-		}
-
-		switch(menu[0]){
-		case "help":
-			menuNo = 0;
-			break;
-		case "list":
-			menuNo = 1;
-			break;
-		case "view":
-			menuNo = 2;
-			break;
-		case "add":
-			menuNo = 3;
-			break;
-		case "delete":
-			menuNo = 4;
-			break;
-		case "update":
-			menuNo = 5;
-			break;
-		case "exit":
-			menuNo = 6;
-			break;
-		default:
-			menuNo = 0;
-		}
-			
-		return menuNo;
+				return "";
+		}	
+		return menu[0];
 	}
-	
-	void displayHelp(){
+
+	void help(){
 		System.out.println("list");
 		System.out.println("view 인덱스");
 		System.out.println("add 이름 국어 영어 수학");
@@ -139,16 +111,15 @@ class ScoreManager{
 		System.out.println("exit");		
 	}
 
-	void displayList(){
-		for ( int i = 0; i < record.size(); i++){
-			score = record.get(i);
-			System.out.println( i + " " + score.name + " " + score.kor 
+	void list(){
+		int i=0;
+		for ( Score score : record){
+			System.out.println( i++ + " " + score.name + " " + score.kor 
 					+ " " + score.eng + " " + score.math);
-		}
-		
+		}	
 	}
 
-	void selectView(int index){
+	void view(int index){
 		score = record.get(index);
 		System.out.println("인덱스: " + index);
 		System.out.println("이름: " + score.name);
@@ -159,76 +130,107 @@ class ScoreManager{
 		System.out.println("평균: " + score.average);
 	}
 
-	void addScore(){
+	void add(){
 		record.add(score);
-		/*while(true){
-			//System.out.println("저장되었습니다.");
 
-			
-			
-			try{
-				String input = scanner.nextLine().trim();
-				if(input.equalsIgnoreCase("add")){
-					Scanner s2 = new Scanner(input); 
-					record.add(new Score(s2.nextLine(), s2.nextInt(), s2.nextInt(), 
-							s2.nextInt()));
-				}
-			}catch(Exception ex){ 
-				System.out.println("입력오류 입니다. add 이름 국어 영어 수학 순으로 입력!");
+	} //end of add()
+
+
+	void delete(int index){
+		score = record.get(index);
+
+		if ( record.size() < index ) {
+			System.out.println("존재하지 않는 인덱스입니다.");
+		} else {
+			System.out.println(score.name +"님을 정말 삭제하시겠습니까? (y/n)");		
+			if (s.nextLine().equalsIgnoreCase("y")) {
+				record.remove(index);
+				System.out.println("삭제하였습니다.");
+			} else {
+				System.out.println("삭제취소하였습니다.");
 			}
-            
-		}//end of while(true)
-*/	} //end of addScore()
+		}
+
+	}
+
+	void update(int index) throws Exception{
+		score = record.get(index);
+		Scanner s = new Scanner(System.in);
+		String name;
+		int kor;
+		int eng;
+		int math;
+		
+		
+		System.out.println("이름(" + score.name+ ")? ");
+		if ((name = s.nextLine()).equals(""))
+			name = score.name;
+		else;
+	
+		System.out.println("국어(" + score.kor + ")? ");
+		String sss = s.nextLine();
+		if ( sss.equals("") ){
+			kor = score.kor;
+		}else{ 
+			kor = Integer.parseInt(sss);
+		}
+		
+		System.out.println("영어(" + score.eng + ")? ");
+		String sss2 = s.nextLine();
+		
+		if ( sss2.equals("") ){
+			eng = score.eng;
+		} else {
+			eng = Integer.parseInt(sss2);
+		}
+		
+		System.out.println("수학(" + score.math + ")? ");
+		String sss3 = s.nextLine();
+		if ( sss3.equals("") ) {
+			math = score.math;
+		} else {
+			math = Integer.parseInt(sss3);
+		}
+		
+		System.out.println("정말 변경하시겠습니까?(y/n)");
+		if (s.nextLine().equalsIgnoreCase("y")) {
+			score.name = name;
+			score.kor = kor;
+			score.eng = eng;
+			score.math = math;
+		} else {
+			System.out.println("변경 취소 되었습니다.");
+		}
+
+		//record.set(index, score);
+	}
 
 	
-	void deleteScore(int index){
+	void exit() throws Exception{
 		
-		//record.remove()
+		FileOutputStream out = new FileOutputStream("score.dat");
+		ObjectOutputStream out2 = new ObjectOutputStream(out);
 		
-		
-		while(true) {
-			
-			try {
-				String input = scanner.nextLine().trim();
-				if (input.equalsIgnoreCase("delete")) {
-					Scanner s2 = new Scanner(input).useDelimiter(" ");
-					
-					int length = record.size();
-					boolean found = false;
-					
-					for (int i = 0; i < length; i++) {
-						Score score = (Score)record.get(i);
-						if(input.equals(score.name)) {
-							found = true;
-							break;
-						}
-					}
-					
-					if(found) {
-						System.out.println("삭제하였습니다.");
-					} else {
-						System.out.println("일치하는데이터엄슴");
-					}
-				} else {
-					return;
-				}
-		} catch (Exception ex) {
-			System.out.println("입력오류임 다시 입력하셈");
+		out2.writeObject(record);
+		/*
+		for (int i = 0; i < record.size(); i++) {
+			Score score = record.get(i);
+			out2.writeUTF(score.name);
+			out2.writeInt(score.kor);
+			out2.writeInt(score.eng);
+			out2.writeInt(score.math);
 		}
-		}
-		/*명령> delete 1
-		임꺽정의 성적을 삭제하시겠습니까?(y/n) y
-		삭제하였습니다.*/
+		*/
+		out2.close();
+		out.close();
 		
 		
-	}
-
-	void updateScore(int index){
-		
-	}
-
-	void exitDaemon() throws Exception{
+		/*
 		BufferedWriter out = new BufferedWriter(new FileWriter("score.dat"));
+		BufferedReader in = new BufferedReader(new FileReader("score.dat"));
 		
+		for (int i = 0; i < record.size(); i++) {
+			Score score = record.get(i);
+		*/	
+		}
 	}
-}
