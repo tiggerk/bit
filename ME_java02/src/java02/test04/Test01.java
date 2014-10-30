@@ -2,17 +2,11 @@
  - File I/O API를 사용하여 데이터를 저장하고 꺼낸다.
  - load(), save() 메서드 준비
  
- - CSV(comma seperated value) 문자열을 가지고 객체를 초기화할 수 있도록 
+ - CSV(comma separated value) 문자열을 가지고 객체를 초기화할 수 있도록 
    Score13에 생성자 추가한다.
  */
 package java02.test04;
 
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Test01 {
