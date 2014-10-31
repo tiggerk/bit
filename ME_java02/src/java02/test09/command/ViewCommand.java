@@ -1,12 +1,12 @@
-package java02.test08.command;
+package java02.test09.command;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-import java02.test08.Command;
-import java02.test08.Score;
-import java02.test08.ScoreDao;
-import java02.test08.annotation.Component;
+import java02.test09.Command;
+import java02.test09.Score;
+import java02.test09.ScoreDao;
+import java02.test09.annotation.Component;
 
 @Component("view")
 public class ViewCommand implements Command {

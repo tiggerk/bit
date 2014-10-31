@@ -18,7 +18,7 @@
      
    
  */
-package java02.test08;
+package java02.test09;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
 
-import java02.test08.annotation.Component;
+import java02.test09.annotation.Component;
 
 import org.reflections.Reflections;
 

@@ -9,8 +9,8 @@ import java02.test07.annotation.Component;
 
 @Component("list")
 public class ListCommand implements Command {
-
-	@Override
+  
+  @Override
 	public String getCommandInfo() {
 		return "list";
 	}
