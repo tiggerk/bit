@@ -1,10 +1,10 @@
-package java02.test05.commands;
+package java02.test06.command;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java02.test05.Command;
-import java02.test05.Score;
-import java02.test05.ScoreDao;
+import java02.test06.Command;
+import java02.test06.Score;
+import java02.test06.ScoreDao;
 
 public class AddCommand implements Command {
 

@@ -7,9 +7,7 @@ package java02.test05;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-
 import java02.test05.commands.AddCommand;
 import java02.test05.commands.DeleteCommand;
 import java02.test05.commands.ExitCommand;
