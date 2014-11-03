@@ -42,8 +42,8 @@ public class Test01 {
 			// 인스턴스를 생성한다.
 			component = (Component) clazz.getAnnotation(Component.class);
 			if (component != null) {
-				command = (Command) clazz.newInstance();
-				commandMap.put(component.value(), command);
+				//command = (Command) clazz.newInstance();
+				commandMap.put(component.value(), (Command)clazz.newInstance());
 			}
 		}
 

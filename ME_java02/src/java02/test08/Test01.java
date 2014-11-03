@@ -1,10 +1,10 @@
 /* 목표1. 오픈 소스 Reflections를 사용하여 클래스 찾기
  * 목표2. 의존 객체 자동 주입
   
- * Dependency Injection (의존성 주입)
+ * Dependency Injection (의존성 주입) => DI
    => 클래스가 사용하는 의존 객체를 애플리케이션을 시작할 때 자동으로 주입하는 것.
   
- * Inversion of Control(역제어)
+ * Inversion Of Control(역제어) => IOC
    1) 사례1 => 이벤트 처리
    2) 사례2 => 의존 객체 주입
    
@@ -31,104 +31,103 @@ import java02.test08.annotation.Component;
 import org.reflections.Reflections;
 
 public class Test01 {
-  Scanner scanner;
-  ScoreDao scoreDao;
-  HashMap<String, Command> commandMap;
+	Scanner scanner;
+	ScoreDao scoreDao;
+	HashMap<String, Command> commandMap;
 
-  public void init() throws Exception {
-    scoreDao = new ScoreDao();
-    try {
-      scoreDao.load();
-    } catch (Exception e) {
-      System.out.println("데이터 로딩 중 오류가 발생하였습니다.");
-    }
+	public void init() throws Exception {
+		scoreDao = new ScoreDao();
+		try {
+			scoreDao.load();
+		} catch (Exception e) {
+			System.out.println("데이터 로딩 중 오류가 발생하였습니다.");
+		}
 
-    scanner = new Scanner(System.in);
+		scanner = new Scanner(System.in);
 
-    commandMap = new HashMap<String, Command>();
+		commandMap = new HashMap<String, Command>();
 
-    Reflections reflections = new Reflections("java02.test08");
-    Set<Class<?>> clazzList = reflections
-        .getTypesAnnotatedWith(Component.class);
+		Reflections reflections = new Reflections("java02.test08");
+		Set<Class<?>> clazzList =
+				reflections.getTypesAnnotatedWith(Component.class);
 
-    Command command = null;
-    Component component = null;
-    Method method = null;
+		Command command = null;
+		Component component = null;
+		Method method = null;
 
-    for (Class clazz : clazzList) {
-      component = (Component) clazz.getAnnotation(Component.class);
-      if (component != null) {
-        command = (Command) clazz.newInstance();
+		for (Class clazz : clazzList) {
+			component = (Component) clazz.getAnnotation(Component.class);
+			command = (Command)clazz.newInstance();
+			commandMap.put(component.value(), command);
 
-        // 만약 setScoreDao가 있다면 호출하여 ScoreDao객체를 주입한다.
-        // Class 관리자로부터 해당 클래스의 Method 객체를 얻는다.
-        // invoke()를 사용하여 메서드를 호출한다.
-        try {
-          method = clazz.getMethod("setScoreDao", ScoreDao.class);
-          //System.out.println(clazz.getName() + "." + method.getName());
-          method.invoke(command, scoreDao);
-        } catch (Exception e) {}
-        
-        // Scanner 의존 객체 주입
-        try {
-          method = clazz.getMethod("setScanner", Scanner.class);
-          //System.out.println(clazz.getName() + "." + method.getName());
-          method.invoke(command, scanner);
-        } catch (Exception e) {}
+			// 만약 setScoreDao가 있다면 호출하여 ScoreDao객체를 주입한다.
+			// Class 관리자로부터 해당 클래스의 Method 객체를 얻는다.
+			// invoke()를 사용하여 메서드를 호출한다.
+			try {
+				method = clazz.getMethod("setScoreDao", ScoreDao.class);
+				// System.out.println(clazz.getName() + "." + method.getName());
+				method.invoke(command, scoreDao); 
+				// ==> command.setScoreDao(scoreDao); // 정확하게 메소드 이름을 지정해야함!!
+			} catch (Exception e) {}
 
-        commandMap.put(component.value(), command);
-      }
-    }
+			// Scanner 의존 객체 주입
+			try {
+				method = clazz.getMethod("setScanner", Scanner.class);
+				// System.out.println(clazz.getName() + "." + method.getName());
+				method.invoke(command, scanner);
+			} catch (Exception e) {
+			}
 
-  }
+		}
+	}
 
-  public void service() {
-    Command command = null;
-    loop: while (true) {
-      try {
-        String[] token = promptCommand();
-        command = commandMap.get(token[0]);
+	public void service() {
+		Command command = null;
+		loop: while (true) {
+			try {
+				String[] token = promptCommand();
+				command = commandMap.get(token[0]);
 
-        if (command == null) {
-          System.out.println("해당 명령을 지원하지 않습니다.");
-          continue;
-        }
+				if (command == null) {
+					System.out.println("해당 명령을 지원하지 않습니다.");
+					continue;
+				}
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
+				HashMap<String, Object> params = new HashMap<String, Object>();
 
-        ArrayList<String> options = new ArrayList<String>();
-        for (int i = 1; i < token.length; i++) {
-          options.add(token[i]);
-        }
-        params.put("options", options);
+				ArrayList<String> options = new ArrayList<String>();
+				for (int i = 1; i < token.length; i++) {
+					options.add(token[i]);
+				}
+				params.put("options", options);
 
-        command.service(params);
+				command.service(params);
 
-        if (token[0].equals("exit"))
-          break loop;
+				if (token[0].equals("exit"))
+					break loop;
 
-      } catch (Exception e) {
-        e.printStackTrace();
-        System.out.println("명령어 처리 중 오류 발생. 다시 시도해 주세요.");
-      }
-    }
-  }
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("명령어 처리 중 오류 발생. 다시 시도해 주세요.");
+			}
+		}
+	}
 
-  public void destroy() {
-    scanner.close();
-  }
+	public void destroy() {
+		scanner.close();
+	}
 
-  private String[] promptCommand() {
-    System.out.print("명령> ");
-    String[] token = scanner.nextLine().split(" ");
-    return token;
-  }
+	private String[] promptCommand() {
+		System.out.print("명령> ");
+		String[] token = scanner.nextLine().split(" ");
+		return token;
+	}
 
-  public static void main(String[] args) throws Exception {
-    Test01 app = new Test01();
-    app.init();
-    app.service();
-    app.destroy();
-  }
+	public static void main(String[] args) throws Exception {
+		Test01 app = new Test01();
+		app.init();
+		app.service();
+		app.destroy();
+	}
 
 }
