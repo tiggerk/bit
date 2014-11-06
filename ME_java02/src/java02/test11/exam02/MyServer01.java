@@ -72,7 +72,7 @@ public class MyServer01 {
 		}
 			//ss.close();
 			//keyboard.close();
-		}
+	}
 
 		private static String prompt() {
 			System.out.println(">");
