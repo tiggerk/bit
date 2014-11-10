@@ -7,6 +7,16 @@ USE DATABASE
 /* CREATE TABLE
  *  테이블 세팅을 시작한다. 테이블에 넣을 데이터의 종류를 분석하여
  *  열 이름과 데이터 타입을 알고 있어야 한다. */
+CREATE TABLE easy_drinks 
+(
+drink_name VARCHAR(16) NOT NULL,
+main VARCHAR(20) NOT NULL,
+amount1 DEC(3,1) NOT NULL,
+second VARCHAR(30) NOT NULL,
+amount2 DEC(4,2) NOT NULL,
+directions VARCHAR(250) NOT NULL
+);
+
 
 /* DROP TABLE
  *  실수를 하는 경우 테이블을 지울 수 있도록 한다.
@@ -25,7 +35,6 @@ USE DATABASE
  * 디폴트 값이 사용된다. */
 
 /* INSERT 문에서 값이 할당되지 않은 열은 디폴트로 NULL이 된다. */
-
 
 
 
@@ -74,17 +83,6 @@ INSERT INTO my_contacts
 (first_name, email, profession, location)
 VALUES
 ('Pat', 'patpost@breakneckpizza.com', 'Postal Worker', 'Princeton, NJ');
-
-/* 예제 */
-CREATE TABLE easy_drinks 
-(
-drink_name VARCHAR(16) NOT NULL,
-main VARCHAR(20) NOT NULL,
-amount1 DEC(3,1) NOT NULL,
-second VARCHAR(30) NOT NULL,
-amount2 DEC(4,2) NOT NULL,
-directions VARCHAR(250) NOT NULL
-);
 
 INSERT INTO easy_drinks
 VALUES
@@ -188,9 +186,33 @@ AND
 drink_name < 'M';
 
 
+p134
+create table doughnut_ratings
+(
+location varchar(30),
+time varchar(20),
+date varchar(10),
+type varchar(20),
+rating integer,
+comments varchar(30)
+);
+
+insert into doughnut_ratings
+values('Krispy King', '8:50 am', '9/27', 'plain glazed', 10, 'almost perfect');
+
+insert into doughnut_ratings
+(location, time, date, rating, comments)
+values('Duncan\'s Donuts', '8:59 am', '8/25', 6, 'greasy');
+
+insert into doughnut_ratings
+values('Starbuzz Coffee', '7:35 pm', '5/24', 'cinnamon cake', 5, 'stale, but tasty');
+
+insert into doughnut_ratings
+values('Duncan\'s Donuts', '7:03 pm', '4/26', 'jelly', 7, 'not enough jelly');
 
 
+select type from doughnut_ratings where location = 'Krispy King' and rating=10;
 
-
+select type from doughnut_ratings where location = 'Krispy King' or rating=10;
 
 

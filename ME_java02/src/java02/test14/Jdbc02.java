@@ -1,6 +1,6 @@
 /* Connection 객체 얻기
    => java.sql.Driver 구현체를 통해서 얻을 수 있음.
-   => DriverManeger
+   => DriverManager
  */
 package java02.test14;
 
