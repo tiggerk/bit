@@ -28,20 +28,7 @@ USE DATABASE
 
 
 
-/* 테이블을 만드는 명령어 CREATE TABLE */
-CREATE TABLE my_contacts
-(
-last_name VARCHAR(30),
-first_name VARCHAR(20),
-email VARCHAR(50),
-gender CHAR(1),
-birthday DATE,
-profession VARCHAR(50),
-location VARCHAR(50),
-status VARCHAR(20),
-interests VARCHAR(100),
-seeking VARCHAR(100)
-);	
+
 
 /* 테이블의 구조 정보를 보는 명령어 DESC */
 DESC my_contacts;
@@ -88,6 +75,32 @@ INSERT INTO my_contacts
 VALUES
 ('Pat', 'patpost@breakneckpizza.com', 'Postal Worker', 'Princeton, NJ');
 
+/* 예제 */
+CREATE TABLE easy_drinks 
+(
+drink_name VARCHAR(16) NOT NULL,
+main VARCHAR(20) NOT NULL,
+amount1 DEC(3,1) NOT NULL,
+second VARCHAR(30) NOT NULL,
+amount2 DEC(4,2) NOT NULL,
+directions VARCHAR(250) NOT NULL
+);
+
+INSERT INTO easy_drinks
+VALUES
+('Blackthorn', 'tonic water', 1.5, 'pineapple juice', 1,
+'stir with ice, strain into cocktail glass with lemon twist');
+
+INSERT INTO easy_drinks
+VALUES
+('Black Moon', 'soda', 1.5, 'blueberry juice', .75,
+'stir with ice, strain into cocktail glass with lemon twist');
+
+INSERT INTO easy_drinks
+VALUES
+('Oh My Gosh', 'peach nectar', 1, 'pineapple juice', 1,
+'stir with ice, strain into shot glass');
+
 
 /* 테이블 안의 정보 보기 SELECT */
 SELECT * FROM my_contacts;
@@ -130,7 +143,7 @@ WHERE drink_name = 'Oh My Gosh';
 
 
 /* 특정 데이터 SELECT */
-SELECT drink_name, main, second
+SELECT (열의 이름) drink_name, main, second
 FROM easy_drinks
 WHERE main = 'soda';
 +------------+------+-----------------+
@@ -140,34 +153,43 @@ WHERE main = 'soda';
 +------------+------+-----------------+
 
 
+/* 쿼리들의 결합 AND : 두 조건을 모두 만족시키는 결과를 반환 */
+SELECT (열의 이름) main
+FROM (테이블이름) easy_drinks
+WHERE
+(열의 이름)second = 'pineapple juice'
+AND
+(열의 이름)amount1 = 1.0;
+
+SELECT main
+FROM easy_drinks
+WHERE
+amount1 >= 1.0;
+AND
+amount2 < 20;
+
+
+/* 비교 연산자 */
+= : 같다
+<> : 같지 않다.
+A < B : B보다 작다.
+A > B : B보다 크다.
+A <= B : B보다 작거나 같다.
+A >= B : B 보다 크거나 같다.
+
+
+/* 비교 연산자를 이용한 문자열 처리 */
+=> 알파벳 순서로 비교
+SELECT drink_name
+FROM drink_info
+WHERE
+drink_name >= 'L'
+AND
+drink_name < 'M';
 
 
 
-/* 예제 */
-CREATE TABLE easy_drinks 
-(
-drink_name VARCHAR(16) NOT NULL,
-main VARCHAR(20) NOT NULL,
-amount1 DEC(3,1) NOT NULL,
-second VARCHAR(30) NOT NULL,
-amount2 DEC(4,2) NOT NULL,
-directions VARCHAR(250) NOT NULL
-);
 
-INSERT INTO easy_drinks
-VALUES
-('Blackthorn', 'tonic water', 1.5, 'pineapple juice', 1,
-'stir with ice, strain into cocktail glass with lemon twist');
-
-INSERT INTO easy_drinks
-VALUES
-('Black Moon', 'soda', 1.5, 'blueberry juice', .75,
-'stir with ice, strain into cocktail glass with lemon twist');
-
-INSERT INTO easy_drinks
-VALUES
-('Oh My Gosh', 'peach nectar', 1, 'pineapple juice', 1,
-'stir with ice, strain into shot glass');
 
 
 
