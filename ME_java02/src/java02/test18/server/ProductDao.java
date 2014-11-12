@@ -1,7 +1,7 @@
 /* 페이징 처리
  * => DBMS마다 처리하는 방법이 다르다. 
  */
-package java02.test17.server;
+package java02.test18.server;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java02.test17.server.util.DBConnectionPool;
+import java02.test18.server.util.DBConnectionPool;
 
 public class ProductDao {
   DBConnectionPool dbConnectionPool;

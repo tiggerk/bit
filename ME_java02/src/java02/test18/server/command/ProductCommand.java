@@ -1,12 +1,12 @@
-package java02.test17.server.command;
+package java02.test18.server.command;
 
 import java.io.PrintStream;
 import java.util.Map;
 import java.util.Scanner;
-import java02.test17.server.Product;
-import java02.test17.server.ProductDao;
-import java02.test17.server.annotation.Command;
-import java02.test17.server.annotation.Component;
+import java02.test18.server.Product;
+import java02.test18.server.ProductDao;
+import java02.test18.server.annotation.Command;
+import java02.test18.server.annotation.Component;
 
 @Component
 public class ProductCommand {

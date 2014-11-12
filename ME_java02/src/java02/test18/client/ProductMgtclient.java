@@ -1,6 +1,6 @@
 // https://github.com/quasar4yjw/bit/tree/origin/java02jw/src/java02jw/test141111/server
 // https://github.com/NaraeH
-package java02.test17.client;
+package java02.test18.client;
 
 import java.io.PrintStream;
 import java.net.Socket;
