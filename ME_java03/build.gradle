@@ -1,0 +1,36 @@
+// 그래들 빌드 명령어를 담고 있는 라이브러리를 가져온다.
+
+apply plugin: 'java'
+//apply plugin: 'eclipse'
+
+
+/*
+version = '1.0'
+sourceCompatibility = 1.8
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+*/
