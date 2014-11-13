@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="output" path="bin"/>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="src" path="src/test/java"/>
 	<classpathentry kind="src" path="src/test/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
-	<classpathentry kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer" exported="true"/>
-	<classpathentry kind="output" path="bin"/>
-	<classpathentry kind="lib" path="/home/bit/javaide/eclipse/unresolved dependency - commons-collections commons-collections 3.2" exported="true"/>
-	<classpathentry kind="lib" path="/home/bit/javaide/eclipse/unresolved dependency - junit junit 4.+" exported="true"/>
 </classpath>

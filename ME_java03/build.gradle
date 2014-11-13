@@ -1,7 +1,7 @@
 // 그래들 빌드 명령어를 담고 있는 라이브러리를 가져온다.
 
 apply plugin: 'java'
-//apply plugin: 'eclipse'
+apply plugin: 'eclipse'
 
 
 /*
