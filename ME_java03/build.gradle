@@ -17,6 +17,7 @@ repositories {
 // 의존 라이브러리 검색 사이트
 //       => http://www.mvnrepository.com/
 dependencies {
+  compile 'org.mybatis:mybatis:3.2.8'
   compile 'mysql:mysql-connector-java:5.1.34'
   compile 'org.reflections:reflections:0.9.9'
   //testCompile 'junit:junit:4.+'
