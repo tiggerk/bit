@@ -7,12 +7,21 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java02.test19.server.util.DBConnectionPool;
 
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
 public class ProductDao {
+  SqlSessionFactory sqlSessionFactory;
+
   DBConnectionPool dbConnectionPool;
+  
+  public void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+    this.sqlSessionFactory = sqlSessionFactory;
+  }
   
   public void setDbConnectionPool(DBConnectionPool dbConnectionPool) {
     this.dbConnectionPool = dbConnectionPool;
@@ -87,60 +96,33 @@ public class ProductDao {
       stmt = con.createStatement();
       stmt.executeUpdate("DELETE FROM PRODUCTS"
           + " WHERE PNO=" + no);
-      
+
     } catch (Exception ex) {
       ex.getStackTrace();
       throw new RuntimeException(ex);
-      
+
     } finally {
       try {stmt.close();} catch (Exception ex) {}
       dbConnectionPool.returnConnection(con);
     }
   }
-  
+
   public List<Product> selectList(int pageNo, int pageSize) {
-    Connection con = null;
-    Statement stmt = null;
-    ResultSet rs = null;
-    
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+
+    HashMap<String,Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", ((pageNo - 1) * pageSize));
+    paramMap.put("pageSize", pageSize);
     try {
-      con = dbConnectionPool.getConnection();
-      stmt = con.createStatement();
-      
-      String sql = "SELECT PNO,PNAME,QTY,MKNO FROM PRODUCTS";
-      
-      if (pageSize > 0) {
-        sql += " limit " + ((pageNo - 1) * pageSize)
-            + "," + pageSize;
-      }
-      
-      rs = stmt.executeQuery(sql);        
-      
-      ArrayList<Product> list = new ArrayList<Product>();
-      Product product = null;
-      
-      while (rs.next()) {
-        product = new Product();
-        product.setNo(rs.getInt("PNO"));
-        product.setName(rs.getString("PNAME"));
-        product.setQuantity(rs.getInt("QTY"));
-        product.setMakerNo(rs.getInt("MKNO"));
-        list.add(product);
-      }
-      
-      return list;
-      
-    } catch (Exception ex) {
-    //RuntimeException을 던지면 받는 곳에서 굳이 try/catch나 throws를 할 필요가 없다.
-      throw new RuntimeException(ex);
-      
+      return sqlSession.selectList(
+          // 네임스페이스 + SQL문 아이디
+          "java02.test19.server.ProductDao.selectList",  
+          paramMap /* SQL문을 실행할 때 필요한 값 전달 */);
     } finally {
-      try {rs.close();} catch (Exception ex) {}
-      try {stmt.close();} catch (Exception ex) {}
-      dbConnectionPool.returnConnection(con);
+      sqlSession.close();
     }
   }
-  
+
   public void insert(Product product) {
     Connection con = null;
     PreparedStatement stmt = null;

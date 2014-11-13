@@ -1,6 +1,5 @@
 package java02.test19.server;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Method;
@@ -58,9 +57,10 @@ public class ProductMgtServer {
         "study",
         "study");
     productDao.setDbConnectionPool(conPool);
+    productDao.setSqlSessionFactory(sqlSessionFactiory);
 
     Reflections reflections = 
-        new Reflections("java02.test18.server.command");
+        new Reflections("java02.test19.server.command");
     Set<Class<?>> clazzList = 
         reflections.getTypesAnnotatedWith(Component.class);
     
