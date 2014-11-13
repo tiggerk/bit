@@ -10,7 +10,6 @@ import java.util.Scanner;
 import java.util.Set;
 import java02.test19.server.annotation.Command;
 import java02.test19.server.annotation.Component;
-import java02.test19.server.util.DBConnectionPool;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -29,7 +28,6 @@ public class ProductMgtServer {
   Scanner scanner; 
   ProductDao productDao;
   HashMap<String,CommandInfo> commandMap;
-  DBConnectionPool conPool;
 
   public void init() throws Exception {
     // MyBatis 설정 파일 경로
@@ -38,6 +36,7 @@ public class ProductMgtServer {
     // 설정 파일을 읽어 들일 입력 스트림 객체를 준비한다.
     // Resources의 getResourceAsStream()을 사용하면,
     // mybatis 설정 파일을 클래스 경로에서 찾는 스트림 객체를 리턴한다.
+    
     InputStream inputStream = Resources.getResourceAsStream(resource);
     // 위에 방법에 비해서 경로를 직접 잡아줘야 하기 때문에 무식한 방법임
     //FileInputStream inputStream = new FileInputStream("/home/bit/git/java63/java03/bin/" + resource);
@@ -50,14 +49,7 @@ public class ProductMgtServer {
     productDao = new ProductDao();
     scanner = new Scanner(System.in);
     commandMap = new HashMap<>();
-    conPool = new DBConnectionPool(
-        "com.mysql.jdbc.Driver",
-        "jdbc:mysql://localhost:3306/studydb" + 
-            "?useUnicode=true&characterEncoding=utf8", 
-        "study",
-        "study");
-    productDao.setDbConnectionPool(conPool);
-    productDao.setSqlSessionFactory(sqlSessionFactiory);
+    productDao.setSqlSessionFactory(sqlSessionFactory);
 
     Reflections reflections = 
         new Reflections("java02.test19.server.command");

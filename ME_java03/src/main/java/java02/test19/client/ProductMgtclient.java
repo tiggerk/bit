@@ -27,7 +27,7 @@ public class ProductMgtclient {
 
       }
       try {
-        socket = new Socket("192.168.0.27", 8888);
+        socket = new Socket("192.168.0.13", 8888);
         in = new Scanner(socket.getInputStream());
         out = new PrintStream(socket.getOutputStream());
 
