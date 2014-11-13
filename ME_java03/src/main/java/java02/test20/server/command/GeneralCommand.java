@@ -2,16 +2,16 @@ package java02.test20.server.command;
 
 import java.io.PrintStream;
 import java.util.Map;
-import java02.test19.server.ProductDao;
-import java02.test19.server.annotation.Command;
-import java02.test19.server.annotation.Component;
+import java02.test20.server.MemberDao;
+import java02.test20.server.annotation.Command;
+import java02.test20.server.annotation.Component;
 
 @Component
 public class GeneralCommand {
-  ProductDao productDao;
+  MemberDao memberDao;
   
-  public void setProductDao(ProductDao productDao) {
-    this.productDao = productDao;
+  public void setMemberDao(MemberDao memberDao) {
+    this.memberDao = memberDao;
   }
   
   @Command("help")

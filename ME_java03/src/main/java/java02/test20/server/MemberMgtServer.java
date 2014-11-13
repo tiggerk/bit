@@ -18,7 +18,7 @@ import org.reflections.ReflectionUtils;
 import org.reflections.Reflections;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
-public class ProductMgtServer {
+public class MemberMgtServer {
   
   static class CommandInfo {
     public Object instance;
@@ -26,12 +26,12 @@ public class ProductMgtServer {
   }
   
   Scanner scanner; 
-  ProductDao productDao;
+  MemberDao productDao;
   HashMap<String,CommandInfo> commandMap;
 
   public void init() throws Exception {
     // MyBatis 설정 파일 경로
-    String resource = "java02/test19/server/mybatis-config.xml";
+    String resource = "java02/test20/server/mybatis-config.xml";
     
     // 설정 파일을 읽어 들일 입력 스트림 객체를 준비한다.
     // Resources의 getResourceAsStream()을 사용하면,
@@ -46,13 +46,13 @@ public class ProductMgtServer {
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
     
-    productDao = new ProductDao();
+    productDao = new MemberDao();
     scanner = new Scanner(System.in);
     commandMap = new HashMap<>();
     productDao.setSqlSessionFactory(sqlSessionFactory);
 
     Reflections reflections = 
-        new Reflections("java02.test19.server.command");
+        new Reflections("java02.test20.server.command");
     Set<Class<?>> clazzList = 
         reflections.getTypesAnnotatedWith(Component.class);
     
@@ -79,7 +79,7 @@ public class ProductMgtServer {
       }
       
       try { 
-        method = clazz.getMethod("setProductDao", ProductDao.class);
+        method = clazz.getMethod("setProductDao", MemberDao.class);
         method.invoke(command, productDao);
       } catch (Exception e) {}
       
@@ -171,7 +171,7 @@ public class ProductMgtServer {
   }
 
   public static void main(String[] args) throws Exception {
-    ProductMgtServer app = new ProductMgtServer();
+    MemberMgtServer app = new MemberMgtServer();
     app.init();
     app.service();
     app.destroy();

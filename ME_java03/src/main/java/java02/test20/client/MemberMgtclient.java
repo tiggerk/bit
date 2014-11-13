@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ProductMgtclient {
+public class MemberMgtclient {
 
   public static void main(String[] args) throws Exception {
     Scanner keyboard = new Scanner(System.in);

@@ -3,18 +3,18 @@ package java02.test20.server.command;
 import java.io.PrintStream;
 import java.util.Map;
 import java.util.Scanner;
-import java02.test19.server.Product;
-import java02.test19.server.ProductDao;
-import java02.test19.server.annotation.Command;
-import java02.test19.server.annotation.Component;
+import java02.test20.server.Member;
+import java02.test20.server.MemberDao;
+import java02.test20.server.annotation.Command;
+import java02.test20.server.annotation.Component;
 
 @Component
-public class ProductCommand {
-  ProductDao productDao;
+public class MemberCommand {
+  MemberDao memberDao;
   Scanner scanner;
   
-  public void setProductDao(ProductDao productDao) {
-    this.productDao = productDao;
+  public void setMemberDao(MemberDao memberDao) {
+    this.memberDao = memberDao;
   }
   
   public void setScanner(Scanner scanner) {
@@ -26,12 +26,12 @@ public class ProductCommand {
     PrintStream out = (PrintStream)params.get("out");
     
     try {
-      Product product = new Product();
-      product.setName((String)params.get("name"));
-      product.setQuantity(Integer.parseInt((String)params.get("qty")));
-      product.setMakerNo(Integer.parseInt((String)params.get("mkno")));
+      Member member = new Member();
+      member.setName((String)params.get("name"));
+      member.setQuantity(Integer.parseInt((String)params.get("qty")));
+      member.setMakerNo(Integer.parseInt((String)params.get("mkno")));
       
-      productDao.insert(product);
+      memberDao.insert(member);
       out.println("저장하였습니다.");
       out.println();
       
@@ -46,14 +46,14 @@ public class ProductCommand {
   public void delete(Map<String, Object> params) {
     PrintStream out = (PrintStream)params.get("out");
     
-    Product product = productDao.selectOne(Integer.parseInt((String)params.get("no")));
+    Member member = memberDao.selectOne(Integer.parseInt((String)params.get("no")));
     
-    if (product == null) {
+    if (member == null) {
       System.out.println("해당 번호의 제품 정보를 찾을 수 없습니다.");
       return;
     }
     
-    productDao.delete(Integer.parseInt((String)params.get("no")));
+    memberDao.delete(Integer.parseInt((String)params.get("no")));
     out.println("삭제하였습니다.");
     out.println();
   }
@@ -74,12 +74,12 @@ public class ProductCommand {
     
     PrintStream out = (PrintStream)params.get("out");
     
-    for (Product product : productDao.selectList(pageNo, pageSize)) {
+    for (Member member : memberDao.selectList(pageNo, pageSize)) {
       out.printf("%-3d %-20s %7d %-3d\n", 
-          product.getNo(), 
-          product.getName(), 
-          product.getQuantity(), 
-          product.getMakerNo());
+          member.getNo(), 
+          member.getName(), 
+          member.getQuantity(), 
+          member.getMakerNo());
     }
     out.println();
   }
@@ -90,13 +90,13 @@ public class ProductCommand {
     
 
     try {
-      Product product = new Product();
-      product.setNo(Integer.parseInt((String)params.get("no")));
-      product.setName((String)params.get("name"));
-      product.setQuantity(Integer.parseInt((String)params.get("qty")));
-      product.setMakerNo(Integer.parseInt((String)params.get("mkno")));
+      Member member = new Member();
+      member.setNo(Integer.parseInt((String)params.get("no")));
+      member.setName((String)params.get("name"));
+      member.setQuantity(Integer.parseInt((String)params.get("qty")));
+      member.setMakerNo(Integer.parseInt((String)params.get("mkno")));
 
-      productDao.update(product);
+      memberDao.update(member);
       out.println("변경하였습니다.");
       out.println();
 
@@ -111,18 +111,18 @@ public class ProductCommand {
   public void view(Map<String, Object> params) throws Exception {
     PrintStream out = (PrintStream)params.get("out");
     
-    Product product = productDao.selectOne(Integer.parseInt((String)params.get("no")));
+    Member member = memberDao.selectOne(Integer.parseInt((String)params.get("no")));
     
-    if (product == null) {
+    if (member == null) {
       out.println("해당 번호의 제품 정보를 찾을 수 없습니다.");
       out.println();
       return;
     }
     
     out.println("제품번호: " + (String)params.get("no"));
-    out.println("제품명: " + product.getName());
-    out.println("수량: " + product.getQuantity());
-    out.println("제조사 번호: " + product.getMakerNo());
+    out.println("제품명: " + member.getName());
+    out.println("수량: " + member.getQuantity());
+    out.println("제조사 번호: " + member.getMakerNo());
     out.println();
   }
 }
