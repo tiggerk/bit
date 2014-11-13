@@ -57,6 +57,48 @@ apply plugin: 'java'
 8. build
 - 모든 작업 수행!
 
+9. cleanEclipse
+- 이클립스 관련 모든 설정 파일 제거
+
+10. eclipse
+- 이클립스 관련 모든 설정 파일 추가
+- 기존에 이미 같은 파일이 있다면, 그 파일에 내용만 추가
+
+
+[의존 라이브러리 설정]
+1) 의존 라이브러리를 다운로드 받을 서버 지정
+  => Maven 서버를 공유한다.
+repositories {
+    mavenCentral()
+}
+  
+2) 다운로드할 의존 라이브러리 이름 설정
+dependencies {
+  [의존 라이브러리의 사용 용도] '그룹명:라이브러리명:버전'
+  compile 'commons-lang:commons-lang:2.6'
+  testCompile 'org.mockito:mockito:1.9.0-rc1'
+
+  [의존 라이브러리의 사용 용도] group:'그룹명', name:'이름', version:'버전'
+  compile group: 'com.google.code.guice', name: 'guice', version: '1.0'
+
+  [의존 라이브러리의 사용 용도] files('경로', '경로', ...)
+  compile files('hibernate.jar', 'libs/spring.jar')
+
+  [의존라이브러리의 사용 용도] fileTree('JAR 파일들이 들어있는 경로')
+  compile fileTree('libs')
+}
+
+* 의존 라이브러리 사용 용도
+compile => 컴파일할 때 사용하고 배포할 때도 포함하라!
+testCompile => 단위 테스트 파일을 컴파일할 때만 사용하라. 배포에서 제외한다.
+
+
+
+
+
+[build.gradle 설정하기]
+- 각 명령어 별로 메서드를 호출하여 설정한다.
+
 
 
 
