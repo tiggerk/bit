@@ -27,7 +27,7 @@ public class ProductMgtServer {
     
     scanner = new Scanner(System.in);
     
-    // java02.test19.server 패키지 및 하위 패키지의 모든 클래스를 뒤지낟.
+    // java02.test19.server 패키지 및 하위 패키지의 모든 클래스를 뒤진다.
     // @Component 애노테이션이 붙은 클래스를 찾는다.
     // 해당 클래스의 인스턴스를 생성하여 보관한다.
     appCtx = new ApplicationContext("java02.test19.server");
