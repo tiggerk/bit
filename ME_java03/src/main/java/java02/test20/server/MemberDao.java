@@ -19,13 +19,13 @@ public class MemberDao {
   
   public MemberDao() {}
 
-  public Member selectOne(int no) {
+  public Member selectOne(String id) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
 
     try {
       return sqlSession.selectOne(
           "java02.test20.server.MemberDao.selectOne",
-          no /* new Integer(no) => autoboxing */);
+          id /* new Integer(no) => autoboxing */);
     } finally {
       sqlSession.close();
     }
@@ -42,11 +42,11 @@ public class MemberDao {
     }
   }
   
-  public void delete(int no) {
+  public void delete(String id) {
     SqlSession sqlSession = sqlSessionFactory.openSession();
     try {
       sqlSession.delete(
-          "java02.test20.server.MemberDao.delete", no);
+          "java02.test20.server.MemberDao.delete", id);
       sqlSession.commit();
     } finally {
       sqlSession.close();

@@ -3,6 +3,7 @@ package java02.test20.server.command;
 import java.io.PrintStream;
 import java.util.Map;
 import java.util.Scanner;
+
 import java02.test20.server.Member;
 import java02.test20.server.MemberDao;
 import java02.test20.server.annotation.Command;
@@ -27,9 +28,15 @@ public class MemberCommand {
     
     try {
       Member member = new Member();
+      member.setId((String)params.get("id"));
+      member.setPwd((String)params.get("pwd"));
+      member.setEmail((String)params.get("email"));
       member.setName((String)params.get("name"));
-      member.setQuantity(Integer.parseInt((String)params.get("qty")));
-      member.setMakerNo(Integer.parseInt((String)params.get("mkno")));
+      member.setTel((String)params.get("tel"));
+      member.setFax((String)params.get("fax"));
+      member.setAddr((String)params.get("addr"));
+      member.setPhoto((String)params.get("photo"));
+      member.setAddrNo(Integer.parseInt((String)params.get("addrNo")));
       
       memberDao.insert(member);
       out.println("저장하였습니다.");
@@ -46,14 +53,14 @@ public class MemberCommand {
   public void delete(Map<String, Object> params) {
     PrintStream out = (PrintStream)params.get("out");
     
-    Member member = memberDao.selectOne(Integer.parseInt((String)params.get("no")));
+    Member member = memberDao.selectOne((String)params.get("id"));
     
     if (member == null) {
-      System.out.println("해당 번호의 제품 정보를 찾을 수 없습니다.");
+      System.out.println("해당 아이디의 정보를 찾을 수 없습니다.");
       return;
     }
     
-    memberDao.delete(Integer.parseInt((String)params.get("no")));
+    memberDao.delete((String)params.get("id"));
     out.println("삭제하였습니다.");
     out.println();
   }
@@ -75,11 +82,11 @@ public class MemberCommand {
     PrintStream out = (PrintStream)params.get("out");
     
     for (Member member : memberDao.selectList(pageNo, pageSize)) {
-      out.printf("%-3d %-20s %7d %-3d\n", 
-          member.getNo(), 
+      out.printf("%-5s %-5s %10s %-10s\n", 
+          member.getId(), 
           member.getName(), 
-          member.getQuantity(), 
-          member.getMakerNo());
+          member.getEmail(), 
+          member.getTel());
     }
     out.println();
   }
@@ -91,10 +98,15 @@ public class MemberCommand {
 
     try {
       Member member = new Member();
-      member.setNo(Integer.parseInt((String)params.get("no")));
+      member.setId((String)params.get("id"));
+      member.setPwd((String)params.get("pwd"));
+      member.setEmail((String)params.get("email"));
       member.setName((String)params.get("name"));
-      member.setQuantity(Integer.parseInt((String)params.get("qty")));
-      member.setMakerNo(Integer.parseInt((String)params.get("mkno")));
+      member.setTel((String)params.get("tel"));
+      member.setFax((String)params.get("fax"));
+      member.setAddr((String)params.get("addr"));
+      member.setPhoto((String)params.get("photo"));
+      member.setAddrNo(Integer.parseInt((String)params.get("addrNo")));
 
       memberDao.update(member);
       out.println("변경하였습니다.");
@@ -111,18 +123,23 @@ public class MemberCommand {
   public void view(Map<String, Object> params) throws Exception {
     PrintStream out = (PrintStream)params.get("out");
     
-    Member member = memberDao.selectOne(Integer.parseInt((String)params.get("no")));
+    Member member = memberDao.selectOne((String)params.get("id"));
     
     if (member == null) {
-      out.println("해당 번호의 제품 정보를 찾을 수 없습니다.");
+      out.println("해당 아이디의 정보를 찾을 수 없습니다.");
       out.println();
       return;
     }
     
-    out.println("제품번호: " + (String)params.get("no"));
-    out.println("제품명: " + member.getName());
-    out.println("수량: " + member.getQuantity());
-    out.println("제조사 번호: " + member.getMakerNo());
+    out.println("아이디: " + params.get("id"));
+    out.println("비밀번호: " + member.getPwd());
+    out.println("이메일: " + member.getEmail());
+    out.println("이름: " + member.getName());
+    out.println("전화번호: " + member.getTel());
+    out.println("팩스: " + member.getFax());
+    out.println("주소: " + member.getAddr());
+    out.println("사진: " + member.getPhoto());
+    out.println("우편번호: " + member.getAddrNo());
     out.println();
   }
 }

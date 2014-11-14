@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- SQL문의 네임스페이스 설정 -->
-<mapper namespace="java02.test19.server.ProductDao">
+<mapper namespace="java02.test20.server.MemberDao">
   <!-- id => SQL문을 찾을 때 사용하는 구분 값
   parameterType => SQL문을 실행할 때 받는 객체
   resultType =? 결과 한 개를 저장할 객체
@@ -29,13 +29,13 @@
 	  -->
 
 	<select id="selectList" parameterType="java.util.Map"
-		resultType="java02.test19.server.Product">
+		resultType="java02.test20.server.Member">
 		SELECT
-			PNO as no,
-			PNAME as name,
-			QTY as quantity,
-			MKNO as makerNo
-		FROM PRODUCTS
+			UID as id,
+			UNAME as name,
+			EMAIL as email,
+			TEL as tel
+		FROM MEMBERS
 		<if test="pageSize != 0">
 		limit #{startIndex}, #{pageSize}
 		</if>
@@ -44,34 +44,44 @@
 	<!-- 만약 파라미터 값이 문자열, 기본형, 랩퍼클래스 객체라면,
 	값을 꺼낼 때 아무 이름이나 지정해도 된다. -->
 	<select id="selectOne"
-	        parameterType="java.lang.Integer"
-	        resultType="java02.test19.server.Product">
+	        parameterType="java.lang.String"
+	        resultType="java02.test20.server.Member">
 	SELECT 
-	  PNO as no,
-    PNAME as name,
-    QTY as quantity,
-    MKNO as makerNo
-	   FROM PRODUCTS
-	WHERE PNO=#{value}
+	  UID as id,
+	  PWD as pwd,
+    EMAIL as email,
+    UNAME as name,
+    TEL as tel,
+    FAX as fax,
+    DET_ADDR as addr,
+    PHOT as photo,
+    ANO as addrNo
+  FROM MEMBERS
+	WHERE UID=#{value}
 	</select>
 	
 	<insert id="insert"
-	        parameterType="java02.test19.server.Product">
-	  INSERT INTO PRODUCTS(PNAME,QTY,MKNO)
-	  VALUES(#{name}, #{quantity}, #{makerNo})
+	        parameterType="java02.test20.server.Member">
+	  INSERT INTO MEMBERS(UID, PWD, EMAIL, UNAME, TEL, FAX, DET_ADDR, PHOT, ANO)
+	  VALUES(#{id}, #{pwd}, #{email}, #{name}, #{tel}, #{fax}, #{addr}, #{photo}, #{addrNo})
   </insert>
   
   <update id="update"
-          parameterType="java02.test19.server.Product">
-    UPDATE PRODUCTS SET
-	    PNAME=#{name},
-	    QTY=#{quantity},
-	    MKNO=#{makerNo}
-	  WHERE PNO=#{no}
+          parameterType="java02.test20.server.Member">
+    UPDATE MEMBERS SET
+	    PWD=#{pwd},
+	    EMAIL=#{email},
+	    UNAME=#{name},
+	    TEL=#{tel},
+	    FAX=#{fax},
+	    DET_ADDR=#{addr},
+	    PHOT=#{photo},
+	    ANO=#{addrNo}
+	  WHERE UID=#{id}
   </update>
   
-  <delete id="delete" parameterType="java.lang.Integer">
-    DELETE FROM PRODUCTS WHERE PNO=#{value}
+  <delete id="delete" parameterType="java.lang.String">
+    DELETE FROM MEMBERS WHERE UID=#{value}
   </delete>
   
   

@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Set;
-import java02.test19.server.annotation.Command;
-import java02.test19.server.annotation.Component;
+import java02.test20.server.annotation.Command;
+import java02.test20.server.annotation.Component;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -26,7 +26,7 @@ public class MemberMgtServer {
   }
   
   Scanner scanner; 
-  MemberDao productDao;
+  MemberDao memberDao;
   HashMap<String,CommandInfo> commandMap;
 
   public void init() throws Exception {
@@ -46,10 +46,10 @@ public class MemberMgtServer {
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
     
-    productDao = new MemberDao();
+    memberDao = new MemberDao();
     scanner = new Scanner(System.in);
     commandMap = new HashMap<>();
-    productDao.setSqlSessionFactory(sqlSessionFactory);
+    memberDao.setSqlSessionFactory(sqlSessionFactory);
 
     Reflections reflections = 
         new Reflections("java02.test20.server.command");
@@ -57,13 +57,11 @@ public class MemberMgtServer {
         reflections.getTypesAnnotatedWith(Component.class);
     
     Object command = null;
-    //Component component = null;
     Method method = null;
     CommandInfo commandInfo = null;
     Command commandAnno = null;
     
     for (Class clazz : clazzList) {
-      //component = (Component) clazz.getAnnotation(Component.class);
       command = clazz.newInstance();
 
       Set<Method> methods = ReflectionUtils.getMethods(
@@ -79,8 +77,8 @@ public class MemberMgtServer {
       }
       
       try { 
-        method = clazz.getMethod("setProductDao", MemberDao.class);
-        method.invoke(command, productDao);
+        method = clazz.getMethod("setMemberDao", MemberDao.class);
+        method.invoke(command, memberDao);
       } catch (Exception e) {}
       
       try { 

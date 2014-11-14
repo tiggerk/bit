@@ -27,7 +27,7 @@
   
   <!-- SQL문을 저장한 파일의 경로 설정 -->
   <mappers>
-    <mapper resource="java02/test19/server/ProductDao.xml"/>
+    <mapper resource="java02/test20/server/MemberDao.xml"/>
   </mappers>
 </configuration>
 

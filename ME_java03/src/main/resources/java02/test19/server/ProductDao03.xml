@@ -2,28 +2,25 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- <sql> 태그 사용하기
-   => 자주 사용되는 SQL문은 별도로 정의해두고 포함한다.
+<!-- resultMap 사용하기
+    => 컬럼 이름과 자바 클래스의 프로퍼티(getter/setter)를 연결하기
  -->
+
 
 <mapper namespace="java02.test19.server.ProductDao">
 
   <!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
   <resultMap type="Product" id="productMap">
-    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
-    <id column="PNO" property="no"/>
+    <result column="PNO" property="no"/>
     <result column="PNAME" property="name"/>
     <result column="QTY" property="quantity"/>
     <result column="MKNO" property="makerNo"/>
   </resultMap>
 
-  <sql id="productSelect">
-    SELECT PNO, PNAME, QTY, MKNO
-    FROM PRODUCTS
-  </sql>
-  
-	<select id="selectList" parameterType="map"	resultMap="productMap">
-		<include refid="productSelect"/>
+	<select id="selectList" parameterType="map"
+		resultMap="productMap">
+		SELECT PNO, PNAME, QTY,	MKNO
+		FROM PRODUCTS
 		<if test="pageSize != 0">
 		  limit #{startIndex}, #{pageSize}
 		</if>
@@ -31,14 +28,18 @@
 	
 	<!-- 만약 파라미터 값이 문자열, 기본형, 랩퍼클래스 객체라면,
 	값을 꺼낼 때 아무 이름이나 지정해도 된다. -->
-	<select id="selectOne" parameterType="int" resultMap="productMap">
-	  <include refid="productSelect" />
-		WHERE PNO=#{value}
+	<select id="selectOne"
+	        parameterType="int"
+	        resultMap="productMap">
+	SELECT PNO, PNAME, QTY,  MKNO
+	   FROM PRODUCTS
+	WHERE PNO=#{value}
 	</select>
 	
-	<insert id="insert" parameterType="Product">
-		INSERT INTO PRODUCTS(PNAME,QTY,MKNO)
-		VALUES(#{name}, #{quantity}, #{makerNo})
+	<insert id="insert"
+	        parameterType="Product">
+	  INSERT INTO PRODUCTS(PNAME,QTY,MKNO)
+	  VALUES(#{name}, #{quantity}, #{makerNo})
   </insert>
   
   <update id="update"

@@ -9,6 +9,7 @@ import java02.test16.MemberDao;
 import java02.test16.annotation.Command;
 import java02.test16.annotation.Component;
 
+// add?id=z99&pwd=1111&email=asdfadf&name=kang&tel=111-2222&fax=3333&addr=address&photo=ddd&addrNo=1
 @Component
 public class MemberCommand {
   MemberDao memberDao;
