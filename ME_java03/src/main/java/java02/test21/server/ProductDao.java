@@ -1,11 +1,11 @@
 /* 페이징 처리
  * => DBMS마다 처리하는 방법이 다르다. 
  */
-package java02.test19.server;
+package java02.test21.server;
 
 import java.util.HashMap;
 import java.util.List;
-import java02.test19.server.annotation.Component;
+import java02.test21.server.annotation.Component;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

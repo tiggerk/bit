@@ -1,4 +1,4 @@
-package java02.test19.server;
+package java02.test21.server;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -7,7 +7,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import java02.test19.server.CommandMapping.CommandInfo;
+import java02.test21.server.CommandMapping.CommandInfo;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;

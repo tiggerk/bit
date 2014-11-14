@@ -1,13 +1,13 @@
-package java02.test20.server.command;
+package java02.test19.server.command;
 
 import java.io.PrintStream;
 import java.util.Map;
 import java.util.Scanner;
 
-import java02.test20.server.Member;
-import java02.test20.server.MemberDao;
-import java02.test20.server.annotation.Command;
-import java02.test20.server.annotation.Component;
+import java02.test19.server.Member;
+import java02.test19.server.MemberDao;
+import java02.test19.server.annotation.Command;
+import java02.test19.server.annotation.Component;
 
 @Component
 public class MemberCommand {
@@ -18,7 +18,11 @@ public class MemberCommand {
     this.memberDao = memberDao;
   }
   
-  @Command("add")
+  public void setScanner(Scanner scanner) {
+    this.scanner = scanner;
+  }
+  
+  @Command("member/add")
   public void add(Map<String, Object> params) {
     PrintStream out = (PrintStream)params.get("out");
     
@@ -45,7 +49,7 @@ public class MemberCommand {
     }
   }
   
-  @Command("delete")
+  @Command("member/delete")
   public void delete(Map<String, Object> params) {
     PrintStream out = (PrintStream)params.get("out");
     
@@ -61,7 +65,7 @@ public class MemberCommand {
     out.println();
   }
   
-  @Command("list")
+  @Command("member/list")
   public void list(Map<String, Object> params) {
     int pageNo = 0;
     int pageSize = 0;
@@ -87,7 +91,7 @@ public class MemberCommand {
     out.println();
   }
   
-  @Command("update")
+  @Command("member/update")
   public void update(Map<String, Object> params) {
     PrintStream out = (PrintStream)params.get("out");
     
@@ -115,7 +119,7 @@ public class MemberCommand {
     }
   }
   
-  @Command("view")
+  @Command("member/view")
   public void view(Map<String, Object> params) throws Exception {
     PrintStream out = (PrintStream)params.get("out");
     

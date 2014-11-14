@@ -1,10 +1,10 @@
-package java02.test19.server.command;
+package java02.test21.server.command;
 
 import java.io.PrintStream;
 import java.util.Map;
-import java02.test19.server.ProductDao;
-import java02.test19.server.annotation.Command;
-import java02.test19.server.annotation.Component;
+import java02.test21.server.ProductDao;
+import java02.test21.server.annotation.Command;
+import java02.test21.server.annotation.Component;
 
 @Component("common")
 public class GeneralCommand {
