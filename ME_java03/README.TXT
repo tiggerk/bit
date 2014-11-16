@@ -67,7 +67,7 @@ apply plugin: 'java'
 
 [의존 라이브러리 설정]
 1) 의존 라이브러리를 다운로드 받을 서버 지정
-  => Maven 서버를 공유한다.
+  => Maven 서버를 공유한다.  (http://mvnrepository.com/)
 repositories {
     mavenCentral()
 }
