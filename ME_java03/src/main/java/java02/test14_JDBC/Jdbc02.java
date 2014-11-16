@@ -2,7 +2,7 @@
    => java.sql.Driver 구현체를 통해서 얻을 수 있음.
    => DriverManager
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

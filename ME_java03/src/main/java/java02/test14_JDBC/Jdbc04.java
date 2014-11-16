@@ -4,7 +4,7 @@
    executeUpdate(INSERT/DELETE/UPDATE문);
    execute(ALL);
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

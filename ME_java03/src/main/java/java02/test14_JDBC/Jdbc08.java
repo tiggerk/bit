@@ -1,7 +1,7 @@
 /* UPDATE 실행
    => executeUpdate(SQL) 호출
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -5,7 +5,7 @@
  * SELECT * FROM 테이블명
    => 컬럼 선택절에 와일드카드를 사용하면 실행 속도가 느리다.
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

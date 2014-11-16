@@ -72,7 +72,7 @@ public class Exception06 {
 		
 		// compute에서 발생된 예외를 printResult()가 아닌 main()에서 처리한다.
 		try {
-		printPage();
+		  printPage();
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}

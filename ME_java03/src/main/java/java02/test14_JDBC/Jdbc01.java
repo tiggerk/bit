@@ -4,7 +4,7 @@
  * => 이 클래스를 통해 Connection 객체를 얻을 수 있다.
  * => 점조직 같은 형태다.
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 
 public class Jdbc01 {

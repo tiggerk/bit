@@ -4,7 +4,7 @@
  * getInt(컬럼명) 또는 getInt(컬럼인덱스) => 가져온 데이터의 컬럼 값을 리턴한다.
  * getXXX() => 컬럼의 데이터 형에 따라 XXX 이름이 바뀐다. 
  */
-package java02.test14;
+package java02.test14_JDBC;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
