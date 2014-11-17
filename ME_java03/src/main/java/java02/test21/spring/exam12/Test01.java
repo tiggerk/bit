@@ -1,7 +1,9 @@
 package java02.test21.spring.exam12;
 
-/* Spring Bean Container 사용하기
+/* 스프링 설정
+ * => 호출할 생성자 지정하기
  */
+
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
