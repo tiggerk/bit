@@ -1,9 +1,14 @@
-package java02.test21.spring.exam06;
+package java02.test21.spring.exam09;
+
+import java.util.Map;
+import java.util.Set;
 
 public class Car {
   String model;
   int cc;
   Engine engine;
+  Set<Tire> tires;
+  Map<String, Object> options; 
   
   public Car() {}
   
@@ -18,7 +23,24 @@ public class Car {
   
   @Override
   public String toString() {
-    return "Car [model=" + model + ", cc=" + cc + ", engine=" + engine + "]";
+    return "Car [model=" + model + ", cc=" + cc + ", engine=" + engine
+        + ", tires=" + tires + ", options=" + options + "]";
+  }
+
+  public Map<String, Object> getOptions() {
+    return options;
+  }
+
+  public void setOptions(Map<String, Object> options) {
+    this.options = options;
+  }
+
+  public Set<Tire> getTires() {
+    return tires;
+  }
+
+  public void setTires(Set<Tire> tires) {
+    this.tires = tires;
   }
 
   public String getModel() {

@@ -1,9 +1,12 @@
-package java02.test21.spring.exam06;
+package java02.test21.spring.exam08;
+
+import java.util.List;
 
 public class Car {
   String model;
   int cc;
   Engine engine;
+  List<Tire> tires;
   
   public Car() {}
   
@@ -18,7 +21,16 @@ public class Car {
   
   @Override
   public String toString() {
-    return "Car [model=" + model + ", cc=" + cc + ", engine=" + engine + "]";
+    return "Car [model=" + model + ", cc=" + cc + ", engine=" + engine
+        + ", tires=" + tires + "]";
+  }
+
+  public List<Tire> getTires() {
+    return tires;
+  }
+
+  public void setTires(List<Tire> tires) {
+    this.tires = tires;
   }
 
   public String getModel() {
