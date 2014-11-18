@@ -17,6 +17,7 @@ repositories {
 // 의존 라이브러리 검색 사이트
 //       => http://www.mvnrepository.com/
 dependencies {
+  compile 'javax.servlet:javax.servlet-api:3.1.0'
   compile 'org.springframework:spring-jdbc:4.1.2.RELEASE'
   compile 'org.mybatis:mybatis-spring:1.2.2'
   compile 'org.springframework:spring-context:4.1.2.RELEASE'
