@@ -7,26 +7,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
-
 import java63.assign01.domain.Product;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductDao {
-  /*
-  @Autowired
-  SqlSessionFactory sqlSessionFactory;
-  */
+  
+  String resource = "java63/assign01/dao/mybatis-config.xml";
   public ProductDao() {}
 
   public Product selectOne(int no) throws IOException {
-    String resource = "java63/assign01/dao/mybatis-config.xml";
     InputStream inputStream = Resources.getResourceAsStream(resource);
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     

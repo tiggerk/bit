@@ -26,6 +26,7 @@ public class ProductUpdateServlet extends GenericServlet {
     
     try {
       Product product = new Product();
+      product.setNo(Integer.parseInt(req.getParameter("no")));
       product.setName((String)req.getParameter("name"));
       product.setQuantity(Integer.parseInt((String)req.getParameter("qty")));
       product.setMakerNo(Integer.parseInt((String)req.getParameter("mkno")));
