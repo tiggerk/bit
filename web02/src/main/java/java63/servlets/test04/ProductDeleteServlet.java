@@ -1,9 +1,8 @@
-package java63.servlets.test03;
+package java63.servlets.test04;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java63.servlets.test03.dao.ProductDao;
+import java63.servlets.test04.dao.ProductDao;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
@@ -12,16 +11,12 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-
 /* Redirect하기
  * => 클라이언트에게 콘텐츠를 보내지 않는다.
  * => 응답 헤더에 다시 요청할 주소를 보낸다.
  * 
  */
-@WebServlet("/test03/product/delete")
+@WebServlet("/test04/product/delete")
 public class ProductDeleteServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
   

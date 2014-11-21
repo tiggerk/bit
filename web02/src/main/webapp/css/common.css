@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
 .container {
-	width: 500px;
+	width: 80%;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 20px;
+	color: blue;
 }

@@ -1,18 +1,19 @@
-package java63.servlets.test03;
+package java63.servlets.test04;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import java63.servlets.test03.dao.ProductDao;
-import java63.servlets.test03.domain.Product;
+import java63.servlets.test04.dao.ProductDao;
+import java63.servlets.test04.domain.Product;
 
 import javax.servlet.GenericServlet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/test03/product/view")
+@WebServlet("/test04/product/view")
 public class ProductViewServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
   
@@ -35,12 +36,12 @@ public class ProductViewServlet extends GenericServlet {
     
     out.println("<html>");
     out.println("<head>");
-    out.println("<link rel='stylesheet' ");
-    out.println("href='../../css/bootstrap.min.css'>");
-    out.println("<link rel='stylesheet' ");
-    out.println("href='../../css/bootstrap-theme.min.css'>");
-    out.println("<link rel='stylesheet' href='../../css/common.css'>");
+    
+    // 다른 서블릿을 실행 => 실행 후 제어권이 되돌아 온다.
+    RequestDispatcher rd = request.getRequestDispatcher("/common/header");
+    rd.include(request, response);
     out.println("</head>");
+    
     out.println("<body>");
     out.println("<div class='container'>");
     out.println("<h1> 제품 정보</h1>");
@@ -117,6 +118,10 @@ public class ProductViewServlet extends GenericServlet {
     out.println("  });");
     
     out.println("</script>");
+    
+    // 다른 서블릿을 실행 => 실행 후 제어권이 되돌아 온다.
+    rd = request.getRequestDispatcher("/common/footer");
+    rd.include(request, response);
     
     out.println("</body>");
     out.println("</html>");

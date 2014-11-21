@@ -1,10 +1,12 @@
-package java63.servlets.test03;
+package java63.servlets.test04;
 
 import java.io.IOException;
-import java63.servlets.test03.dao.ProductDao;
-import java63.servlets.test03.domain.Product;
+
+import java63.servlets.test04.dao.ProductDao;
+import java63.servlets.test04.domain.Product;
 
 import javax.servlet.GenericServlet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -18,14 +20,15 @@ import javax.servlet.http.HttpServletResponse;
  *    => 클라이언트가 보내는 데이터의 문자 집합을 알려줘라!
  */
 
-@WebServlet("/test03/product/add")
+@WebServlet("/test04/product/add")
 public class ProductAddServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
   
   @Override
   public void service(ServletRequest request, ServletResponse response)
       throws ServletException, IOException {
-    request.setCharacterEncoding("UTF-8");
+    // 다음 코드는 필터로 대체함.
+    //request.setCharacterEncoding("UTF-8");
     
     Product product = new Product();
     product.setName(request.getParameter("name"));
@@ -40,7 +43,16 @@ public class ProductAddServlet extends GenericServlet {
     // => 장점: 특정 클래스에 종속되지 않는다. 유지보수에서 더 중요!!!
     ProductDao productDao =
         (ProductDao)this.getServletContext().getAttribute("productDao");
-    productDao.insert(product);
+    try {
+      productDao.insert(product);
+      
+    } catch (Exception e) {
+      // Forward로 다른 서블릿에게 제어권 위임하기
+      // => 제어권이 넘어가면 돌아오지 않는다.
+      RequestDispatcher rd = request.getRequestDispatcher("/common/error");
+      request.setAttribute("error", e);
+      rd.forward(request, response);
+    }
 
     HttpServletResponse orginResponse = (HttpServletResponse)response;
     orginResponse.sendRedirect("list");
