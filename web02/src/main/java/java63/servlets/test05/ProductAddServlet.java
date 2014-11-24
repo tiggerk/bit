@@ -1,9 +1,8 @@
-package java63.servlets.test04;
+package java63.servlets.test05;
 
 import java.io.IOException;
-
-import java63.servlets.test04.dao.ProductDao;
-import java63.servlets.test04.domain.Product;
+import java63.servlets.test05.dao.ProductDao;
+import java63.servlets.test05.domain.Product;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +12,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 /* POST 요청 처리
  * => 한글이 깨지는 문제 해결
  * => 처음 getParameter()를 호출하기 전에
@@ -20,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *    => 클라이언트가 보내는 데이터의 문자 집합을 알려줘라!
  */
 
-@WebServlet("/test04/product/add")
+@WebServlet("/test05/product/add")
 public class ProductAddServlet extends GenericServlet {
   private static final long serialVersionUID = 1L;
   
@@ -35,16 +37,13 @@ public class ProductAddServlet extends GenericServlet {
     product.setQuantity(Integer.parseInt(request.getParameter("qty")));
     product.setMakerNo(Integer.parseInt(request.getParameter("mkno")));
     
-    //AppInitServlet.productDao.insert(product);   // 위,아래 두가지 방법이 있음.
-    //ContextLoaderListener.productDao.insert(product);
+    //ProductDao productDao = (ProductDao)ContextLoaderListener.appCtx.getBean("productDao");
     
-    // ProductDao를 ServletContext 보관소에서 꺼내는 방식을 사용.
-    // => 단점: 위의 방식보다 코드가 늘었다.
-    // => 장점: 특정 클래스에 종속되지 않는다. 유지보수에서 더 중요!!!
-    //ProductDao productDao = (ProductDao)this.getServletContext().getAttribute("productDao");
+    // 스프링의 ContextLoaderListener가 준비한 ApplicationContext 객체 꺼내기
+    ApplicationContext appCtx = WebApplicationContextUtils.getWebApplicationContext(
+        this.getServletContext());
+    ProductDao productDao = (ProductDao)appCtx.getBean("productDao");
     
-    ProductDao productDao = (ProductDao)ContextLoaderListener
-        .appCtx.getBean("productDao");
     try {
       productDao.insert(product);
       
