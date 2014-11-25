@@ -17,18 +17,15 @@ include를 JSP 액션 태그(기본으로 제공하는 태그)를 사용해서 �
 </head>
 <body>
 <div class='container'>
-<h1> 제품 목록(v1.0)</h1>
+<h1> 제품 목록(by JSP)</h1>
 <p><a href='product-form.html' class='btn btn-primary'>새제품</a></p>
 <table class='table table-hover'>
 <tr>
 <th>#</th><th>제품</th><th>수량</th><th>제조사</th>
 </tr>
-<jsp:useBean
-  scope="request" 
-  type="java.util.List<java63.servlets.test05.domain.Product>"
-  id="products"/>
-  
+
 <%
+List<Product> products = (List<Product>)request.getAttribute("products");
 for (Product product : products) {
 %>
 <tr>
