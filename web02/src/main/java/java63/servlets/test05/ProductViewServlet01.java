@@ -4,22 +4,22 @@ import java.io.IOException;
 import java63.servlets.test05.dao.ProductDao;
 import java63.servlets.test05.domain.Product;
 
+import javax.servlet.GenericServlet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-@WebServlet("/test05/product/view")
-public class ProductViewServlet extends HttpServlet {
+//@WebServlet("/test05/product/view")
+public class ProductViewServlet01 extends GenericServlet {
   private static final long serialVersionUID = 1L;
   
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response)
+  public void service(ServletRequest request, ServletResponse response)
       throws ServletException, IOException {
     int no = Integer.parseInt(request.getParameter("no"));
     
