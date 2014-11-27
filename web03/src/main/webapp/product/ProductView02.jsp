@@ -9,7 +9,7 @@
 
 <body>
 <div class='container'>
-<h1> 제품 정보(v1.1)</h1>
+<h1> 제품 정보(v1.2)</h1>
 <form class='form-horizontal' role='form' action='update.do' method='post'>
 <div class='form-group'>
 <label for='no' class='col-sm-2 control-label'>번호</label>
@@ -35,9 +35,7 @@
   <select id='mkno' name='mkno' class='form-control'>
     <option value="0">제조사를 선택하세요</option>
       <c:forEach items="${makers}" var="maker">
-        <option value="${maker.no}"
-        <c:if test="${maker.no==product.makerNo}">selected</c:if>
-        >${maker.name}</option>
+        <option value="${maker.no}">${maker.name}</option>
       </c:forEach>
   </select>
 </div>
@@ -53,6 +51,11 @@
 </div>
  <script src='../js/jquery-1.11.1.js'></script>
  <script>
+ //$(document.ready(function(){}));
+ $(function(){
+	 $('#mkno').val(${product.makerNo});
+ });
+ 
 $('#btnCancel').click(function(){
 history.back();
 });
@@ -70,10 +73,10 @@ $('#btnUpdate').click(function() {
       alert('수량은 필수 입력 항목입니다.');
       return false;
     }
-    if ($('#mkno').val().length == 0) {
-      alert('제조사 번호는 필수 입력 항목입니다.');
-      return false;
-    }
+    if ($('#mkno').val() == '0') {
+        alert('제조사를 선택하세요.');
+        return false;
+      }
   });
 </script>
 <jsp:include page="/common/Footer.jsp"/>
