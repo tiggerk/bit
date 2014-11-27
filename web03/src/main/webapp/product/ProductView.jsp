@@ -16,6 +16,7 @@
 
 <body>
 <div class='container'>
+<jsp:include page="/common/LoginPanel.jsp"/>
 <h1> 제품 정보(v1.3)</h1>
 <form class='form-horizontal' role='form' action='update.do' method='post'>
 <div class='form-group'>

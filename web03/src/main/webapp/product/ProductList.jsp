@@ -13,6 +13,7 @@ include를 JSP 액션 태그(기본으로 제공하는 태그)를 사용해서 �
 </head>
 <body>
 <div class='container'>
+<jsp:include page="/common/LoginPanel.jsp"/>
 <h1> 제품 목록(v1.1)</h1>
 <p><a href='add.do' class='btn btn-primary'>새제품</a></p>
 <table class='table table-hover'>

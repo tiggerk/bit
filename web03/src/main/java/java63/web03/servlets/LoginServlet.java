@@ -72,8 +72,8 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("loginUser", member);
         response.sendRedirect("../product/list.do");
       } else {
-        session.invalidate();
-        response.sendRedirect("login.do");
+        session.invalidate(); // 세션을 제거하고 새로 만든다.
+        response.sendRedirect("login.do");  // 로그인 폼으로 보낸다.
       }
       
     } catch (Exception e) {

@@ -9,3 +9,17 @@
 	font-size: 20px;
 	color: blue;
 }
+
+.header {
+	background-color: #f4ed7c;
+	height: 25px;
+	padding: 2px 10px 0px 10px;
+}
+
+.userinfo {
+	float: left;
+}
+
+.logout {
+	float: right;
+}

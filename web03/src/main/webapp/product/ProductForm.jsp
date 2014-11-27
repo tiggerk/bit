@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class='container'>
+  <jsp:include page="/common/LoginPanel.jsp"/>
     <h1>제품 등록</h1>
     <form class='form-horizontal' role='form'
        action='add.do' method='post' enctype='multipart/form-data'>
