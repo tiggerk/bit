@@ -50,7 +50,7 @@ ${applicationScope.member.no} => application.getAttribute("member").getNo()
  <%-- ${객체.프로퍼티} 
  객체명            : 설명               : 사용예
  pageContext      : 생략               : ${pageContext.객체}
- pageScope          pageContext.getAttribute() => ${pageScope.객체{
+ pageScope          pageContext.getAttribute() => ${pageScope.객체}
  servletContext   : ServletContext    : ${pageContext.servletContext.객체}
  applicationScope   servletContext.getAttribute() => ${applicationScope.객체}
  session          : HttpSession       : ${pageContext.session.객체}
