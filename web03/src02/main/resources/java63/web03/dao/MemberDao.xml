@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <sql> 태그 사용하기
+=> 자주 사용되는 SQL문은 별도로 정의해두고 포함한다.
+-->
+
+<mapper namespace="java63.web03.dao.MemberDao">
+
+  <!-- 객체의 컬럼과 프로퍼티를 연결한다. -->
+  <resultMap type="Member" id="memberMap">
+    <!-- PK 컬럼은 id 태그를 사용하여 지정한다. -->
+    <id column="UID" property="userId"/>
+    <result column="PWD" property="password"/>
+    <result column="EMAIL" property="email"/>
+    <result column="UNAME" property="userName"/>
+    <result column="TEL" property="tel"/>
+    <result column="FAX" property="fax"/>
+    <result column="POST_NO" property="postNo"/>
+    <result column="BAS_ADDR" property="baseAddress"/>
+    <result column="DET_ADDR" property="detailAddress"/>
+    <result column="PHOT" property="photo"/>
+  </resultMap>
+
+  
+  <select id="existUser" parameterType="map" resultMap="memberMap">
+    SELECT UID, UNAME, EMAIL, PHOT 
+    FROM MEMBERS
+    WHERE UID=#{userId} AND PWD=#{password}
+  </select>
+
+</mapper>
+
+
+
+
