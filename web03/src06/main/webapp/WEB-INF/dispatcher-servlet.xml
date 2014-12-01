@@ -26,13 +26,6 @@
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
     <property name="maxUploadSize" value="10000000"/>
   </bean>
-  
-  <!-- WEB-INF에 들어 있는 JSP를 실행해주는 해결사 등록 -->
-  <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-    <property name="prefix" value="/WEB-INF/view/"/>
-    <property name="suffix" value=".jsp"/>
-  </bean>
 </beans>
 
 

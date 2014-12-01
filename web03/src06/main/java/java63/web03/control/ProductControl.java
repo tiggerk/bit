@@ -8,7 +8,6 @@ import java63.web03.domain.Product;
 
 import javax.servlet.ServletContext;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +19,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller 
 @RequestMapping("/product")
 public class ProductControl {
-  static Logger log = Logger.getLogger(ProductControl.class);
   static final int PAGE_DEFAULT_SIZE = 3;
 
   @Autowired MakerDao makerDao;
@@ -31,7 +29,7 @@ public class ProductControl {
   public ModelAndView form() throws Exception {
     ModelAndView mv = new ModelAndView();
     mv.addObject("makers", makerDao.selectNameList());
-    mv.setViewName("product/ProductForm");
+    mv.setViewName("/product/ProductForm.jsp");
     return mv;
   }
 
@@ -73,7 +71,7 @@ public class ProductControl {
 
     model.addAttribute("products", productDao.selectList(paramMap));
 
-    return "product/ProductList";
+    return "/product/ProductList.jsp";
   }
 
   @RequestMapping("/update")
@@ -90,7 +88,7 @@ public class ProductControl {
     model.addAttribute("photos", productDao.selectPhoto(product.getNo()));
     model.addAttribute("makers", makerDao.selectNameList());
 
-    return "product/ProductView";
+    return "/product/ProductView.jsp";
   }
 
 }
