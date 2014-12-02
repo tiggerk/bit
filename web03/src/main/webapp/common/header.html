@@ -1,0 +1,29 @@
+<p class='userinfo'>
+  <img id='userPhoto' src='/web03/images/default-user-photo.jpg'>
+  <a id='userName' href='mailto:'></a>
+</p>
+<p class='logout'>
+  <button id='logoutBtn' type='button' class='btn btn-warning btn-xs'
+      style='display:none'>로그아웃</button>
+  <button id='loginBtn' type='button' class='btn btn-success btn-xs'
+      style='display:none'>로그인</button>
+</p>
+<script>
+$.getJSON('/web03/json/auth/loginUser.do', function(data){
+	console.log(data);
+	if (data.userId == '') {
+		$('#loginBtn').css('display', '');
+		
+	} else {
+		$('#logoutBtn').css('display', '');
+		
+		if (data.photo) {
+			  $('#userPhoto').attr('src', data.photo);
+		}
+		$('#userName').html(data.userName);
+	  $('#userName').click(function(){
+	    alert('사용자 정보 조회 창으로 보낼 예정')
+	  });
+	}
+});
+</script>
