@@ -15,6 +15,13 @@ body {
 	border-radius: 5px;
 }
 
+.form {
+  background-color: #fff;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
 .copyright {
 	text-align: center;
 	font-size: 20px;

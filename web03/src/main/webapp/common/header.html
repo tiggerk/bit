@@ -10,17 +10,16 @@
 </p>
 <script>
 $.getJSON('/web03/json/auth/loginUser.do', function(data){
-	console.log(data);
-	if (data.userId == '') {
+	if (data.status == 'fail') {
 		$('#loginBtn').css('display', '');
 		
 	} else {
 		$('#logoutBtn').css('display', '');
 		
 		if (data.photo) {
-			  $('#userPhoto').attr('src', data.photo);
+			  $('#userPhoto').attr('src', data.loginUser.photo);
 		}
-		$('#userName').html(data.userName);
+		$('#userName').html(data.loginUser.userName);
 	  $('#userName').click(function(){
 	    alert('사용자 정보 조회 창으로 보낼 예정')
 	  });

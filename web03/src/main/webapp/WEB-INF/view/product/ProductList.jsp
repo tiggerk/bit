@@ -14,6 +14,7 @@ include를 JSP 액션 태그(기본으로 제공하는 태그)를 사용해서 �
 <body>
 <div class='container'>
 <jsp:include page="/common/LoginPanel.jsp"/>
+<div class='content'>
 <h1> 제품 목록(v1.1)</h1>
 <p><a href='add.do' class='btn btn-primary'>새제품</a></p>
 <table class='table table-hover'>
@@ -43,6 +44,7 @@ include를 JSP 액션 태그(기본으로 제공하는 태그)를 사용해서 �
   <a href='list.do?pageNo=${nextPageNo}' class='btn btn-default'>다음</a>
 </c:if>
 
+</div>
 </div>
 </div>
  <script src='../js/jquery-1.11.1.js'></script>

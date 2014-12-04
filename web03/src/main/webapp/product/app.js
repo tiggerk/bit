@@ -1,43 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel='stylesheet'
-  href='/web03/css/bootstrap.min.css'>
-<link rel='stylesheet' 
-  href='/web03/css/bootstrap-theme.min.css'>
-<link rel='stylesheet' 
-  href='/web03/css/common.css'>
-</head>
-<body>
-<div class='container'>
-
-<div class='header'>
-   <p class='userinfo'><a href='mailto:'></a></p>
-   <p class='logout'><a href='/web03/auth/logout.do'>로그아웃</a></p>
-</div>
-
-<h1> 제품 목록(v1.1)</h1>
-<p><a href='add.do' class='btn btn-primary'>새제품</a></p>
-<table id='productTable' class='table table-hover'>
-<tr>
-<th>#</th><th>제품</th><th>수량</th><th>제조사</th>
-</tr>
-</table>
-
-<div id='pagingBar'>
-  <button id='prevBtn' type='button' class='btn btn-default'>이전</button>
-  <span id='pageNo'>1</span>
-  <button id='nextBtn' type='button' class='btn btn-default'>다음</button>
-</div>
-</div>
-<address class='copyright'>Copyright&copy;Java63</address>
-
-<script src='../js/jquery-1.11.1.js'></script>
-<script>
 var currPageNo;
 var maxPageNo;
 
-loadProductList(1);
+//$(document).ready(function(){});   //=> 아래랑 같은것
+$(function(){
+  $('.header').load('../common/header.html');
+  $('.footer').load('../common/footer.html');
+  $('.form').load('form.html');
+
+  loadProductList(1);
+
+});
+
 
 $('#prevBtn').click(function(event){
 	if (currPageNo > 1) {
@@ -67,6 +40,8 @@ function setPageNo(currPageNo, maxPageNo) {
 function loadProductList(pageNo){
 	$.getJSON('../json/product/list.do?pageNo=' + pageNo,
     function(data){
+		console.log(data);
+		
       setPageNo(data.currPageNo, data.maxPageNo);
       var products = data.products;
       
@@ -88,8 +63,3 @@ function loadProductList(pageNo){
       }
     });
 }
-</script>
-</body>
-</html>
-
-

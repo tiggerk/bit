@@ -15,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller("json.productControl")
 @RequestMapping("/json/product")
@@ -27,27 +26,29 @@ public class ProductControl {
   @Autowired ProductDao productDao;
   @Autowired ServletContext servletContext;
 
-  @RequestMapping(value="/add", method=RequestMethod.GET)
-  public ModelAndView form() throws Exception {
-    ModelAndView mv = new ModelAndView();
-    mv.addObject("makers", makerDao.selectNameList());
-    mv.setViewName("product/ProductForm");
-    return mv;
-  }
-
   @RequestMapping(value="/add", method=RequestMethod.POST)
-  public String add(Product product) throws Exception {
-
-    String fileuploadRealPath =
-        servletContext.getRealPath("/fileupload");
-    String filename = System.currentTimeMillis() + "_";
-    File file = new File(fileuploadRealPath + "/" + filename);
-    product.getPhotofile().transferTo(file);
-    product.setPhoto(filename);
-
+  public Object add(Product product) throws Exception {
+    
     productDao.insert(product);
-    productDao.insertPhoto(product);
-    return "redirect:list.do";
+    
+    if (product.getPhotofile() != null
+        && !product.getPhotofile().isEmpty()) {
+      String fileuploadRealPath =
+          servletContext.getRealPath("/fileupload");
+      String filename = System.currentTimeMillis() + "_";
+      File file = new File(fileuploadRealPath + "/" + filename);
+      
+      product.getPhotofile().transferTo(file);
+      product.setPhoto(filename);
+      
+      productDao.insertPhoto(product);
+    }
+    
+    
+    HashMap<String, Object> resultMap = new HashMap<>();
+    resultMap.put("status", "success");
+    
+    return resultMap;
   }
 
   @RequestMapping("/delete")
@@ -58,10 +59,9 @@ public class ProductControl {
   }
   
   @RequestMapping("/list")
-  public String list(
+  public Object list(
       @RequestParam(defaultValue="1") int pageNo,
-      @RequestParam(defaultValue="5") int pageSize,
-      Model model) throws Exception {
+      @RequestParam(defaultValue="5") int pageSize) throws Exception {
 
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
@@ -78,13 +78,13 @@ public class ProductControl {
     paramMap.put("startIndex", ((pageNo - 1) * pageSize));
     paramMap.put("pageSize", pageSize);
 
-    model.addAttribute("products", productDao.selectList(paramMap));
+    HashMap<String, Object> resultMap = new HashMap<>();
+    resultMap.put("status", "success");
+    resultMap.put("currPageNo", pageNo);
+    resultMap.put("maxPageNo", maxPageNo);
+    resultMap.put("products", productDao.selectList(paramMap));
     
-    model.addAttribute("currPageNo", pageNo);
-    model.addAttribute("maxPageNo", maxPageNo);
-    
-    
-    return "json/product/ProductList";
+    return resultMap;
   }
 
   @RequestMapping("/update")

@@ -1,0 +1,98 @@
+<h1>제품 등록</h1>
+<form class='form-horizontal' role='form'>
+	<div class='form-group'>
+		<label for='name' class='col-sm-2 control-label'>제품</label>
+		<div class='col-sm-10'>
+			<input type='text' class='form-control' id='name'
+				placeholder='제품명 예)아이폰6 플러스'>
+		</div>
+	</div>
+	<div class='form-group'>
+		<label for='quantity' class='col-sm-2 control-label'>수량</label>
+		<div class='col-sm-10'>
+			<input type='text' class='form-control' id='quantity'
+				placeholder='수량 예) 20'>
+		</div>
+	</div>
+	<div class='form-group'>
+		<label for='makerNo' class='col-sm-2 control-label'>제조사</label>
+		<div class='col-sm-10'>
+			<select id='makerNo' class='form-control'>
+				<option value="0">제조사를 선택하세요</option>
+
+				<option value="4">IBM</option>
+
+				<option value="3">LG</option>
+
+				<option value="6">구글</option>
+
+				<option value="2">삼성</option>
+
+				<option value="1">애플</option>
+
+				<option value="5">인텔</option>
+
+			</select>
+		</div>
+	</div>
+	<div class='form-group'>
+		<label for='madeDate' class='col-sm-2 control-label'>제조일</label>
+		<div class='col-sm-10'>
+			<input type="date" class='form-control' id='madeDate'
+				placeholder='제조일 예) 2014-12-25'>
+		</div>
+	</div>
+	<div class='form-group'>
+		<label for='photofile' class='col-sm-2 control-label'>사진</label>
+		<div class='col-sm-10'>
+			<input type='file' class='form-control' id='photofile'>
+		</div>
+	</div>
+	<div class='form-group'>
+		<div class='col-sm-offset-2 col-sm-10'>
+			<button id='btnAdd' type='button' class='btn btn-primary'>등록</button>
+			<button id='btnCancel' type='button' class='btn btn-primary'>취소</button>
+		</div>
+	</div>
+</form>
+
+<script>
+  $('#btnCancel').click(function() {
+    history.back();
+  });
+
+  $('#btnAdd').click(function() {
+    if ($('#name').val().length == '0') {
+      alert('제품명은 필수 입력 항목입니다.');
+      return;
+    }
+
+    if ($('#quantity').val().length == 0) {
+      alert('수량은 필수 입력 항목입니다.');
+      return;
+    }
+
+    if ($('#makerNo').val() == '0') {
+      alert('제조사를 선택하세요.');
+      return;
+    }
+    
+    $.post('../json/product/add.do' /* URL */
+      , { /* 서버에 보낼 데이터를 객체에 담아 넘긴다 */
+        name : $('#name').val(),
+        quantity : $('#quantity').val(),
+        makerNo : $('#makerNo').val(),
+        photofile2 : $('#photofile').val()
+      }
+      , function(result){ /* 서버로부터 응답을 받았을 때 호출될 메서드*/
+        if (result.status == "success") {
+          alert("등록 성공!");
+        } else {
+          alert("등록 실패!");
+        }
+      } 
+      , 'json' /* 서버가 보낸 데이터를 JSON 형식으로 처리 */);
+    
+  });
+</script>
+
