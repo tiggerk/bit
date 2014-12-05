@@ -1,9 +1,10 @@
 package java63.web03.control;
 
 import java.io.File;
+import java.util.HashMap;
+import java63.web03.dao.MakerDao;
+import java63.web03.dao.ProductDao;
 import java63.web03.domain.Product;
-import java63.web03.service.MakerService;
-import java63.web03.service.ProductService;
 
 import javax.servlet.ServletContext;
 
@@ -22,21 +23,21 @@ public class ProductControl {
   static Logger log = Logger.getLogger(ProductControl.class);
   static final int PAGE_DEFAULT_SIZE = 5;
 
-  @Autowired ProductService productService;
-  @Autowired MakerService makerService;
-  
+  @Autowired MakerDao makerDao;
+  @Autowired ProductDao productDao;
   @Autowired ServletContext servletContext;
 
   @RequestMapping(value="/add", method=RequestMethod.GET)
   public ModelAndView form() throws Exception {
     ModelAndView mv = new ModelAndView();
-    mv.addObject("makers", makerService.getList());
+    mv.addObject("makers", makerDao.selectNameList());
     mv.setViewName("product/ProductForm");
     return mv;
   }
 
   @RequestMapping(value="/add", method=RequestMethod.POST)
   public String add(Product product) throws Exception {
+
     String fileuploadRealPath =
         servletContext.getRealPath("/fileupload");
     String filename = System.currentTimeMillis() + "_";
@@ -44,14 +45,15 @@ public class ProductControl {
     product.getPhotofile().transferTo(file);
     product.setPhoto(filename);
 
-    productService.add(product);
-    
+    productDao.insert(product);
+    productDao.insertPhoto(product);
     return "redirect:list.do";
   }
 
   @RequestMapping("/delete")
   public String delete(int no) throws Exception {
-    productService.delete(no);
+    productDao.deletePhoto(no);
+    productDao.delete(no);
     return "redirect:list.do";
   }
   
@@ -64,13 +66,19 @@ public class ProductControl {
     if (pageSize <= 0)
       pageSize = PAGE_DEFAULT_SIZE;
     
-    int maxPageNo = productService.getMaxPageNo(pageSize);
+    int totalSize = productDao.totalSize();
+    int maxPageNo = totalSize / pageSize;
+    if ((totalSize % pageSize) > 0) maxPageNo++;
     
     if (pageNo <= 0) pageNo = 1;
     if (pageNo > maxPageNo) pageNo = maxPageNo;
+    
+    
+    HashMap<String,Object> paramMap = new HashMap<>();
+    paramMap.put("startIndex", ((pageNo - 1) * pageSize));
+    paramMap.put("pageSize", pageSize);
 
-    model.addAttribute("products",
-        productService.getList(pageNo, pageSize));
+    model.addAttribute("products", productDao.selectList(paramMap));
 
     model.addAttribute("currPageNo", pageNo);
     
@@ -87,18 +95,17 @@ public class ProductControl {
 
   @RequestMapping("/update")
   public String update(Product product) throws Exception {
-    productService.update(product);
+    productDao.update(product);
 
     return "redirect:list.do";
   }
 
   @RequestMapping("/view")
   public String view(int no, Model model) throws Exception {
-    Product product = productService.get(no);
+    Product product = productDao.selectOne(no);
     model.addAttribute("product", product);
-    model.addAttribute("photos", product.getPhotoList());
-    
-    model.addAttribute("makers", makerService.getList());
+    model.addAttribute("photos", productDao.selectPhoto(product.getNo()));
+    model.addAttribute("makers", makerDao.selectNameList());
 
     return "product/ProductView";
   }

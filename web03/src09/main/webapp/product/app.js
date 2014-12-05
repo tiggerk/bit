@@ -9,13 +9,9 @@ $(function(){
 
   loadProductList(1);
   
-  $(document).on('click', '.data-row a', function(){
-    loadProduct($(this).attr('data-no'));
-  });
   
-  $(document).on('click', '.my-delete-btn', function(){
-    deleteProduct($(this).attr('data-no'));
-    loadProduct(0);
+  $(document).on('click', '.data-row a', function(){ // 현재 존재하는 태그 이외에 앞으로 존재할 태그에 대해서도!!
+    loadProduct($(this).attr('data-no'));
   });
 });
 
@@ -50,14 +46,27 @@ function loadProductList(pageNo){
   
 	$.getJSON('../json/product/list.do?pageNo=' + pageNo,
     function(data){
-	    console.log(data);
-	    setPageNo(data.currPageNo, data.maxPageNo);
-	    var products = data.products;
+		console.log(data);
+		
+      setPageNo(data.currPageNo, data.maxPageNo);
+      var products = data.products;
       
-      require(['text!templates/product-table.html'], function(html){
-        var template = Handlebars.compile(html);
-        $('#listDiv').html( template(data) );
-      });
+      $('.data-row').remove();
+      
+      for (var i = 0; i < products.length; i++) {
+        $('<tr>').addClass('data-row')
+            .append($('<td>').html(products[i].no))
+            .append(
+            		$('<td>').append(
+            				$('<a>').attr('href', '#')
+            				        .attr('data-no', products[i].no)
+            				        .html(products[i].name)
+            		)
+        		)
+            .append($('<td>').html(products[i].quantity))
+            .append($('<td>').html(products[i].maker))
+            .appendTo('#productTable')
+      }
     });
 }
 

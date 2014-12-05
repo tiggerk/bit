@@ -1,8 +1,9 @@
 package java63.web03.control;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java63.web03.dao.MemberDao;
 import java63.web03.domain.Member;
-import java63.web03.service.MemberService;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -29,7 +30,7 @@ import org.springframework.web.bind.support.SessionStatus;
 // 그 값은 세션에 있는 값이다.
 @SessionAttributes({"loginUser", "requestUrl"})
 public class AuthControl {
-  @Autowired MemberService memberService;
+  @Autowired MemberDao memberDao;
 
   @RequestMapping(value="/login.do", method=RequestMethod.GET)
   public String form (
@@ -60,8 +61,11 @@ public class AuthControl {
       cookie.setMaxAge(0);  // 무효화시킴
       cookieList.add(cookie);
     }
-    
-    Member member = memberService.validate(uid, pwd);
+
+    HashMap<String,String> params = new HashMap<>();
+    params.put("userId", uid);
+    params.put("password", pwd);
+    Member member = memberDao.existUser(params);
 
     if (member != null) {
       model.addAttribute("loginUser", member);

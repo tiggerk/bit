@@ -9,15 +9,6 @@
       style='display:none'>로그인</button>
 </p>
 <script>
-$('#logoutBtn').click(function(event){
-  $.getJSON('/web03/json/auth/logout.do', function(data) {
-     location.href = '/web03/auth/app.html';
-  });
-});
-$('#loginBtn').click(function(event){
-  location.href = '/web03/auth/app.html';
-});
-
 $.getJSON('/web03/json/auth/loginUser.do', function(data){
 	if (data.status == 'fail') {
 		$('#loginBtn').css('display', '');
