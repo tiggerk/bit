@@ -1,0 +1,66 @@
+.login-content {
+	padding: 10px 20px;
+	margin: 30px 250px;
+	border: 3px solid darkgray;
+}
+.signup-content {
+	padding: 10px 20px;
+	margin: 30px 250px;
+	border: 3px solid darkgray;
+}
+#clear{
+	clear: both;
+}
+.login-area {
+
+}
+
+.btn-login-close {
+	float: right;
+/*	display:inline-block;
+	position: absolute;
+	border:0;
+	text-indent: -9999px;
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: transparent; */
+}
+
+.btn-signup-close {
+	float: right;	
+/* 	display:inline-block;
+	position: absolute;
+	border:0;
+	text-indent: -9999px; */
+} 
+
+.signup-area {
+	text-align: center;
+	padding: 5px 20px;
+}
+
+.form-control {
+	width: 200px;
+}
+
+#btnlogin {
+	float: right;
+	height: 40px;
+	width: 90px;
+	text-align: center;
+	
+}
+
+.form-group {
+	width: 280px;
+	float: left;
+}
+.idpw-search {
+	display: -ms-inline-flexbox;
+	padding-left: 0;
+	padding-right: 150px;
+}
+.idpw-box {
+	height: 20px;
+}

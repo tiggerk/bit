@@ -1,0 +1,53 @@
+/* * {
+	border: 1px solid red;
+} */
+.qna {
+	/* border: 1px solid red; */
+	margin: 20px 150px;
+	width: 75%;
+	height: 600px;
+}
+.qna-form {
+	margin: 20px;
+	height: 100%;
+	background-color: white;
+	border-radius : 
+}
+.qna-data {
+	padding: 0px 100px;
+	height: 80%;
+	width: 700px;
+	margin-left: 85px;
+}
+hr {
+		border: 1px solid red;
+}
+h4 {
+	padding-top: 30px;
+}
+
+.title-qna {
+	text-align: center;
+	padding-top: 1px;
+}
+
+.qna-email {
+	width: 200px;
+	margin: 0 auto;
+}
+.qna-content {
+	margin-bottom: 30px;
+}
+
+.qna-email-form, .qna-content-form {
+	width: 100%;
+	height: 100px;
+	margin: 0 auto;
+	/* height: 100%; */
+}
+
+.btn-qna-submit {
+	width: 100%;
+	height: 50px;
+	/* padding: 15px 0px; */
+}
