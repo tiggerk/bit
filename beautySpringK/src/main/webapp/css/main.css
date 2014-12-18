@@ -3,6 +3,10 @@
 /* @import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
  */
+ 
+header {
+	height: 60px;
+}
 
 #shop-search {
 	float: left;

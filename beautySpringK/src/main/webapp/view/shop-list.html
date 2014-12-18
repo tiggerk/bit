@@ -6,34 +6,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<!-- Bootstrap Core CSS -->
-<link href="../css/resources/bootstrap.css" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link href="../css/resources/heroic-features.css" rel="stylesheet">
-
-<!-- 그리드리스트 CSS  -->
-<link href="../css/resources/grid.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/resources/bootstrap.css">
+<link rel="stylesheet" href="../css/resources/heroic-features.css">
+<link rel="stylesheet" href="../css/resources/grid.css">
 <!-- 별점 CSS -->
 <link rel="stylesheet" href="../css/resources/starrr.css">
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-
 <!-- 댓글 -->
-
 <link rel="stylesheet" href="../css/resources/comment.css">
 
- <link rel="stylesheet" type="text/css" href="../css/common.css"> 
+<link rel="stylesheet" type="text/css" href="../css/common.css"> 
 <link rel="stylesheet" type="text/css" href="../css/shop-list.css">
-<!-- 슬라이더 CSS -->
-<!-- <link rel="stylesheet" href="css/resources/slider.css"> -->
-<!-- <link rel="stylesheet" type="text/css" href="css/shop-detail.css"> -->
+
+<script src="../js/resources/jquery.js"></script>
+<script src="../js/resources/bootstrap.min.js"></script>
+<!-- 그리드 리스트버튼  -->
+<script src="../js/resources/grid.js"></script>
+<!-- 별점 -->
+<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+<script src="../js/resources/starrr.js"></script>
+
+
 
 <title>SHOP LIST GRID</title>
 </head>
 
 
 <body>
+	<header>
+		<!-- 상단 고정 메뉴 -->
+	</header>
+	
 	<div id='wrap'>
 		<header> </header>
 		<section class='style-list'>
@@ -43,10 +49,10 @@
 				<div class="well well-sm">
 					<strong>Shop List</strong>
 					<div class="btn-group">
-						<a href="#" id="list" class="btn btn-default btn-sm"><span
-							class="glyphicon glyphicon-th-list"> </span>List</a> <a href="#"
-							id="grid" class="btn btn-default btn-sm"><span
-							class="glyphicon glyphicon-th"></span>Grid</a>
+						<a href="#" id="list" class="btn btn-default btn-sm">
+						<span	class="glyphicon glyphicon-th-list"> </span>List</a> 
+						<a href="#" id="grid" class="btn btn-default btn-sm">
+						<span	class="glyphicon glyphicon-th"> </span>Grid</a>
 					</div>
 				</div>
 				<div id="products" class="row list-group">
@@ -57,22 +63,19 @@
 							src="../images/shop/shop1.jpg" 
 							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">JUNO hair </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -84,21 +87,18 @@
 							data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
 								<h4 class="group inner list-group-item-heading">br헤어샵</h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+									<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -107,24 +107,21 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop3.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">THE HAIR SHOP </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -133,24 +130,21 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop4.jpg" 
-						    data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">JUNO hair </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -159,24 +153,21 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop5.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">JUNO hair </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -185,24 +176,21 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop6.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">금낭헤어샵</h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -211,76 +199,67 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop7.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">THE HAIR GALLERY</h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
 					<div class="item  col-xs-4 col-lg-4">
 						<div class="thumbnail">
 							<img 
-							class="btn group list-group-image"  
+							class="btn group list-group-image" 
 							src="../images/shop/shop8.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">헤어디자인</h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
 					<div class="item  col-xs-4 col-lg-4">
 						<div class="thumbnail">
 							<img 
-							class="btn group list-group-image"  
+							class="btn group list-group-image" 
 							src="../images/shop/shop9.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">블루클럽 </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -289,24 +268,21 @@
 							<img 
 							class="btn group list-group-image" 
 							src="../images/shop/shop10.jpg" 
-							data-toggle="modal" data-target="#myModal" alt="" />
+							 data-toggle="modal" data-target="#myModal" alt="" />
 							<div class="caption">
-								<h4 class="group inner list-group-item-heading">박승철 헤어스튜디오 </h4>
-								<p class="group inner list-group-item-text col-md-8">서울시 서초구 서초동 
-								</p>
-									<div> 115m
-									</div>
-								
+								<h4 class="group inner list-group-item-heading">JUNO hair </h4><p id='distance'>123m</p>
+								<p class="group inner list-group-item-text col-md-8 ">서울시 서초구 서초동	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">영업시간: 10:00~22:00	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">디자이너: 가위손, 박승철, JUNO	</p>
+								<p class="group inner list-group-item-text col-md-8 list-content">저희 미용실로 오세요~</p>
+									<!-- <p> 115m</p> -->
 								<div class="row">
+									<!-- <p class='grid-content'>샵상세정보</p> -->
 									<div class="col-xs-12 col-md-6">
-
-										<div class='starrr'></div>
+										<div class='starrr'></div> 
+									 	<p>review 17</p> 
 									</div>
-									<!--  <a href="shop-detail.html"> -->
-									<div class="col-xs-12 col-md-6">
-										<!-- </a> --><p>review 17</p>
-									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
@@ -560,28 +536,31 @@
 
 	<!-- /.container -->
 
-	<!-- jQuery -->
-	<script src="../js/resources/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="../js/resources/bootstrap.min.js"></script>
-	<!-- 그리드 리스트버튼  -->
-	<script src="../js/resources/grid.js"></script>
-	<!-- 별점 -->
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-	<script src="../js/resources/starrr.js"></script>
 	<script>
+	$('header').load('header.html');
+	/* $('footer').load('footer.html'); */
+	
+	
+	
 	$(function(){
 		  $('.footer').load('footer.html');
 	});
-
 	
+	$(document).ready(function() {
+		$('.list-content').hide();
+	}) 
+	
+	$('#list').click(function() {
+		$('.list-content').show();
+		
+	})
+	
+	$('#grid').click(function() {
+		$('.list-content').hide();
+		
+	})
 	</script>
 
-	<!-- 	<script language='javascript'>
-		window.setTimeout('window.location.reload()', 5000); //60초마다 새로고침
-	</script> -->
 </body>
 </html>
 

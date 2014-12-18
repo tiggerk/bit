@@ -61,8 +61,9 @@
 	margin: 0px 200px 20px 200px;
 }
 .signup-content {
-	padding: 0px 20px 10px 20px;
-	margin: 0px 300px 30px 300px;
+/* 	padding: 0px 20px 10px 20px;
+	margin: 0px 300px 30px 300px; */
+	margin: 0px 50px;
 }
 #clear{
 	clear: both;
