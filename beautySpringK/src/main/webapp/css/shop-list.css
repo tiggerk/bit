@@ -1,0 +1,178 @@
+@CHARSET "EUC-KR";
+
+* {
+    	/* border: 1px solid red;    */
+}
+
+header{
+/* 	border: 1px solid red; */
+	height: 180px;
+/* 	text-align: right;
+ */}
+
+#style-main{
+	
+	height: 400px;
+}
+
+#shop-main{
+	
+	height: 350px;
+}
+
+footer{
+	height: 60px;
+	text-align: center;
+}
+
+
+ul{
+	list-style: none;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+nav li{
+	display: inline;
+}
+
+nav li a{
+	
+}
+
+nav{
+	float: right;
+}
+
+#clear{
+	clear: both;
+}
+
+#site-title {
+	
+	font-size: 2.5em;
+	text-align: center;
+}
+
+#searchbar {
+	text-align: center;
+	padding: 20px 0;
+}
+
+#input-search {
+	width: 300px;
+	height: 20px;
+}
+
+#menubar{
+/* 	border: 1px solid red; */
+	height: 80px;
+}
+
+
+.style-div{
+	width: 230px;
+	height: 400px;
+	/* background-color: aqua; */
+	float: left;
+	margin: 5px;
+}
+
+.style-list{
+	position: relative;
+	/* 堪檜 熱薑 */
+	height: 100%;
+ 	text-align: left; 
+	padding: 10px 15px;
+	width: 100%;
+}
+
+/*-------------------*/
+.well-sm {
+	text-align: right;
+}
+
+ strong {
+	float: left;
+} 
+
+.container {
+	width: 100%;
+
+}
+.thumbnail>img {
+	width: 286px;
+	height: 165px;
+	border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+.col-lg-4 {
+	width: 23%;
+	padding-right: 6px;
+	padding-left: 6px;
+	margin-left: 10px;
+	margin-right: 10px;
+	
+}
+
+.thumbnail {
+	border-radius: 5px;
+	line-height: 1;
+}
+
+.row {
+	margin-right: -7px;
+	margin-left: -7px;
+}
+.starrr{
+	width: 100px;
+}
+
+.list-group-item-text {
+	height: 40px;
+	margin: 0 0 0px;
+	width: 80%;
+}
+
+.thumbnail a > img {
+	height: 165px;
+}
+/* で機 */
+/* で機 創檜 */
+.modal-dialog {
+	width: 940px;
+}
+
+ .carousel-inner>.item>img{
+ width:635px;
+ height: 400px;
+ 
+ 
+ }
+ .col-sm-2 > .thumbnail > img {
+  width: 118px;
+ height: 69px;
+ }
+ 
+ .btn {
+ padding: 0px 0px;
+ }
+ 
+ .btn-group > .btn {
+ 	padding: 5px 10px;
+ }
+ 
+ 
+ section {
+ 	background-color: Beige;
+ }
+ 
+ p {
+ 	margin: 0 0 0px;
+ }
+ 
+.col-md-8 {
+	padding: 0px;
+}
+ 

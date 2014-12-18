@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+
+<title>문의하기</title>
+<link rel='stylesheet' type='text/css' href='css/common.css'>
+<link rel='stylesheet' type='text/css' href='css/qna.css'>
+<link rel='stylesheet' href='css/resources/bootstrap.min.css'>
+<link rel='stylesheet' href='css/resources/bootstrap-theme.min.css'>
+
+<script src="js/resources/modernizr.custom.63321.js"></script>
+<script src="js/resources/jquery-2.1.1.min.js"></script>
+<!-- <script src="js/jquery-ui.min.js"></script> -->
+<script src="js/resources/bootstrap.min.js"></script>
+
+<script type='text/javascript'
+	src='http://code.jquery.com/jquery-1.7.2.js'></script>
+
+</head>
+<body>
+	<header>
+		<nav id='loginnav'>
+			<ul>
+				<li><a href='#' class='show-login' id='show-login'>로그인</a></li>
+				<li><a href='#' class='show-signup' id='show-signup'>회원가입</a></li>
+				<li><a href='#'>문의하기</a></li>
+			</ul>
+		</nav>
+		<div id='clear'></div>
+		<div id='site-title'>Beauty Chu♥</div>
+		<div id='searchbar'>
+			<form>
+				<input id='input-search' placeholder='search' />
+				<button>search</button>
+			</form>
+		</div>
+	</header>
+
+	<section class='qna' id='qna'>
+	<div class='qna-form'>
+		<div class='title-qna'>
+			<h2>문 의 하 기</h2>
+		</div>
+	<hr>
+		<div class='qna-data'>
+		<div class='qna-email-form' id='qna-email-form'>
+			<h4>이메일 주소</h4>
+			<input name='qna-email' class='qna-email form-control col-lg-3' id='qna-email' type='email'
+				placeholder="beautychu@appchu.com" required>
+		</div>
+		<div class='qna-content-form' id='qna-content-form'>
+			<h4>문의 내용</h4>
+			<textarea name='qna-content' class='qna-content form-control col-lg-3' id='qna-content'
+				placeholder="문의하실 내용을 작성해주세요." required style='height:200px;'></textarea>
+		</div>
+		
+		<div class='qna-submit' id='qna-submit'>
+			<button class="btn btn-inverse btn-qna-submit">문 의 하 기</button>
+		</div>
+		</div>
+		<hr>
+		</div>
+	</section>
+
+	<footer>
+		Yoon Yong Sik, Kang Da Hyun, Kim Ki Hyun, Kim Ji Yeong <br>
+		copyright @AppChu 2015
+	</footer>
+</body>
+</html>
