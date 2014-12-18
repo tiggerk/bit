@@ -41,6 +41,9 @@
   font-family: Lato;
   line-height: 1;
   background: #3a3b40;
+  opacity: 0.95;
+  -webkit-box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 #menu-icon {
 	display: block !important;
