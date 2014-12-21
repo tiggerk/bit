@@ -1,0 +1,107 @@
+/* 2014-03-09 전체 업데이트 */
+.search-container { position: fixed; top:0; left:0; right: 0; bottom: 0; z-index:2000;}
+.search-container > .inner { margin: 0 auto;  min-width: 1000px; position: relative; height: 100%;}
+.search-container .btn-close { background:url(/web/img/search/btn-close.png) 50% 50%; width: 41px; height: 41px; position: absolute; top:44px; right: 44px; display: block; text-indent: -9999em; overflow: hidden; z-index: 100;}
+
+.csstransforms .search-container .btn-close { background-image: url(/web/img/search/btn-close.png) ;
+-webkit-transition: all .25s ease-out;
+   -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+     -o-transition: all .25s ease-out;
+        transition: all .25s ease-out;
+        -webkit-transform: rotate(0deg);
+           -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+             -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+
+                }
+.csstransforms .search-container .btn-close:hover {
+		-webkit-transform: rotate(-90deg);
+           -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+             -o-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+             }
+
+
+.search-page  { position: absolute; top:0; left:0; right: 0; bottom: 0; background:url(/web/img/search/pattern-bg.png); overflow: auto;   color: #fff;}
+
+.search-page .search-page-header { margin: 0 auto; width: 1000px; padding-top: 120px; position: relative; margin-bottom: 60px;}
+.search-page h1 { background: url(/web/img/search/title-search.png) no-repeat; width:110px; height: 40px; text-indent: -9999em; overflow: hidden; margin-bottom: 30px; }
+.search-page .desc { background: url(/web/img/search/desc-search.png) no-repeat; width: 550px; height: 36px; text-indent: -9999em; overflow: hidden;}
+
+.search-page .search-page-result input.keyword { font-family: 'MyriadPro-Semibold','Nanum Gothic', '나눔고딕','돋움','dotum','AppleSDGothic', 'AppleGothic', Helvetica, sans-serif; font-size: 40px; line-height: 50px;  text-transform: none; margin-bottom: 10px; border:0; width: 100%; background: transparent; outline:none; color: #fff; width:540px; vertical-align:middle;}
+.search-page .search-page-result .search-line {border-bottom:1px solid #e5e5e5; width:602px;}
+.search-page .search-page-result .btn-search {margin-left:15px; vertical-align:middle;}
+
+.search-page .search-page-result ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #4d4d4d;
+}
+.search-page .search-page-result :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #4d4d4d;
+}
+.search-page .search-page-result ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #4d4d4d;
+}
+.search-page .search-page-result :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #4d4d4d;
+}
+
+.search-page .search-page-result input.keyword.placeholder { color: #4d4d4d; }
+
+.search-page .search-page-body { margin: 0 auto; width: 1000px; padding-bottom: 120px;}
+
+.search-page .search-page-result .result { font-size: 12px; margin-top:20px;}
+.search-page .search-page-result .result .keyword { text-transform: none; text-decoration: underline; font-weight: bold;}
+.search-page .search-page-result .result .total-count { color: #e4c9b0}
+
+.search-page .search-result-box {margin-top:55px;}
+.search-page .search-result-box h2 {margin-bottom:20px;}
+.search-page .search-result-box h2 strong {display:inline-block; overflow:hidden; height:12px; line-height:9999em; margin-right:10px; vertical-align:middle;}
+.search-page .search-result-box h2 span {font-size:12px;}
+.search-page .search-result-box .btn-floor {display:block; width:136px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-floor.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-floor:hover {background:url('/web/img/search/btn-floor_on.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-show {display:block; width:208px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-showwindow.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-show:hover {background:url('/web/img/search/btn-showwindow_on.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-fashion {display:block; width:222px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-fashion.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-fashion:hover {background:url('/web/img/search/btn-fashion_on.png') 0 0 no-repeat;}
+.search-page .search-result-box .result-brand h2 strong {background:url('/web/img/search/title-brand.png') 0 50% no-repeat; width:71px;}
+.search-page .search-result-box .result-show h2 strong {background:url('/web/img/search/title-showwindow.png') 0 50% no-repeat; width:134px;}
+.search-page .search-result-box .result-fashion h2 strong {background:url('/web/img/search/title-fashion.png') 0 50% no-repeat; width:148px;}
+.search-page .search-result-box .result-brand, .search-page .search-result-box .result-show {margin-bottom:80px;}
+
+.search-page .search-result-box .result-brand .list {padding:20px 0 10px;}
+.search-page .search-result-box .result-brand .list li {width:327px; float:left; display:inline; margin-right:10px; position:relative; margin-bottom:10px;}
+.search-page .search-result-box .result-brand .list li.i {margin-right:0; width:326px;}
+.search-page .search-result-box .result-brand .list li a {display:block; padding:15px 28px 27px 15px; background:#f6f6f6; height:40px;}
+.search-page .search-result-box .result-brand .list li a:visited, .search-page .search-result-box .result-brand .list li a:hover {text-decoration:none}
+.search-page .search-result-box .result-brand .list li p {font-size:13px; color:#545454; line-height:12px;}
+.search-page .search-result-box .result-brand .list li p.name{font-family:'MyriadPro-Semibold'; padding:0 0 7px; font-size:13px; color:#545454; line-height:12px;}
+.search-page .search-result-box .result-brand .list li p.name span{display:block; padding:4px 0 0; font-family:'Nanum Gothic'; color:#333; line-height:14px; }
+
+.search-page .search-result-box .result-show .list {padding:20px 0 0;}
+.search-page .search-result-box .result-show .list  li {width:242px; height:318px; margin-right:10px; float:left; display:inline;}
+.search-page .search-result-box .result-show .list  li.i {margin-right:0;}
+.search-page .search-result-box .result-show .list  li a {display:block; text-align:center;}
+.search-page .search-result-box .result-show .list  li a span {font-family:'MyriadPro-Bold'; color:#fff; display:block;}
+.search-page .search-result-box .result-show .list  li img {display:block; width:242px; height:242px; margin-bottom:15px;}
+.search-page .search-result-box .result-show .list  li .brand {font-size:14px;margin-bottom:5px;}
+.search-page .search-result-box .result-show .list  li .name {font-size:11px; color:#ccc;}
+
+.search-page .search-result-box .result-fashion .list {padding:20px 0 10px;}
+.search-page .search-result-box .result-fashion .list li {width:192px; height:192px; float:left; display:inline; margin-right:10px; margin-bottom:10px;}
+.search-page .search-result-box .result-fashion .list li a {display:block; position:relative;}
+.search-page .search-result-box .result-fashion .list li a:hover .over {display:block;}
+.search-page .search-result-box .result-fashion .list li.i {margin-right:0;}
+.search-page .search-result-box .result-fashion .list li img {width:192px; height:192px;}
+.search-page .search-result-box .result-fashion .list li .over {position:absolute; left:0; top:0; width:192px; height:192px; background: url('/web/img/common/bg-alpha-grey.png'); display:none;}
+.search-page .search-result-box .result-fashion .list li .over .label {font-family: 'MyriadPro-Bold','돋움','dotum','AppleSDGothic', 'AppleGothic', Helvetica, sans-serif; text-transform: uppercase;text-decoration: none; font-size: 12px; color: #fff;line-height: 16px; vertical-align: middle; width: 172px; display: block; background: url('/web/img/common/good-name-line.png') 50% 0 no-repeat; height: 40px; padding: 10px; margin-top:74px; text-align:center;}
+
+.search-page .search-result-box .list {padding:20px 0; border:1px solid #4c4c4c; border-width:1px 0; }
+.search-page .search-result-box .list.nodata {padding:49px 0; text-align:center;}
+.search-page .search-result-box .list.nodata .text {margin-bottom:30px; font-size:12px; line-height:160%;}
+.search-page .search-result-box .list .btn-list {text-align:center; padding:20px 0;}
+
+#mainsearch_fashion_search_loading_btn, #mainsearch_brand_search_loading_btn, #mainsearch_window_search_loading_btn {text-align:center;}
+#mainsearch_fashion_search_loading_btn span, #mainsearch_brand_search_loading_btn span, #mainsearch_window_search_loading_btn span {display:block; margin:0 auto;}

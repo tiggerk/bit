@@ -54,12 +54,12 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 #header {height: 70px; width: auto; position: fixed; top:0; left:0; right: 0; z-index: 1000;  }
 #header > .inner {margin: 0 auto;  min-width: 1050px; max-width:1920px; background: #161616; height: 70px; position: relative; z-index: 1002;   }
 #header .logo { width: 125px; width: 160px; height:70px; border-right: 1px solid #363636; float:left;}
-#header .logo a { display: block; width: 100%; height: 100%; background:url(/web/img/common/logo.png) no-repeat 50% 50%; text-indent: -9999em; overflow: hidden;}
+#header .logo a { display: block; width: 100%; height: 100%; font-size: 20px; color: #fff; font-family: 'MyriadPro-Semibold', Helvetica, sans-serif; text-decoration: none; line-height: 70px; text-align: center; position: relative; /* background:url(/web/img/common/logo.png) no-repeat 50% 50%; text-indent: -9999em; */ overflow: hidden;}
 #nav { float:left; height: 70px;}
 #nav .gnb > li { width: 160px; height: 70px; border-right:1px solid #363636; float:left; position: relative; }
 #nav .gnb > li > a { width: 100%; height: 100%; font-size: 15px; color: #fff; font-family: 'MyriadPro-Semibold', Helvetica, sans-serif; text-decoration: none; line-height: 70px; text-align: center; display: block; text-transform: uppercase; position: relative;}
 
-#nav .gnb > li > a .label { background:url(/web/img/common/gnb.png) no-repeat; text-indent: -9999em; overflow: hidden; display: block; width: 160px; height: 70px; position: absolute; top:0; left:-1px; right: 0; bottom: 0; border-left: 1px solid #363636; border-right: 1px solid #363636; z-index: 1004;	}
+#nav .gnb > li > a .label { background:url(/web/img/common/gnb.png) no-repeat; /* text-indent: -9999em; */ overflow: hidden; display: block; width: 160px; height: 70px; position: absolute; top:0; left:-1px; right: 0; bottom: 0; border-left: 1px solid #363636; border-right: 1px solid #363636; z-index: 1004;	}
 
 #nav .gnb > li:hover > a .label,
 #nav .gnb > li:active > a .label {border-left: 1px solid #e7e7e7; border-right: 1px solid #e7e7e7; color:#111;	}
@@ -159,11 +159,11 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 #nav .gnb > li > .sub-menu li.m7.active > a { background-position: -160px -168px;}
 #nav .gnb > li > .sub-menu li.m8.active > a { background-position: -160px -196px;}
 
-#nav .gnb > li.m1 > .sub-menu li > a  {background-image:url(/web/img/common/sub-menu-1.png);}
-#nav .gnb > li.m2 > .sub-menu li > a  {background-image:url(/web/img/common/sub-menu-2.png);}
-#nav .gnb > li.m3 > .sub-menu li > a  {background-image:url(/web/img/common/sub-menu-3.png);}
-#nav .gnb > li.m4 > .sub-menu li > a  {background-image:url(/web/img/common/sub-menu-4.png);}
-#nav .gnb > li.m5 > .sub-menu li > a  {background-image:url(/web/img/common/sub-menu-5.png);}
+#nav .gnb > li.m1 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
+#nav .gnb > li.m2 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
+#nav .gnb > li.m3 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
+#nav .gnb > li.m4 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
+#nav .gnb > li.m5 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
 /*메뉴 추가*/
 #nav .gnb > li.m3 > .sub-menu li.m6 > a  {background-image:url(/web/img/common/sub-menu-3_02.png);}
 #nav .gnb > li.m5 > .sub-menu li.m7 > a  {background-image:url(/web/img/common/sub-menu-5_02.png);}
@@ -177,9 +177,9 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 .good-box {width: 160px; height: 160px; position: relative; background: #fff;}
 .good-box .good-img { position: absolute; top:0; left:0; width: 161px; height: 161px; }
 .lined .good-box .good-img { width: 160px; height: 160px;}
-.good-box .good-name { position:absolute; top:0; left:-1px; right: -1px; bottom: -1px; line-height: 160px; background: url(/web/img/common/bg-alpha-grey.png); text-decoration: none; text-align: center; overflow: hidden; display: none; vertical-align: middle; }
+.good-box .good-name { position:absolute; top:0; left:-1px; right: -1px; bottom: -1px; line-height: 160px; background: url(../img/common/bg-alpha-grey.png); text-decoration: none; text-align: center; overflow: hidden; display: none; vertical-align: middle; }
 
-.good-box .good-name .label {font-family: 'MyriadPro-Bold','돋움','dotum','AppleSDGothic', 'AppleGothic', Helvetica, sans-serif; text-transform: uppercase;text-decoration: none; font-size: 12px; color: #fff;line-height: 16px; vertical-align: middle; width: 140px; display: block; background: url(/web/img/common/good-name-line.png) 50% 0 no-repeat; height: 40px; padding: 10px; margin-top:52px; }
+.good-box .good-name .label {font-family: 'MyriadPro-Bold','돋움','dotum','AppleSDGothic', 'AppleGothic', Helvetica, sans-serif; text-transform: uppercase;text-decoration: none; font-size: 12px; color: #fff;line-height: 16px; vertical-align: middle; width: 140px; display: block; background: url(../img/common/good-name-line.png) 50% 0 no-repeat; height: 40px; padding: 10px; margin-top:52px; }
 
 .good-box:hover .good-name,
 .good-box.js-control .good-name { display: block;}

@@ -138,4 +138,352 @@ $(function(){
 		}
 		return false;
 	});
-})
+
+
+
+	// 검색하기버튼을 누르면 검색창을 호출
+	$('.util-menu .search a, .panel-util-menu .btn-search').on('click', function(){
+		showSearch();
+		return false;
+	});
+
+	// #nav의 메뉴 중에는 good-list-container를 가지는 메뉴들이 있음(m2,m3). good-list-container에 있는 good들을 세팅
+	$('.good-list-container').each(function(){
+		var container = $(this);
+		var startIndex = $('.good-list', this).attr('start-index'); //starIndex로 시작포지션을 구분
+		var goodLi = $('.good-list li', this);
+
+		goodLi.each(function(index){
+			var posX = 0;
+			if ( index < startIndex ) {
+				// index가 startIndex보다 작을 경우 버튼을 기준으로 왼쪽으로 세팅
+				posX = index * (-161) + 160 * (startIndex-1);
+			} else {
+				// index가 startIndex보다 클 경우 버튼을 기준으로 오른쪽으로 세팅
+				posX = (index-(startIndex-1)) * 161 + 160 * startIndex + 1 ;
+			}
+			$(this).css({'left':posX,'top':-161});
+		});
+
+
+	});
+
+
+	// good-list-container안의 good-box들을 세팅
+	$('.good-box').addClass('js-control').find('.good-name').slideUp(0);
+	$('.good-box').on('mouseenter', function(){
+		$('.good-name', this).stop().slideDown(300);
+	});
+
+	$('.good-box').on('mouseleave', function(){
+		$('.good-name', this).stop().slideUp(200);
+	});
+
+	$(window).trigger('resize');
+
+});
+
+
+// gnb의 각 메뉴들을 펼쳐주는 함수
+var showGnbLi = function(container) {
+
+	if ($(this).hasClass('opened')) return false; // 이미 열려있다면 무시
+	if ( $.browser.mobile ) closeGnbLi($('.gnb > li.opened')); // 기존에 열린 메뉴 닫음
+	$(container).addClass('opened');
+
+	var subMenu = $('.sub-menu', container),
+		height = 230,
+		speed = 400;
+
+	$('a .over', container).stop().css({'height':0}).animate({'height':height}, speed);
+
+	subMenu.stop().css({'height':0}).delay(50).animate({'height':160}, speed, function(){
+	 	if($.browser.mobile)	$(container).addClass('active');
+	});
+
+	var goodList = $('.good-list-container', container);
+	if ( goodList.length > 0 ) {
+		goodList.stop().show().animate({'height':161},200, function(){
+			var goodLi = $('.good-list li', goodList);
+			var startIndex = $('.good-list', goodList).attr('start-index');
+			goodLi.each(function(index){
+				var delay = index * 60;
+				if ( index < startIndex ) {
+					delay = index * 60;
+				} else {
+					delay = (index - startIndex ) * 60 + 25 ;
+				}
+				$(this).stop(true,true).delay(delay).animate({'top':0},260);
+			});
+		});
+	}
+};
+
+// gnb의 각 메뉴들을 닫아주는 함수
+var closeGnbLi = function(container) {
+
+	if ( container.hasClass('opened') == false ) return false;
+	container.removeClass('opened active');
+
+	var subMenu = $('.sub-menu', container),
+		speed = 200;
+
+	$('a .over', container).stop().animate({'height':'0'}, speed);
+	subMenu.stop().animate({'height':0}, 100);
+
+	var goodList = $('.good-list-container', container);
+	if ( goodList.length > 0 ) {
+		goodList.stop().animate({'height':0},500, function(){
+			goodList.hide();
+		});
+		var goodLi = $('.good-list li', goodList);
+		goodLi.each(function(index){
+			var delay = (goodLi-index) * 30;
+			$(this).stop(true,true).animate({'top':-161},100);
+		});
+	}
+};
+
+// todo : 개발에서 해당 url을 개발된 페이지로 바꿔야 함.
+var SEARCH_URL = "/svc/search/web/kr/searchList.do";	 //	   /svc/search/web/kr/searchList.do
+
+
+var showSearch = function() {
+	if ( $('.search-page-loader').length > 0 ) {
+		//이미 서치페이지가 로드되어 있으면 중복 로드를 피한다.
+		return;
+	}
+
+	var searchPageLoader = $('<div></div>').addClass('search-page-loader').appendTo('body');
+
+	searchPageLoader.load( SEARCH_URL + ' .search-container', function(data){
+		
+		$('html,body').css({'overflow':'hidden'});
+		$(window).trigger('resize');
+		var placeholderSupport = !!("placeholder" in document.createElement( "input" ));
+		//$('.search-page .search-page-result input.keyword').placeholder();
+		var speed = ( window.underIE9 ) ? 1 : 600 ;
+		$('.search-container').hide().fadeIn(speed, 'easeOutQuad');
+		$('#search_frame_keyword').focus();
+		if ( placeholderSupport ) $('.search-container input#search_frame_keyword').focus();
+		$('.search-container .btn-close').on('click', function(){
+			speed = ( window.underIE9 ) ? 1 : 300 ;
+			$('.search-container').fadeOut(speed, 'easeOutQuad', function(){
+				searchPageLoader.remove();
+				$('html,body').css({'overflow':'auto','height':'auto'});
+				$(window).trigger('resize');
+			});
+			return false;
+		});
+
+		var bSearching1 = false;
+		var bSearching2 = false;
+		var bSearching3 = false;
+
+		$("#search_frame_keyword").on('keydown', function(e){
+			if (e.keyCode == 13 && !bSearching1 && !bSearching2&& !bSearching3) {
+				bSearching1 = true;
+				bSearching2 = true;
+				bSearching3 = true;
+				$('#search_frame_submit').trigger("click");
+			}
+		});
+		$("#mainsearch_brand_search_btn").on('click', function(){
+			mainsearchNextPage('brand');
+		});
+		$("#mainsearch_fashion_search_btn").on('click', function(){
+			mainsearchNextPage('fashion');
+		});
+		$("#mainsearch_window_search_btn").on('click', function(){
+			mainsearchNextPage('window');
+		});
+		$('#search_frame_submit').on('click', function(){
+			if($.trim($("#search_frame_keyword").val()).length == 0){
+				alert("검색어를 입력하세요.");
+				return;
+			}
+
+			$("#mainsearch_brand_num").val(1);
+			$("#mainsearch_show_window_num").val(1);
+			$("#mainsearch_fashion_style_num").val(1);
+			$("#mainsearch_search_param2").val($("#search_frame_keyword").val());
+	//alert($("#search_param2").val() );
+			search_frame_keyword=$("#search_frame_keyword").val();
+			hideAllHtmlPage();
+			searchCount();
+	
+			//$(".search-result-box").load("/svc/search/web/kr/searchResultList.do")
+		});
+		var search_frame_keyword = "";
+		var mainsearch_total_cnt=0;
+		var mainsearch_brand_cnt=0;
+		var mainsearch_window_cnt=0;
+		var mainsearch_fashion_cnt=0;
+
+		function searchCount(){
+			$.ajax( // 화면의 데이타를 조회한다.
+					{
+						url:"/svc/search/web/kr/searchCount.do",
+						dataType:"json",
+						type:"POST",
+						data:{
+							curr_page : 1
+							,search_param2 : search_frame_keyword
+
+						},
+						success:function( data ) {
+
+		 					mainsearch_total_cnt = parseInt( data.dataObject.total );
+		 					mainsearch_brand_cnt = parseInt( data.dataObject.brand_cnt );
+		 					mainsearch_window_cnt = parseInt( data.dataObject.show_cnt );
+		 					mainsearch_fashion_cnt = parseInt( data.dataObject.fashion_cnt );
+		 					//alert("mainsearch_fashion_cnt="+mainsearch_fashion_cnt);
+ 		 					search_frame_keyword= search_frame_keyword.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+		 					 
+		 					$("#result_count").html("<strong class=\"keyword\">"+search_frame_keyword+"</strong> 검색어로 총 <strong class=\"total-count\">"+mainsearch_total_cnt+"</strong> 건의 항목이 검색 되었습니다.");
+		 					$("#result_count").show();
+//alert(mainsearch_total_cnt); 
+		 					//if( mainsearch_total_cnt > 0 ){
+		 						//alert("mainsearch_brand_cnt="+$("#mainsearch_result_box").attr("style"));
+		 						$("#mainsearch_result_box").show();
+		 						//alert("mainsearch_brand_cnt="+$("#mainsearch_result_box").attr("style"));
+		 						$("#mainsearch_brand_count").html(mainsearch_brand_cnt+"개");
+		 						$("#mainsearch_window_count").html(mainsearch_window_cnt+"개");
+		 						$("#mainsearch_fashion_count").html(mainsearch_fashion_cnt+"개");
+
+		 						if( mainsearch_brand_cnt == 0 ){
+		 							$("#mainsearch_result_brand").show();
+ 		 							bSearching1 = false;
+		 						}else{
+		 							$("#mainsearch_brand_search_box").show();
+		 							keywordSearchLoadHtml("/svc/search/web/kr/searchBrandList.do" ,"#mainsearch_brand_num","#mainsearch_brand_search",mainsearch_brand_cnt,6);
+		 						}
+		 						if( mainsearch_window_cnt == 0 ){
+		 							//alert(mainsearch_window_cnt);
+		 							$("#mainsearch_result_window").show();
+ 	 								bSearching2 = false;
+		 						}else{
+		 							$("#mainsearch_window_search_box").show();
+		 							keywordSearchLoadHtml("/svc/search/web/kr/searchShowWindowList.do" ,"#mainsearch_show_window_num","#mainsearch_window_search",mainsearch_window_cnt,4);
+		 						}
+		 						if( mainsearch_fashion_cnt == 0 ){
+		 							$("#mainsearch_result_fashion").show();
+	 								bSearching3 = false;
+		 						}else{
+		 							$("#mainsearch_fashion_search_box").show();
+		 							keywordSearchLoadHtml("/svc/search/web/kr/searchFashionStyleList.do" ,"#mainsearch_fashion_style_num","#mainsearch_fashion_search",mainsearch_fashion_cnt,5);
+		 						}
+		 					//}
+
+		 					//{"dataObject":{"mainsearch_total_cnt":575,"brand_cnt":479,"show_cnt":75,"fashion_cnt":21}}
+						},
+						error : function( e ) {
+							//alert("조회 오류\n"+e.status);
+ 						}
+					}
+			);
+		}
+		function hideAllHtmlPage(){
+ 			$("#mainsearch_brand_search_box").hide();
+			$("#mainsearch_fashion_search_box").hide();
+			$("#mainsearch_window_search_box").hide();
+			$("#mainsearch_result_brand").hide();
+	 		$("#mainsearch_result_window").hide();
+	 		$("#mainsearch_result_fashion").hide();			
+  		}
+		function mainsearchNextPage(name){
+			//alert("click="+name);mainsearch_brand_search_loading_btn
+			if(name=="brand"){
+				keywordSearchLoadHtml("/svc/search/web/kr/searchBrandList.do" ,"#mainsearch_brand_num","#mainsearch_brand_search",mainsearch_brand_cnt,6);
+			}else if(name=="window"){
+				keywordSearchLoadHtml("/svc/search/web/kr/searchShowWindowList.do" ,"#mainsearch_show_window_num","#mainsearch_window_search",mainsearch_window_cnt,4);
+			}else if(name=="fashion"){
+				keywordSearchLoadHtml("/svc/search/web/kr/searchFashionStyleList.do" ,"#mainsearch_fashion_style_num","#mainsearch_fashion_search",mainsearch_fashion_cnt,5);
+			}
+		}
+		function keywordSearchLoadHtml(url ,pageName,divName,cnt,limit){
+			//alert(url)
+			//$("#fashionNextPage").show();
+			$(divName+"_btn").hide();
+			$(divName+"_loading_btn").show();
+
+			if(pageName=="#mainsearch_brand_num"){
+				startMotion($('.motion-loading'));
+			}else if(pageName=="#mainsearch_show_window_num"){
+				startMotion($('.motion-loading2'));
+			}else if(pageName=="#mainsearch_fashion_style_num"){
+				startMotion($('.motion-loading3'));
+			}
+			$.ajax( // 화면의 데이타를 조회한다.
+				{
+					url:url,
+					dataType:"html",
+					type:"POST",
+		 			data:{
+						curr_page :  $(pageName).val()
+						,search_param2 : search_frame_keyword
+
+					},
+					success:function( data ) {
+						data = $.trim(data) ;
+						 //alert("data="+data.length);
+
+		 				if( data.length > 50 ){
+							if( cnt > 0 ){
+								//alert(" $(pageName).val() "+ $(pageName).val() )
+			 					if( $(pageName).val() ==  "1"){
+									$(divName).html(data);
+				 				}else{
+				 					$(divName).append(data);
+				 				}
+								$(divName+"_box").show();
+ 								if( cnt > limit ){
+									$(divName+"_btn").show();
+								}
+								$(divName+"_btn").show();
+								$(pageName).val(parseInt($(pageName).val())+1);
+
+		 					}
+						}else if(  $(pageName).val() != 1 ){
+							alert("마지막 페이지 입니다.");
+						}else{
+							//검색결과가 없습니다.
+							alert("검색결과가 없습니다.");
+
+						}
+		 				$(divName+"_btn").show();
+		 				$(divName+"_loading_btn").hide();
+
+		 				if(pageName=="#mainsearch_brand_num"){
+							bSearching1 = false;
+		 				}else if(pageName=="#mainsearch_show_window_num"){
+							bSearching2 = false;
+		 				}else if(pageName=="#mainsearch_fashion_style_num"){
+							bSearching3 = false;
+		 				}
+
+						//$("#fashionNextPage").hide();
+
+							//{"dataObject":{"mainsearch_total_cnt":575,"brand_cnt":479,"show_cnt":75,"fashion_cnt":21}}
+					},
+					error : function( e ) {
+						//alert("조회 오류\n"+e.status);
+						//$("#fashionNextPage").hide();
+ 		 				$(divName+"_btn").show();
+		 				$(divName+"_loading_btn").hide();
+		 				if(pageName=="#mainsearch_brand_num"){
+							bSearching1 = false;
+		 				}else if(pageName=="#mainsearch_show_window_num"){
+							bSearching2 = false;
+		 				}else if(pageName=="#mainsearch_fashion_style_num"){
+							bSearching3 = false;
+		 				}
+					}
+				}
+			);
+
+		}
+
+
+	});
+};

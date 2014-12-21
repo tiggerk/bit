@@ -5,7 +5,7 @@
 
 /*html,body { width: 100%; height: 100%;}*/
 html.home,body.home { background:#1f1f1f !important;}
-/* .home .wrapper {display: none;} */
+.home .wrapper {display: none;}
 
 
 .show-window { background: #fff ; min-height: 800px; height: 800px; position: relative;  overflow: hidden;}
@@ -40,7 +40,7 @@ html.home,body.home { background:#1f1f1f !important;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container a { display: block; position: relative; width: 332px; height:332px;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container a:focus .over {display:block;}  /* 2014-04-22 */
 .grid-by-slider .slider-content-container .slider-content .good.active .img-container a { width: 470px; height: 470px;}
-.grid-by-slider .slider-content-container .slider-content .good .img-container img { position: absolute; width: 332px; height: 332px; display: block; }
+.grid-by-slider .slider-content-container .slider-content .good .img-container img { /* position: absolute; */ margin: 0 auto; /* width: 332px; height: 332px;*/ height: 320px; display: block; }
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over { position: absolute; top:0; left:0; width: 100%; height:100%; display: block;background:url(../img/main/over-bg.png); display: none;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over .anim-obj { position: absolute; top:50%; left:50%; margin-left: -32px; margin-top: -35px;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over i { display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; background:url(../img/main/210_over.png) 50% 50% no-repeat;}
@@ -88,6 +88,39 @@ html.home,body.home { background:#1f1f1f !important;}
 .grid-by-list .list-index li { float:left; width: 9px; height: 9px;/* background: url(../img/main/icon-index.png);*/ margin-right: 14px; }
 .grid-by-list .list-index li.active { background: url(../img/main/icon-index.png); }
 .grid-by-list .list-index li a { display: block; width: 100%; height: 100%; text-indent: -9999em; overflow: hidden; }
+
+/*digit*/
+.digit-0 { background-position: 0 0 !important; }
+.digit-1 { background-position: 0 -100px !important;  }
+.digit-2 { background-position: 0 -200px !important;  }
+.digit-3 { background-position: 0 -300px !important;  }
+.digit-4 { background-position: 0 -400px !important;  }
+.digit-5 { background-position: 0 -500px !important;  }
+.digit-6 { background-position: 0 -600px !important;  }
+.digit-7 { background-position: 0 -700px !important;  }
+.digit-8 { background-position: 0 -800px !important;  }
+.digit-9 { background-position: 0 -900px !important;  }
+
+/*clock*/
+/* These CSS styles all apply to the SVG elements defined below */
+#clock {
+	/* styles for everything in the clock */
+	stroke: white;
+	/* black lines */
+	stroke-linecap: round;
+	/* with rounded ends */
+	fill: #000;
+/* on a light blue gray background */
+}
+#face { stroke-width: 0px;}
+/* clock face outline */
+#ticks { stroke-width: 2px; }
+/* lines that mark each hour */
+#hourhand {stroke-width: 3px;}
+/* wide hour hand */
+#minutehand {stroke-width: 3px;} /* narrow minute hand */
+#secondhand {stroke-width: 2px; stroke: #2dacfc}
+
 
 
 body > .loading { position: fixed; top:0; left:0; right:0; bottom: 0; background:#1f1f1f url(../img/common/loading.gif) no-repeat 50% 50%;}

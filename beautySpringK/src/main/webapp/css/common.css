@@ -85,10 +85,10 @@ caption strong, caption p{position:absolute; left:-10000px; top:auto;width:1px; 
 
 
 /* Left Menu */
-/*.container-news aside h2{background:none}
+.container-news aside h2{background:none}
 .container-news aside h2.member {background:url('../img/member/member_left_title.jpg') 0 0 no-repeat; }
 .container-news aside h2.mypage {background:url('../img/member/mypage_left_title.jpg') 0 0 no-repeat; }
-.container-news aside h2.customer {background:url('../img/customer/customer_left_title.jpg') 0 0 no-repeat; }*/
+.container-news aside h2.customer {background:url('../img/customer/customer_left_title.jpg') 0 0 no-repeat; }
 .container-news aside ul{padding:0 0 19px 0;}
 .container-news aside li{padding:8px 0 0 0; height:13px;}
 .container-news aside li:first-child{padding-top:0}
