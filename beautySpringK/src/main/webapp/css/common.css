@@ -1,24 +1,162 @@
-@CHARSET "UTF-8";
+@charset 'utf-8';
+/* Copyright 2011 ROUNDED. All Rights Reserved. */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* ***************  global *************** */
+html, body {margin:0; padding:0; font-family:'돋움','dotum','arial';/*overflow-x:hidden; overflow-y:hidden*/ -webkit-overflow-scrolling:touch}/* */
+body{min-height:500px; background:#f1f1f1}
+/*body {overflow-y:hidden} */
 
-* {
-	/* font-family: 'Nanum Gothic', '나눔고딕', 'Gulim'; */
-}
-body {
-	
-}
-#wrap {
-	width: 1200px;
-	height: 100%;
-	margin: 0 auto;
+/*
+  px to % conversions
+  -------------------
+  px  | %
+  -------------------
+  9 | 70
+  10  | 77
+  11  | 85
+  12  | 93
+  13  | 100
+  14  | 108
+  15  | 116
+  16  | 123.1
+  17  | 131
+  18  | 138.5
+  19  | 146.5
+  20  | 153.9
+  21  | 161.6
+  22  | 167
+  23  | 174
+  24  | 182
+  25  | 189
+  26  | 197
+  27  | 204
+  28  | 212
+  29  | 219
+  30  | 227
+  31  | 234
+  32  | 242
+*/
+
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden; } .clearfix { display:inline-block; }/*  ie-mac \*/ *html .clearfix {height: 1%;} .clearfix {display: block;}/* ie-mac */
+
+/* *********** other ********** */
+::selection {}
+summary {display:none}
+/* link */
+a {}
+a:link {text-decoration:none}
+a:visited {} 
+/*a:active {text-decoration:underline} 
+a:hover {text-decoration:underline}*/
+
+/* image */
+img {border:0; vertical-align:top}
+
+/* define */
+dl, dt, dd {margin:0px; padding:0px;} 
+div, p {margin:0px; padding:0px}
+
+/* list */
+ul, ol {list-style-type:none; margin:0px; padding:0px;}
+
+/* area */
+hr {display:none;}
+
+/* form */
+form {margin:0; padding:0;}
+form label, label {cursor:default;}
+select {vertical-align:middle; letter-spacing:0px}
+legend {display:none;}
+fieldset {margin:0; padding:0; border:none;}
+input {margin:0}
+
+table {margin:0px; padding:0px; border-spacing:0;}
+td {margin:0px; padding:0px; font-size:100%;}
+.notable{border-collapse:collapse; margin:0; padding:0; border-spacing:0; border:0 solid;}
+th {  font-weight:normal;}
+h1, h2, h3, h4, h5, h6, h7 {margin:0; padding:0;}
+/*caption {position:absolute; left:-10000px; top:auto;width:1px; height:1px; overflow:hidden;} */
+caption {width:0; height:0; font-size:0; line-height:0; overflow:hidden; visibility:hidden;}
+caption strong, caption p{position:absolute; left:-10000px; top:auto;width:1px; height:1px; overflow:hidden;}
+
+.p-r {position:relative;}
+
+.border {border:1px solid red}
+
+
+/* Left Menu */
+/*.container-news aside h2{background:none}
+.container-news aside h2.member {background:url('../img/member/member_left_title.jpg') 0 0 no-repeat; }
+.container-news aside h2.mypage {background:url('../img/member/mypage_left_title.jpg') 0 0 no-repeat; }
+.container-news aside h2.customer {background:url('../img/customer/customer_left_title.jpg') 0 0 no-repeat; }*/
+.container-news aside ul{padding:0 0 19px 0;}
+.container-news aside li{padding:8px 0 0 0; height:13px;}
+.container-news aside li:first-child{padding-top:0}
+.container-news aside li a{padding:0; height:13px;}
+
+.container-news section .navis a{text-decoration:none; font-family:'Nanum Gothic'; font-size:11px}
+.container-news section .navis a:hover {text-decoration:underline} /* 20140310 */
+.container-news section .navis a strong{text-decoration:underline; font-weight:normal}
+
+
+
+/* 20140304 add */
+
+div,p,span {margin:0; padding:0; font-family:'돋움','dotum','애플산돌고딕', 'Apple SD Gothic', 'Apple Gothic','arial',sans-serif;}/* */
+
+.pull-left { float:left;}
+.pull-right { float:right;}
+
+.diff-10 { height: 10px; display: block; margin: 0; padding: 0; }
+.diff-20 { height: 20px; display: block; margin: 0; padding: 0;}
+
+.hide { display: none;}
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
-footer {
-	height: 60px;
-	text-align: center;
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
-#clear {
-	clear: both;
+
+.clearfix:after {
+  clear: both;
 }
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}
+
+
+/* scrollbar */
+html {scrollbar-3dLight-Color: #eee; scrollbar-arrow-color: #999; scrollbar-base-color: #eee; scrollbar-Face-Color: #999; scrollbar-Track-Color: #eee; scrollbar-DarkShadow-Color: #eee; scrollbar-Highlight-Color: #eee; scrollbar-Shadow-Color: #eee}
+
+
+/* Chrome, Safari */
+::-webkit-scrollbar {width: 8px; height: 8px; border: 3px solid #eee;  }
+::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {display: block; height: 10px; background:  #eee}
+::-webkit-scrollbar-track {background: #eee; -webkit-border-radius: 10px; border-radius:10px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.2)}
+::-webkit-scrollbar-thumb {height: 50px; width: 50px; background: rgba(0,0,0,.5); -webkit-border-radius: 8px; border-radius: 8px; -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,.1);}
