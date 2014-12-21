@@ -1,0 +1,18 @@
+/* 절대 손대지 말것!!!!!!!!!!!!!!! 특히 기현이!!! */
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+* {
+	font-family: "Nanum Gothic", "nanum gothic", "나눔 고딕", "Gulim", sans-serif;
+}
+
+.wrap-chu {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.div-clear {
+	clear: both;
+}

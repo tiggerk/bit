@@ -1,0 +1,65 @@
+.anim-obj {display: block;}
+.anim-obj > .frame { display: block; width: 100%; height: 100%; }
+.anim-obj.weather-cloudy {width: 110px; height: 110px;}
+.anim-obj.weather-cloudy > .frame { background: url(../img/weather/cloudy.png); width: 110px; height: 110px;}
+
+
+.anim-obj.weather-snowy {width: 110px; height: 110px;}
+.anim-obj.weather-snowy > .frame { background: url(../img/weather/snowy.png); width: 110px; height: 110px;}
+
+
+.anim-obj.weather-rainy-snowy {width: 110px; height: 110px;}
+.anim-obj.weather-rainy-snowy > .frame { background: url(../img/weather/rainy-snowy.png); width: 110px; height: 110px;}
+
+
+.anim-obj.weather-clear {width: 110px; height: 110px;}
+.anim-obj.weather-clear > .frame { background: url(../img/weather/clear.png); width: 110px; height: 110px;}
+
+
+.anim-obj.weather-sunny {width: 110px; height: 110px;}
+.anim-obj.weather-sunny > .frame { background: url(../img/weather/sunny.png); width: 110px; height: 110px;}
+
+.anim-obj.weather-rainy {width: 110px; height: 110px;}
+.anim-obj.weather-rainy > .frame { background: url(../img/weather/rainy.png); width: 110px; height: 110px;}
+
+
+.anim-obj.weather-cloud2 {width: 110px; height: 110px;}
+.anim-obj.weather-cloud2 > .frame { background: url(../img/weather/cloud2.png); width: 110px; height: 110px;}
+
+
+.anim-obj.motion-drag {width: 77px; height: 44px;}
+.anim-obj.motion-drag > .frame { background: url(../img/motionicon/drag.png); width: 77px; height: 44px;}
+
+
+.anim-obj.motion-drag2 {width: 77px; height: 44px;}
+.anim-obj.motion-drag2 > .frame { background: url(../img/motionicon/drag2.png); width: 77px; height: 44px;}
+
+
+.anim-obj.motion-enter {width: 65px; height: 71px;}
+.anim-obj.motion-enter > .frame { background: url(../img/motionicon/enter.png); width: 65px; height: 71px;}
+
+.anim-obj.motion-more {width: 44px; height: 50px;}
+.anim-obj.motion-more > .frame { background: url(../img/motionicon/more.png); width: 44px; height: 50px;}
+
+.anim-obj.motion-more2 {width: 65px; height: 71px;}
+.anim-obj.motion-more2 > .frame { background: url(../img/motionicon/more2.png); width: 65px; height: 71px;}
+
+
+.anim-obj.motion-scroll {width: 65px; height: 71px;}
+.anim-obj.motion-scroll > .frame { background: url(../img/motionicon/scroll.png); width: 65px; height: 71px;}
+
+.anim-obj.motion-hall {width: 83px; height: 56px;}
+.anim-obj.motion-hall > .frame { background: url(../img/motionicon/hall.png); width: 83px; height: 56px;}
+
+
+.anim-obj.motion-hall2 {width: 83px; height: 56px;}
+.anim-obj.motion-hall2 > .frame { background: url(../img/motionicon/hall2.png); width: 83px; height: 56px;}
+
+.anim-obj.motion-loading {width: 44px; height: 50px;}
+.anim-obj.motion-loading > .frame { background: url(../img/common/more_loding2.png); width: 44px; height: 50px; margin:0 auto; display:block;}
+
+.anim-obj.motion-loading2 {width: 44px; height: 50px;}
+.anim-obj.motion-loading2 > .frame { background: url(../img/common/more_loding2.png); width: 44px; height: 50px; margin:0 auto; display:block;}
+
+.anim-obj.motion-loading3 {width: 44px; height: 50px;}
+.anim-obj.motion-loading3 > .frame { background: url(../img/common/more_loding2.png); width: 44px; height: 50px; margin:0 auto; display:block;}

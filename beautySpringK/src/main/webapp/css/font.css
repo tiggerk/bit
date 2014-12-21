@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+/* Nanumgothic */
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);*/
+
+/* MyriadPro-Regular */
+@font-face {
+font-family: 'MyriadPro-Regular';
+font-weight: normal;
+font-style: normal;
+src: url('font/MyriadPro-Regular.eot');
+src: url('font/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+url('font/MyriadPro-Regular.woff') format('woff'), 
+url('font/MyriadPro-Regular.ttf') format('truetype'), 
+url('font/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');}
+
+
+@font-face {
+font-family: 'MyriadPro-Bold';
+font-weight: normal;
+font-style: normal;
+src: url('font/myriadpro-bold-webfont.eot');
+src: url('font/myriadpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+url('font/myriadpro-bold-webfont.woff') format('woff'), 
+url('font/myriadpro-bold-webfont.ttf') format('truetype'), 
+url('font/MyriadPro-Bold.svg#MyriadPro-Bold') format('svg');}
+
+
+/* MyriadPro-Semibold */
+@font-face {
+font-family: 'MyriadPro-Semibold';
+font-weight: normal;
+font-style: normal;
+src: url('font/myriadpro-semibold-webfont.eot');
+src: url('font/myriadpro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+url('font/myriadpro-semibold-webfont.woff') format('woff'), 
+url('font/myriadpro-semibold-webfont.ttf') format('truetype'), 
+url('font/MyriadPro-Semibold.svg#MyriadPro-Semibold') format('svg');}
+
+
+@font-face{
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('font/NanumGothic.eot'); 
+  src: local('☺'), url('font/NanumGothic.woff') format('woff'); 
+}
+
+@font-face{
+  font-family: 'Nanum Gothic Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('font/NanumGothicBold.eot'); 	
+  src: local('☺'), url('font/NanumGothicBold.woff') format('woff'); 
+}
+
+
+@font-face{
+  font-family: 'Nanum Gothic Ex';
+  font-style: normal;
+  font-weight: bolder;
+  src: url('font/NanumGothicExtraBold.eot'); 	
+  src: local('☺'), url('font/NanumGothicExtraBold.woff') format('woff'); 
+}

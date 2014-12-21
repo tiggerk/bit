@@ -1,0 +1,147 @@
+@charset 'utf-8';
+
+.container-news .head-area.small {height:114px;} /* 2014-03-03 이종석 추가 */
+
+/* 2014-03-03 이종석 추가 */
+.fashion_style {min-height:1200px;}
+.fashion .head-area.view {display:none;}
+.fashion_style .option {margin-bottom:30px; display:none;}
+.fashion_style .option ul li {width:200px; float:left; display:inline; margin-bottom:15px;}
+.fashion_style .option ul li label {font:13px/13px 'MyriadPro-Bold'; color:#666; position:relative; overflow:hidden; padding:1px 0 1px 23px; background:url('/web/img/common/ico_checkbox.png') 0 0 no-repeat; display:inline-block;}
+.fashion_style .option ul li label.checked {background:url('/web/img/common/ico_checkbox_on.png') 0 0 no-repeat;}
+.fashion_style .option label input {position:absolute; top:0; left:-30px; width:400px; height:15px; z-index:1;}
+.fashion_style .option ul li label span {display:none;}
+.fashion_style .list-area ul li {width:250px; float:left; display:inline; margin-top:-1px; padding-left:250px; position:relative;}
+.fashion_style .list-area ul li .mo {display:none;}
+.fashion_style .list-area ul li .thumb {position:absolute; left:-1px; top:0; border:1px solid #e0e0e0; width:248px; height:248px; overflow:hidden;}
+.fashion_style .list-area ul li .thumb img {width:248px; height:248px;}
+.fashion_style .list-area ul li .thumb a {display:block;}
+.fashion_style .list-area ul li .thumb a:focus > .over {display:block;} /* 2014-04-22 추가 */
+.fashion_style .list-area ul li .thumb .over {position:absolute; left:0; top:0; width:100%; height:100%; background:url('/web/img/main/over-bg.png'); display:none; z-index:0;}
+.fashion_style .list-area ul li .thumb .over i {position:absolute; display:block; width:41px; height:48px; left:50%; top:50%; margin:-24px 0 0 -20px; background:url('/web/img/common/icon_over.png') 0 0 no-repeat; text-indent:-9999em;}
+.fashion_style .list-area ul li .info {height:212px; border:1px solid #e0e0e0; border-width:1px 1px 1px 0; padding:18px 10px 18px 20px;}
+.fashion_style .list-area ul li .info a{display:block; text-decoration:none} /* 20140410 */
+.fashion_style .list-area ul li .cate {font:11px/100% 'MyriadPro-Bold'; color:#666; padding-bottom:10px; background:url('/web/img/common/line_bottom.png') 0 100% no-repeat; margin-bottom:15px; display:block;} /* 20140311 */
+.fashion_style .list-area ul li .subject {font:800 18px/19px 'Nanum Gothic'; color:#333; display:block; height:45px;} /* 20140311 */
+.fashion_style .list-area ul li .text {font:12px/150%  'Nanum Gothic', "나눔고딕", "돋움", Dotum, Tahoma, sans-serif;  color:#666; display:block; height:110px; overflow:hidden;}
+/* 2014-04-22 수정 start */
+.fashion_style .list-area ul li .share {position:relative; width:74px;}
+.fashion_style .list-area ul li .share .btn-share {display:inline-block; width:24px; height:25px; overflow:hidden;}
+.fashion_style .list-area ul li .share .btn-share:hover img {margin-top:-25px;}
+.fashion_style .list-area ul li .share .share_list {display:none; position:absolute; left:24px;}
+.fashion_style .list-area ul li .share .share_list a {display:inline-block; height:25px; overflow:hidden; line-height:9999px; vertical-align:middle;}
+.fashion_style .list-area ul li .share .share_list a:hover .btn-share {display:block;}
+.fashion_style .list-area ul li .share .share_list a.s1 {background:url('/web/img/common/bt_share2.png') 0 0 no-repeat; width:25px;}
+.fashion_style .list-area ul li .share .share_list a.s1:hover {background:url('/web/img/common/bt_share2_on.png') 0 0 no-repeat;}
+.fashion_style .list-area ul li .share .share_list a.s2 {background:url('/web/img/common/bt_share3.png') 0 0 no-repeat; width:24px;}
+.fashion_style .list-area ul li .share .share_list a.s2:hover {background:url('/web/img/common/bt_share3_on.png') 0 0 no-repeat;}
+/* 2014-04-22 수정 end */
+.fashion_style .btn_more {text-align:center; margin-top:40px; display:none;}
+
+.show_window {min-height:1500px;}
+.show_window .option {margin-bottom:50px; text-align:center; display:none;}
+.show_window .option label {font:13px/13px 'MyriadPro-Bold'; color:#666; position:relative; overflow:hidden; padding:1px 0 1px 30px; background:url('/web/img/common/ico_checkbox.png') 0  0 no-repeat; display:inline-block; margin-right:25px; padding-bottom:20px; }
+.show_window .option label.checked {background:url('../img/common/ico_checkbox_on.png') 0 0 no-repeat;}
+.show_window .option label.last {margin:0;}
+.show_window .option label input {position:absolute; top:0; left:-400px; width:400px; height:15px; z-index:1;}
+.show_window .option label span {display:none;}
+.show_window .option_txt{padding:18px 0; margin-bottom:30px; font-size:14px; color:#666; line-height:18px; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; text-align:center} /* 20140417 */
+.show_window .item-group {*zoom:1;}
+.show_window .item-group:after {content:""; display:block; clear:both;}
+.show_window .item {float:left; width:263px; height:320px; text-align:center; position:relative; display:none;}
+.show_window .item.last {width:210px;}
+.show_window .item.last a {padding-right:0;}
+.show_window .item a {display:block; position:relative; width:210px; padding-right:53px;}
+.show_window .item a span {font-family:'MyriadPro-Bold';}
+.show_window .item span {display:block;}
+.show_window .item a span.over {display:none; position:absolute; left:0; top:0; background:url('/web/img/main/over-bg.png') 0 0 no-repeat; width:210px; height:210px; overflow:hidden;}
+.show_window .item a .img {margin-bottom:20px; width:210px; height:210px; -webkit-transition: all .2s ease-in-out;}
+.show_window .item a:hover .img { -webkit-transform: scale(1.05);}
+.show_window .item a span.over .icon {width:59px; height:68px; position:absolute; top:50%; left:50%; margin:-34px 0 0 -30px; display:block; cursor:pointer; text-indent:-9999px; overflow:hidden;}
+.show_window .item a span.over .icon.type1 {background:url('/web/img/common/icon_hover_type1.png') 0 0 no-repeat;}
+.show_window .item a span.over .icon.type2 {background:url('/web/img/common/icon_hover_type2.png') 0 0 no-repeat;}
+.show_window .item a span.over .icon.type3 {background:url('/web/img/common/icon_hover_type3.png') 0 0 no-repeat;}
+.show_window .item a span.over .icon.type4 {background:url('/web/img/common/icon_hover_type4.png') 0 0 no-repeat;}
+.show_window .item .btn-view:focus > .over {display:block;} /* 2014-04-22 추가 */
+.show_window .item .brand {font-size:14px; color:#333; margin-bottom:5px;}
+.show_window .item .name {font-size:11px; color:#666;}
+.show_window .item-detail {border-top:1px solid #c5c5c5; position:relative; overflow:hidden; display:none; width:1px; height:auto; left:50%; margin-bottom:20px;}
+.show_window .item-detail.top {display:block; width:100%; left:0;}
+.show_window .item-detail.top .detail-view1 {top:0;}
+.show_window .detail-view1 {width:100%; height:543px; overflow:hidden; position:relative; top:-544px; border-bottom:1px solid #c5c5c5;}
+.show_window .detail-view1 .img-area {float:left; width:470px; margin-left:35px;}
+.show_window .detail-view1 .big {width:470px; height:470px; margin:0 auto;}
+.show_window .detail-view1 .big img {width:470px; height:470px;}
+.show_window .detail-view1 .thumb {text-align:center;}
+.show_window .detail-view1 .thumb a {border:1px solid #e6e6e6; display:inline-block; margin-left:-1px; position:relative; z-index:1;}
+.show_window .detail-view1 .thumb a img {width:38px; height:38px;}
+.show_window .detail-view1 .thumb a.on, .show_window .detail-view1 .thumb a:hover {border:1px solid #333; z-index:2;}
+.show_window .detail-view1 .text-area {float:left; width:373px; padding-top:60px; position:relative; height:478px; margin-left:60px;}
+.show_window .detail-view1 .text-area .brand {font:30px/100% 'MyriadPro-Bold'; color:#000; display:block; margin-bottom:15px;}
+.show_window .detail-view1 .text-area .name {font:15px/110% 'MyriadPro-Semibold'; color:#737373; display:block; margin-bottom:50px;}
+.show_window .detail-view1 .text-area .price, .show_window .detail-view1 .text-area .store {display:block; font:13px 'MyriadPro-Semibold'; color:#757575; margin-bottom:5px;}
+.show_window .detail-view1 .text-area .price strong, .show_window .detail-view1 .text-area .store strong {display:inline-block; font:13px 'MyriadPro-Bold'; color:#1e1e1e; width:118px;}
+.show_window .detail-view1 .text-area .text {display:block; background:url('/web/img/common/line_bottom.png') 0 10px no-repeat; padding-top:25px; font:12px/150%  'Nanum Gothic', "나눔고딕", "돋움", Dotum, Tahoma, sans-serif; color:#1e1e1e; height:75px; overflow:hidden;}
+.show_window .detail-view1 .text-area .btns {margin-bottom:28px; display:block; height:28px;}
+.show_window .detail-view1 .text-area .btns a {display:inline-block; margin-left:9px; vertical-align:middle; overflow:hidden; height:28px;}
+.show_window .detail-view1 .text-area .btns a:first-child {margin-left:0;}
+.show_window .detail-view1 .text-area .btns a:hover img {margin-top:-28px; }
+.show_window .detail-view1 .text-area .more {position:absolute; bottom:29px; height:60px; left:0; display:block; width:100%;}
+.show_window .detail-view1 .text-area .more a {float:left; width:60px; height:60px; display:block; overflow:hidden; position:relative;}
+.show_window .detail-view1 .text-area .more a img {width:60px; height:60px;}
+.show_window .detail-view1 .text-area .more a .hover {display:none; position:absolute; left:0; top:0;}
+.show_window .detail-view1 .text-area .more a:hover .hover {display:block}
+.show_window .detail-view1 .text-area .more:hover .more_list {display:block;}
+.show_window .detail-view1 .text-area .more .more_list {display:none;}
+.show_window .detail-view1 .btn-close {position:absolute; display:block; width:25px; height:25px; right:0; top:25px;
+-webkit-transition: all .25s ease-out;
+-moz-transition: all .25s ease-out;
+-ms-transition: all .25s ease-out;
+-o-transition: all .25s ease-out;
+transition: all .25s ease-out;
+-webkit-transform: rotate(0deg);
+-moz-transform: rotate(0deg);
+-ms-transform: rotate(0deg);
+-o-transform: rotate(0deg);
+transform: rotate(0deg);
+}
+.show_window .detail-view1 .btn-close:hover {
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+transform: rotate(-90deg);
+}
+.show_window .detail-view2 {width:100%; height:543px; overflow:hidden; position:absolute; display:none; z-index:10; left:100%; top:0; background:#fff; border-bottom:1px solid #c5c5c5;}
+.show_window .detail-view2 .btn-back {position:absolute; display:block; width:38px; height:25px; right:0; top:25px;}
+.show_window .detail-view2 .title {font:11px 'MyriadPro-Bold'; color:#666; text-align:center; letter-spacing:2px; margin-top:45px;}
+.show_window .detail-view2 .brand {font:30px/135px 'MyriadPro-Bold'; color:#000; text-align:center; height:135px; background:url('../img/common/line_bottom2.png') 50% 100% no-repeat; margin-bottom:15px;}
+.show_window .detail-view2 .scroll {height:250px; overflow:auto; max-height:255px; min-height:255px;}
+.show_window .detail-view2 .scroll dl {margin-top:40px; padding-left:70px;}
+.show_window .detail-view2 .scroll dt {float:left; width:230px; font:14px 'MyriadPro-Bold'; color:#333;}
+.show_window .detail-view2 .scroll dd {margin-left:230px; font:12px/160% 'Nanum Gothic', "나눔고딕", "돋움", Dotum, Tahoma, sans-serif; color:#666;}
+.show_window .detail-view2 .scroll dd p{ font-family:'Nanum Gothic'!important; } /* 20140312 */
+.show_window .detail-view2 .scroll dd p span {padding:0;}
+.show_window .detail-view2 .scroll dd span {display:inline-block; padding:0 15px; font-family:'Nanum Gothic'!important; } /* 20140312 */
+.show_window .brand-item > div.item {float:left; width:368px; height:445px; margin:0; text-align:center; display:none;}
+.show_window .brand-item > div.item.bn {position:relative; width:264px; height:445px; text-align:center; padding:0; z-index:999;}
+.show_window .brand-item a {display:block; position:relative; width:100%; padding:0;}
+.show_window .brand-item a .img {width:368px; height:368px; -webkit-transition: all .2s ease-in-out;}
+.show_window .brand-item a:hover .img {-webkit-transform: scale(1.05);}
+.show_window .brand-item > div span {display:block; font-family:'MyriadPro-Bold'; position:relative; z-index:1;}
+.show_window .brand-item a span.over {display:none; position:absolute; left:0; top:0; background:url('../img/main/over-bg.png') 0 0 no-repeat; width:368px; height:368px; overflow:hidden;}
+.show_window .brand-item > div .brand {font-size:14px; color:#333; margin-bottom:5px;}
+.show_window .brand-item > div .name {font-size:11px; color:#666;}
+.show_window .brand-item a span.over .icon {width:74px; height:74px; position:absolute; top:184px; left:50%; margin:-37px 0 0 -37px; display:block; cursor:pointer; text-indent:-9999px; overflow:hidden;}
+.show_window .brand-item a span.over .icon.type1 {background:url('/web/img/common/icon_hover_type1.png') 0 0 no-repeat;}
+.show_window .brand-item a span.over .icon.type2 {background:url('/web/img/common/icon_hover_type2.png') 0 0 no-repeat;}
+.show_window .brand-item a span.over .icon.type3 {background:url('/web/img/common/icon_hover_type3.png') 0 0 no-repeat;}
+.show_window .brand-item a span.over .icon.type4 {background:url('/web/img/common/icon_hover_type4.png') 0 0 no-repeat;}
+.show_window .brand-item .inner-cont {border-top:1px solid #c5c5c5; margin-bottom:60px; display:none; clear:both;}
+.show_window .brand-item .inner-cont .title {height:89px; position:relative;}
+.show_window .brand-item .inner-cont .title p {font:17px/89px 'MyriadPro-Bold'; color:#000;}
+.show_window .brand-item .inner-cont .title .btn-close {position:absolute; display:block; width:25px; height:25px; right:0; top:50%; margin-top:-13px;}
+.show_window .brand-item .inner-cont .banner-mov {padding:30px 0 60px 0; border-bottom:1px solid #c5c5c5; height:460px;}
+.show_window .brand-item .inner-cont .banner-mov .video-area {float:left;}
+.show_window .brand-item .inner-cont .banner-mov .text-area {margin-left:700px; font:12px/160% Dotum, Tahoma, sans-serif; color:#666;}
+.show_window .btn_more {text-align:center; margin-top:40px; display:none;}
