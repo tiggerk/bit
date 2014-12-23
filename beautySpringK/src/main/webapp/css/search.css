@@ -1,9 +1,9 @@
 /* 2014-03-09 전체 업데이트 */
 .search-container { position: fixed; top:0; left:0; right: 0; bottom: 0; z-index:2000;}
 .search-container > .inner { margin: 0 auto;  min-width: 1000px; position: relative; height: 100%;}
-.search-container .btn-close { background:url(/web/img/search/btn-close.png) 50% 50%; width: 41px; height: 41px; position: absolute; top:44px; right: 44px; display: block; text-indent: -9999em; overflow: hidden; z-index: 100;}
+.search-container .btn-close { background:url(../img/search/btn-close.png) 50% 50%; width: 41px; height: 41px; position: absolute; top:44px; right: 44px; display: block; text-indent: -9999em; overflow: hidden; z-index: 100;}
 
-.csstransforms .search-container .btn-close { background-image: url(/web/img/search/btn-close.png) ;
+.csstransforms .search-container .btn-close { background-image: url(../img/search/btn-close.png) ;
 -webkit-transition: all .25s ease-out;
    -moz-transition: all .25s ease-out;
     -ms-transition: all .25s ease-out;
@@ -25,11 +25,11 @@
              }
 
 
-.search-page  { position: absolute; top:0; left:0; right: 0; bottom: 0; background:url(/web/img/search/pattern-bg.png); overflow: auto;   color: #fff;}
+.search-page  { position: absolute; top:0; left:0; right: 0; bottom: 0; background:url(../img/search/pattern-bg.png); overflow: auto;   color: #fff;}
 
 .search-page .search-page-header { margin: 0 auto; width: 1000px; padding-top: 120px; position: relative; margin-bottom: 60px;}
-.search-page h1 { background: url(/web/img/search/title-search.png) no-repeat; width:110px; height: 40px; text-indent: -9999em; overflow: hidden; margin-bottom: 30px; }
-.search-page .desc { background: url(/web/img/search/desc-search.png) no-repeat; width: 550px; height: 36px; text-indent: -9999em; overflow: hidden;}
+.search-page h1 { background: url(../img/search/title-search.png) no-repeat; width:110px; height: 40px; text-indent: -9999em; overflow: hidden; margin-bottom: 30px; }
+.search-page .desc { /* background: url(../img/search/desc-search.png) no-repeat; */ width: 550px; height: 36px; text-indent: -9999em; overflow: hidden;}
 
 .search-page .search-page-result input.keyword { font-family: 'MyriadPro-Semibold','Nanum Gothic', '나눔고딕','돋움','dotum','AppleSDGothic', 'AppleGothic', Helvetica, sans-serif; font-size: 40px; line-height: 50px;  text-transform: none; margin-bottom: 10px; border:0; width: 100%; background: transparent; outline:none; color: #fff; width:540px; vertical-align:middle;}
 .search-page .search-page-result .search-line {border-bottom:1px solid #e5e5e5; width:602px;}
@@ -60,15 +60,15 @@
 .search-page .search-result-box h2 {margin-bottom:20px;}
 .search-page .search-result-box h2 strong {display:inline-block; overflow:hidden; height:12px; line-height:9999em; margin-right:10px; vertical-align:middle;}
 .search-page .search-result-box h2 span {font-size:12px;}
-.search-page .search-result-box .btn-floor {display:block; width:136px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-floor.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-floor {display:block; width:136px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('../img/search/btn-floor.png') 0 0 no-repeat;}
 .search-page .search-result-box .btn-floor:hover {background:url('/web/img/search/btn-floor_on.png') 0 0 no-repeat;}
-.search-page .search-result-box .btn-show {display:block; width:208px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-showwindow.png') 0 0 no-repeat;}
-.search-page .search-result-box .btn-show:hover {background:url('/web/img/search/btn-showwindow_on.png') 0 0 no-repeat;}
-.search-page .search-result-box .btn-fashion {display:block; width:222px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('/web/img/search/btn-fashion.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-show {display:block; width:208px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url('../img/search/btn-showwindow.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-show:hover {background:url('../img/search/btn-showwindow_on.png') 0 0 no-repeat;}
+.search-page .search-result-box .btn-fashion {display:block; width:222px; height:28px; overflow:hidden; margin:0 auto; text-indent:-9999em; background:url(../img/search/btn-fashion.png') 0 0 no-repeat;}
 .search-page .search-result-box .btn-fashion:hover {background:url('/web/img/search/btn-fashion_on.png') 0 0 no-repeat;}
-.search-page .search-result-box .result-brand h2 strong {background:url('/web/img/search/title-brand.png') 0 50% no-repeat; width:71px;}
-.search-page .search-result-box .result-show h2 strong {background:url('/web/img/search/title-showwindow.png') 0 50% no-repeat; width:134px;}
-.search-page .search-result-box .result-fashion h2 strong {background:url('/web/img/search/title-fashion.png') 0 50% no-repeat; width:148px;}
+.search-page .search-result-box .result-brand h2 strong {background:url('../img/search/title-brand.png') 0 50% no-repeat; width:71px;}
+.search-page .search-result-box .result-show h2 strong {background:url('../img/search/title-showwindow.png') 0 50% no-repeat; width:134px;}
+.search-page .search-result-box .result-fashion h2 strong {background:url('../img/search/title-fashion.png') 0 50% no-repeat; width:148px;}
 .search-page .search-result-box .result-brand, .search-page .search-result-box .result-show {margin-bottom:80px;}
 
 .search-page .search-result-box .result-brand .list {padding:20px 0 10px;}

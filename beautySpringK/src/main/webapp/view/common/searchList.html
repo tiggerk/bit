@@ -1,0 +1,132 @@
+<!-- 원래는 searchList.do 였음.. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Beauty Chu~♥ | Search</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script><!---->
+<script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+</head>
+
+<body>
+	<div class="search-container">
+		<input type="hidden" id="mainsearch_brand_num">
+		<input type="hidden" id="mainsearch_show_window_num">
+		<input type="hidden" id="mainsearch_fashion_style_num">
+		<input type="hidden" id="mainsearch_search_param2">
+ 
+		<div class="inner">
+			<!-- <a href="#" class="btn-close" title="검색창 닫기">검색창 닫기</a> 20140409 위치 수정-->
+			<div class="search-page">
+
+				<div class="search-page-header">
+					<h1>Search</h1>
+					<div class="desc">
+						Beauty Chu~♥ 검색 서비스입니다. 검색어를 입력하여 원하시는 정보를 정확하고 빠르게 찾아보세요.
+						<em>결과박스를 클릭하시면 해당 상세화면으로 이동할 수 있습니다.</em>
+					</div>
+				</div>
+				<!-- 2014-03-09 start -->
+				<div class="search-page-body">
+					<div class="search-page-result">
+						<div class="search-line">
+							<input type="text" class="keyword" id="search_frame_keyword" title="검색어 입력" autocomplete="off" name="keyword" placeholder="검색어를 입력하세요" /><a href="javascript:void(0);"><img src="../img/search/btn-search.png" title="검색" class="btn-search" id="search_frame_submit" /></a>
+						 </div>
+						<p class="result" id="result_count"></p>
+					</div>
+ 					<div class="search-result-box"  style="display:none;" id="mainsearch_result_box">
+						<div class="result-brand" >
+							<h2 ><strong>BRAND</strong><span id="mainsearch_brand_count">0개</span></h2>
+							<!-- 검색 결과 없을때 -->
+							<div class="list nodata" style="display:none;" id="mainsearch_result_brand">
+								<p class="text">검색어에 맞는 결과가 없습니다.<br />층별안내 페이지에서 원하는 브랜드를 찾아보세요.</p>
+								<p><a href="/svc/shop_info/web/kr/shopInfoList.do" class="btn-floor">층별안내 바로가기</a></p>
+							</div>
+							<!-- //검색 결과 없을때 -->
+							<!-- 검색 결과 있을때 -->
+							<div class="list" id="mainsearch_brand_search_box" style="display:none;" >
+								<ul class="clearfix" id="mainsearch_brand_search">
+									 
+									 <!--            DATA            -->
+								</ul>
+								<!-- //검색 결과 있을때 -->
+							   <p class="btn-list" id="mainsearch_brand_search_btn"><a href="javascript:"><img src="/web/img/search/btn-list-more.png" alt="더보기" /></a></p>
+								<p class="btn-list" id="mainsearch_brand_search_loading_btn" style="display:none;"><span class="anim-obj motion-loading" frames="106" fps="30" img-height="50"><span class="frame sprite"></span></span></p>								
+							</div>
+							
+						</div>
+						
+						
+						
+						
+						
+						
+						<div class="result-show"  >
+							<h2><strong>SHOW WINDOW</strong><span id="mainsearch_window_count">0개</span></h2>
+							<!-- 검색 결과 없을때 -->
+							<div class="list nodata" id="mainsearch_result_window" style="display:none;">
+								<p class="text">검색어에 맞는 결과가 없습니다.</p>
+								<p><a href="/svc/show_window/web/kr/showWindowList.do" class="btn-show">SHOW WINDOW 바로가기</a></p>
+							</div>
+							<!-- //검색 결과 없을때 -->
+							<!-- 검색 결과 있을때 -->
+							<div class="list"  style="display:none;" id="mainsearch_window_search_box" >
+								<ul class="clearfix"    id="mainsearch_window_search">
+									
+
+ 
+<!--   data      -->
+
+
+								</ul>
+								<!-- 리스트 닫기 -->
+								<p class="btn-list"  id="mainsearch_window_search_btn"><a href="javascript:void(0);"><img src="../img/search/btn-list-more.png" alt="리스트 닫기" /></a></p>
+								<p class="btn-list" id="mainsearch_window_search_loading_btn" style="display:none;"><span class="anim-obj motion-loading2" frames="106" fps="30" img-height="50"><span class="frame sprite"></span></span></p>								
+								<!-- //리스트 닫기-->
+							</div>
+							<!-- //검색 결과 있을때 -->
+						</div>
+						
+						
+						<div class="result-fashion">
+							<h2><strong>FASHION &amp; STYLE</strong><span id="mainsearch_fashion_count">0개</span></h2>
+							<!-- 검색 결과 없을때 -->
+							<div class="list nodata"  id="mainsearch_result_fashion" style="display:none;">
+								<p class="text">검색어에 맞는 결과가 없습니다.</p>
+								<p><a href="/svc/fashion_style/web/kr/fashionStyleList.do" class="btn-fashion">FASHION &amp; STYLE 바로가기</a></p>
+							</div>
+							<!-- //검색 결과 없을때 -->
+							<!-- 검색 결과 있을때 -->
+							<div class="list"  style="display:none;" id="mainsearch_fashion_search_box" >
+								<ul class="clearfix"  id="mainsearch_fashion_search">
+									
+
+
+	<!--              data               -->
+
+
+
+								</ul>
+								<p class="btn-list"  id="mainsearch_fashion_search_btn" style="display:none;">
+									<a href="javascript:void(0);"><img src="/web/img/search/btn-list-more.png" alt="더보기" /></a>
+								</p> 
+								<p class="btn-list" id="mainsearch_fashion_search_loading_btn" style="display:none;"><span class="anim-obj motion-loading3" frames="106" fps="30" img-height="50"><span class="frame sprite"></span></span></p>
+							</div>
+							<!-- //검색 결과 있을때 -->
+						</div>
+		 		
+																
+					</div>
+				</div>
+				<!-- 2014-03-09 end -->
+			</div>
+			<a href="#" class="btn-close" title="검색창 닫기">검색창 닫기</a>
+		</div>
+	</div>
+</body>
+</html>

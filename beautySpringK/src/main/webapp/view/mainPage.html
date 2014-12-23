@@ -1,0 +1,1376 @@
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+ 
+ 
+    
+ 
+
+ <!-- 영문인 경우-->
+   
+<!DOCTYPE html>
+<html lang="ko" class="home">
+<head>
+<title>메인 - 갤러리아 명품관</title>
+
+
+<meta property="og:description" content="갤러리아 명품관 홈페이지에 오신걸 환영합니다." />
+<meta property="og:url" content="http://dept.galleria.co.kr/svc/shopping_news/web/kr/shoppingNewsView.do?news_seq="/>
+
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="http://dept.galleria.co.kr/favicon.ico" />
+<link rel="apple-touch-icon-precomposed" href="http://dept.galleria.co.kr/siteicon.png" />
+<meta name="viewport" content="width=1060" />
+
+<link rel="stylesheet" type="text/css" href="/web/css/basic.css"/>
+<script type="text/javascript" src="/web/js/modernizr.min.js"></script>
+<script type="text/javascript" src="/web/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/web/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/web/js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="/web/js/common.js"></script>
+<script type="text/javascript" src="/web/js/custom.js"></script>
+<script type="text/javascript" src="/web/js/basic.js"></script>
+<script type="text/javascript" src="/web/js/motion.js"></script> 
+<script type="text/javascript" src="/web/js/jquery.motio.min.js"></script>
+
+	<script>
+		window.intro = 'yes';
+	</script>
+	<!-- page가 home일 경우에만 로드하는 js -->
+	<script type="text/javascript" src="/web/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="/web/js/jquery.event.drag-2.2.js"></script>
+	<script type="text/javascript" src="/web/js/jquery.event.drag.live-2.2.js"></script>
+	<script type="text/javascript" src="/web/js/home.js"></script>
+	<script type="text/javascript" src="/web/js/home.luxury-hall-info.js"></script>
+	<script type="text/javascript" src="/web/js/home.show-window.js"></script>
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/web/js/html5.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="home">
+	<div class="skip-menu" tabindex="1"><a href="#content">본문바로가기</a> | <a href="#nav">주메뉴바로가기</a> | <a href="#galleriaSub">하위메뉴 바로가기</a> | <a href="#footer">하단메뉴 바로가기</a></div>
+	<!-- wrapper -->
+	<div class="wrapper">
+	
+<script type="text/javascript">
+<!--
+		function twitterShareURL(url){
+			var href = "";
+			var name = "";
+			var pageURL = url;
+			var msg = "갤러리아 명품관";
+			target="_blank";
+
+				href = "http://twitter.com/share?url="+pageURL+"&text="+encodeURI(msg);
+				name = "twitter";
+			window.open(href, target);
+		}
+
+		function facebookShareURL(url){
+			var facebookMsg=" 갤러리아 명품관";
+			var facebookUrl= url;
+			var facebookLinkURL = facebookMsg + facebookUrl;
+			var str = facebookMsg + facebookUrl;
+			var pageURL = url;
+			url ="http://www.facebook.com/sharer.php?u="+ encodeURI(pageURL) + "&t=" + encodeURI(facebookLinkURL);
+			target="_blank";
+			window.open(url,target);
+		}
+//-->
+</script>
+	
+	
+	
+
+<!-- 로그인 체크 -->
+
+		<!-- SSO 인증을 위한 Cookie 체크 -->
+		<script type="text/javascript">
+		function getCookie(name) {
+			var nameOfCookie = name + "=";
+			var x = 0;
+			while ( x <= document.cookie.length ) {
+				var y = (x+nameOfCookie.length);
+				if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+					if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+						endOfCookie = document.cookie.length;
+					return unescape( document.cookie.substring( y, endOfCookie ) );
+				}
+				x = document.cookie.indexOf( " ", x ) + 1;
+				if ( x == 0 ) break;
+			}
+			return "";
+		}
+		
+		var checkLogin = getCookie("kalogin");
+		
+		if(checkLogin != "") {
+			// SSO 인증토큰 요청
+			top.location.href = "/sso/login_post_proc.jsp?returnurl=http://dept.galleria.co.kr";
+		}
+		</script>
+
+
+
+
+
+
+
+     
+
+
+
+
+ <!-- 영문인 경우-->
+   
+		<!-- #header -->
+		<header id="header">
+			<div class="inner">
+				<h1 class="logo"><a href="/svc/main_page/web/kr/mainPage.do?intro=no">the galleria</a></h1>
+				<!-- #nav -->
+				<nav id="nav">
+					<!-- gnb -->
+					<ul class="gnb">
+						<li class="m1" delay-in="100">
+							<a href="/svc/shopping_news/web/kr/shoppingNewsList.do"><span class="over"></span><span class="label">STORE INFO</span></a>
+							<div class="sub-menu">
+								<ul>
+									<li class="m1"><a href="/svc/shopping_news/web/kr/shoppingNewsList.do">쇼핑뉴스</a></li>
+									<li class="m2"><a href="/svc/realtime_ranking/web/kr/realtimeRanking.do">실시간 인기 브랜드</a></li>
+									<li class="m3"><a href="/svc/shop_info/web/kr/shopInfoList.do">층별안내</a></li>
+									<li class="m4"><a href="/web/luxury_contact.jsp">오시는 길</a></li>
+									<!-- <li class="m5"><a href="/svc/notice/web/kr/noticeList.do">공지사항</a></li> -->
+									<li class="m6"><a href="http://branch.galleria.co.kr/index.jsp" target="_blank" title="다른 지점보기">다른 지점보기</a></li>
+									<li class="m7"><a href="/web/jejuDutyMain.jsp"  title="갤러리아 면세점">갤러리아 면세점</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="m2" delay-in="100">
+							<a href="/svc/show_window/web/kr/showWindowList.do"><span class="over"></span><span class="label">Show Window</span></a>
+							<div class="sub-menu">
+								<ul>
+									<!--<li class="m1"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=ALL,">All</a></li> -->
+									<li class="m1"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0401">New Arrival</a></li>
+									<li class="m2"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0402">Today's Pick</a></li>
+									<!-- <li class="m6"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0416">All About Series</a></li> -->
+									<li class="m7"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0426">Seasonal Essentials</a></li>
+									<!-- <li class="m8"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0433">Pop-up Store </a></li> -->
+									<li class="m6"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0435">All About Series</a></li>
+									<!--li class="m3"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0403,">Season's Best</a></li>
+									<li class="m4"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0404,">Buyer's Choice</a></li>
+									<li class="m5"><a href="/svc/show_window/web/kr/showWindowList.do?search_param1=L0405,">Galleria Brand</a></li-->
+								</ul>
+							</div>
+							<!-- Show Window Product -->
+							<div class="good-list-container">
+								<h2 class="title">Show Window Product</h2>
+								<!-- good-list -->
+								<ul class="good-list lined" start-index="2">
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1311"><img src="http://dept.galleria.co.kr/upload//show_window/210/508a1d7e-08fe-48ea-a12f-739c37811f65.jpg" alt="Padding" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1311" class="good-name">
+												<span class="label">CANADA GOOSE</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1303"><img src="http://dept.galleria.co.kr/upload//show_window/210/6c7a1f66-5c97-4653-a265-7d975e9e77e3.jpg" alt="Padding Coat" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1303" class="good-name">
+												<span class="label">SOLID HOMME</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1347"><img src="http://dept.galleria.co.kr/upload//show_window/210/e466acc0-7f04-4eb2-8bc0-da76c6964cf7.jpg" alt="SWEAT DRESS / SNEAKERS" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1347" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1346"><img src="http://dept.galleria.co.kr/upload//show_window/210/548c9847-26a5-4340-98c0-14c198506356.jpg" alt="DRESS / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1346" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1345"><img src="http://dept.galleria.co.kr/upload//show_window/210/53bb64e2-cc9c-4f8b-bd41-42a1a76c3a14.jpg" alt="JACKET / T-SHIRTS / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1345" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1344"><img src="http://dept.galleria.co.kr/upload//show_window/210/8e87ec5c-1e9e-45af-a9f0-c543e9e30b59.jpg" alt="TRACK-TOP / TRACK-JACKET / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1344" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1343"><img src="http://dept.galleria.co.kr/upload//show_window/210/aa9a2cd2-7cc7-4bcf-b697-83fb307819a4.jpg" alt="DRESS / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1343" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1342"><img src="http://dept.galleria.co.kr/upload//show_window/210/29304948-c9c7-46ff-aaa4-a4ca73b8638c.jpg" alt="CREW NECK / LEGGINGS / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1342" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1341"><img src="http://dept.galleria.co.kr/upload//show_window/210/dbe7ff11-1738-4d14-9e6a-40afccb24c59.jpg" alt="DRESS / JACKET / SHOES" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1341" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1321"><img src="http://dept.galleria.co.kr/upload//show_window/210/887eb7a6-ac9f-4ead-b3c1-609139309fed.jpg" alt="JERSEY / BAG / SNEAKERS" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1321" class="good-name">
+												<span class="label">adidas Originals x Mary Katrantzou</span>
+											</a>
+										</div>
+									</li>
+								
+									<li>
+										<div class="good-box">
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1312"><img src="http://dept.galleria.co.kr/upload//show_window/210/a833b7df-4bed-4dbf-ab4c-4a6d504634e3.jpg" alt="Padding" class="good-img"></a>
+											<a href="/svc/show_window/web/kr/showWindowList.do?win_seq=1312" class="good-name">
+												<span class="label">BEAN POLE</span>
+											</a>
+										</div>
+									</li>
+									
+									 
+								</ul><!-- good-list -->
+							</div><!-- Show Window Product -->
+						</li>
+						<li class="m3" delay-in="100">
+							<a href="/svc/fashion_style/web/kr/fashionStyleList.do"><span class="over"></span><span class="label">Style</span></a>
+							<div class="sub-menu">
+								<ul>
+									<!-- <li class="m1"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=ALL,">All</a></li> -->
+									<li class="m2"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=L0701,">What to Wear</a></li>
+									<li class="m3"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=L0702,">Beauty Flash</a></li>
+									<li class="m4"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=L0703,">Timeless Value</a></li>
+									<li class="m5"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=L0704,">Lifestyle</a></li>
+									<li class="m6"><a href="/svc/fashion_style/web/kr/fashionStyleList.do?search_param1=L0705,">Gentlmen Class</a></li>
+								</ul>
+							</div>
+							<!-- Fashion &amp; Style Content -->
+							<div class="good-list-container">
+								<h2 class="title">Fashion &amp; Style Content</h2>
+								<ul class="good-list" start-index="3">
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=524"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/15/2014121511092797935.jpg" alt="더욱 모던하고 고급스러워진 노비스(Nobis)의 2014 F/W COLLECTION"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=524" class="good-name">
+												<span class="label">EMBRACE THE NOBIS CULTURE</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=523"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/15/2014121511072523926.jpg" alt="까르뱅(CARVEN)에서 선보이는 섹시한 레오퍼드 프린트의 재킷과 펜슬 스커트"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=523" class="good-name">
+												<span class="label">SEXY LEOPARD LOOK</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=522"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/15/2014121511045856921.jpg" alt="스타일리시한 겨울 아우터로 손색없는 이로(IRO)의 앳 우드 코트(AT WOOD COAT)"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=522" class="good-name">
+												<span class="label">AT WOOD STYLISH COAT</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=520"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/15/2014121511005174052.jpg" alt="도시적인 라이프 스타일의 트렌드를 제시하는 필립 플레인(Philipp Plein)의 타탄 체크 패딩 재킷"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=520" class="good-name">
+												<span class="label">TARTAN CHECK PADDING</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=519"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/11/2014121113355980518.jpg" alt="크리스마스를 빛나게 하는 최고의 아이템들(Key Item)과 잊지 못할 순간(Key Moments)를 경험할 수 있는, 매년 크리스마스에 꼭 찾아가야 할 그 곳(Key destination) 갤러리아입니다"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=519" class="good-name">
+												<span class="label">CHRISTMAS KEY MOMENTS</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=517"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/10/2014121011110010766.jpg" alt="HAPPY NEW YEAR! VIENNA BOYS CANTABILE"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=517" class="good-name">
+												<span class="label">VIENNA BOYS CHOIR</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=516"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/03/2014120311162520191.jpg" alt="패딩 점퍼와 재미있는 프린트의 패션 아이템이 완벽한 겨울 스타일링을 완성해주는 조력자가 되어줄 것"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=516" class="good-name">
+												<span class="label">WINTER ESSENTIALS</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=515"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/03/2014120311133077683.jpg" alt="기존의 거칠고 투박한 밀리터리 룩은 잊어도 좋다"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=515" class="good-name">
+												<span class="label">MILITARY LUXE</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=514"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/03/2014120311074762515.jpg" alt="캐시미어 소재가 소복히 쌓인 눈처럼 포근한 화이트 컬러의 순수한 이미지를 배가시킨다"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=514" class="good-name">
+												<span class="label">INNOCENT WHITE</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=513"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/03/2014120311064173990.jpg" alt="그린과 레드 컬러의 대비, 화려한 골드 컬러 장식까지!"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=513" class="good-name">
+												<span class="label">GO BOLD!</span>
+											</a>
+										</div>
+									</li>
+									
+									<li>
+										<div class="good-box">
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=512"><img  src="http://imgdm.galleria.co.kr/upload/curation/2014/12/03/2014120311052785389.jpg" alt="브로케이드 소재와 시퀸을 빼곡하게 수놓은 패션 아이템으로 좌중의 시선을 압도하는 근사한 파티 룩을 연출해보자"  class="good-img"></a>
+											<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=512" class="good-name">
+												<span class="label">GLITTERING EFFECT</span>
+											</a>
+										</div>
+									</li>
+									
+	 
+								</ul>
+							</div><!-- Fashion &amp; Style Content -->
+						</li>
+						<li class="m4" delay-in="300">
+							<a href="/web/galleria_card.jsp"><span class="over"></span><span class="label">Card&Point</span></a>
+							<div class="sub-menu">
+								<ul>
+									<li class="m1"><a href="/web/galleria_card.jsp">갤러리아카드</a></li>
+									<li class="m2"><a href="/web/g_galleria_card.jsp">G.갤러리아카드</a></li>
+									<li class="m3_02"><a href="/web/galleria_point.jsp">갤러리아 포인트</a></li>
+									<li class="m3"><a href="/web/voucher_01.jsp">상품권</a></li>
+									<li class="m4"><a href="/web/giftcard_01.jsp">기프트카드</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="m5" delay-in="300">
+							<a href="/web/customer_1.jsp"><span class="over"></span><span class="label">Customer Service</span></a>
+							<div class="sub-menu sub_depth6">
+								<ul>
+									<li class="m1"><a href="/web/customer_1.jsp">VIP 혜택안내</a></li>
+									<li class="m2"><a href="/web/customer_2.jsp">프리미엄 서비스</a></li>
+									<li class="m3"><a href="/svc/conv_area/web/kr/convAreaList.do">편의시설</a></li>
+									<li class="m4"><a href="/svc/faq_info/web/kr/faqInfoList.do">FAQ</a></li>
+									<li class="m5"><a href="/customer/voc/list.jsp">고객의 소리</a></li>
+									<!--<li class="m6"><a href="/svc/lost_found/web/kr/lostFoundList.do">습득물 게시판</a></li> -->
+									<li class="m7"><a href="/web/customer_8.jsp">소비자분쟁 해결기준</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul><!-- gnb -->
+				</nav><!-- #nav -->
+				<!-- sub-menu -->
+				<ul class="util-menu">
+					<!-- 로그아웃 시 노출 -->
+
+					<li class="login"><a href="/sso/login.jsp" title="로그인">login</a></li>
+					<li class="join"><a href="/member/join/agree.jsp" title="회원가입">Join</a></li> 
+
+					<li class="sitemap"><a href="/web/sitemap.jsp" title="사이트맵">Sitemap</a></li>
+					<li class="language toggle-menu">
+						<!-- class를 kor,eng,jpn,chn로 해당언어를 맞춰주세요! -->
+						<!-- 언어목록은 상단에 선택된 언어를 제외하고 리스팅하세요! -->
+
+						<a href="#more" class="kor" title="언어 더보기">Kor</a>
+
+ 					 
+						<ul class="language-list toggle-list">
+							<!--<li class="kor"><a href="#">Kor</a></li> -->
+
+							<li class="eng"><a href="/svc/main_page/web/en/mainPage.do">Eng</a></li>
+							<li class="jpn"><a href="/svc/main_page/web/jp/mainPage.do">Jpn</a></li>
+							<li class="chn"><a href="/svc/main_page/web/cn/mainPage.do">Chn</a></li>
+							
+						</ul>
+					</li>
+					<!--<li class="share toggle-menu">
+						<a href="#more" title="sns 바로가기">share</a>
+						<ul class="share-list toggle-list">
+							<li class="facebook"><a href="https://www.facebook.com/galleria.luxury" target="blank" title="facebook 새창열림">facebook</a></li>
+							<li class="twitter"><a href="https://twitter.com/Galleria_Luxury" target="blank" title="twitter 새창열림">twitter</a></li>
+							<li class="blog"><a href="http://blogdegalleria.tistory.com/" target="blank" title="blog 새창열림">blog</a></li>
+							<li class="app"><a href="/web/app.jsp" title="앱 보기">App</a></li>
+						</ul> 
+					</li>-->
+					<li class="search">
+						<a href="#" title="검색하기">Search</a>
+					</li>
+				</ul><!--sub-menu-->
+				<!-- under-1200일 때 나오는 버튼 -->
+				<a href="#" class="btn-show-util-menu">기타 메뉴 보여주기</a>
+			</div>
+
+			<!-- panel-util-menu : 가로 1200이하일 경우 활성화됨-->
+			<div class="panel-util-menu">
+				<div class="inner">
+					<ul class="sns-list pull-left">
+						<li class="blog"><a href="http://blogdegalleria.tistory.com/" target="blank" title="blog 새창열림">blog</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/galleria.luxury" target="blank" title="facebook 새창열림">facebook</a></li>
+						<li class="twitter"><a href="https://twitter.com/Galleria_Luxury" target="blank" title="twitter 새창열림">twitter</a></li>
+						<li class="app"><a href="/web/app.jsp" title="앱 보기">App</a></li>
+					</ul>
+					<a href="#" class="btn-search pull-right" title="검색하기">search</a>
+					<div class="clear"></div>
+
+					<a href="/sso/login.jsp" class="btn-login" title="로그인">login</a>
+					<a href="/member/join/agree.jsp" class="btn-join" title="회원가입">join</a>
+
+					<!-- <a href="#" class="btn-login">login</a>
+					<a href="#" class="btn-join">join</a>
+					<a href="#" class="btn-logout">logout</a>
+					<a href="#" class="btn-mypage">mypage</a> 20140312 -->
+					<div class="diff-20"></div>
+					<a href="/web/sitemap.jsp" class="btn-sitemap" title="사이트맵">sitemap</a>
+					<div class="diff-10"></div>
+					<div class="language-selector toggle-menu">
+					<!-- 언어목록은 상단에 선택된 언어를 제외하고 리스팅하세요! -->
+						<a href="#" class="btn-show-language" title="언어 더보기">
+
+						<span class="current kor">Kor</span>
+						
+						
+						</a>
+						<ul class="language-list toggle-list">
+							<!--<li class="kor"><a href="/svc/main_page/web/kr/mainPage.do">Kor</a></li> -->
+
+							<li class="eng"><a href="/svc/main_page/web/en/mainPage.do">Eng</a></li>
+							<li class="jpn"><a href="/svc/main_page/web/jp/mainPage.do">Jpn</a></li>
+							<li class="chn"><a href="/svc/main_page/web/cn/mainPage.do">Chn</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div><!-- panel-util-menu -->
+
+		</header><!-- #header -->
+
+ <!-- //국문인 경우-->
+ 
+ <form id="dataForm" method="POST">
+ 
+<input type="hidden" name="curr_page" id="curr_page" value="1" ><!-- curr_page -->
+<input type="hidden" name="search_param1"  id="search_param1" value="" > <!--   -->
+<input type="hidden" name="fs_seq" id="fs_seq" value="" > 
+<input type="hidden" name="num" id="num" value="" > 
+
+</form>
+
+
+	<!-- #content -->
+		<div id="content">
+			<div class="featured-slide">
+				<ul class="slides">
+
+			
+					<li>
+						<div class="banner">
+							<div class="banner-img" style="background-image:url(http://dept.galleria.co.kr/upload/main_visual/7b5c4606-77b1-42e8-ac23-e5b746adf25b.jpg);" title="COLOR YOUR TASTY CHRISTMAS" alt="COLOR YOUR TASTY CHRISTMAS"></div>
+
+							
+					
+							<a href='/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&curr_seq=1&news_seq=1042'  class="btn-link">페이지가기</a>
+ 
+ 						</div>
+					</li>
+					
+ 
+			
+					<li>
+						<div class="banner">
+							<div class="banner-img" style="background-image:url(http://dept.galleria.co.kr/upload/main_visual/7e811e22-c401-44c1-bde6-a11c13f2a172.jpg);" title="CHRISTMAS KEY DESTINATION &amp; MOMENTS" alt="CHRISTMAS KEY DESTINATION &amp; MOMENTS"></div>
+
+							
+					
+							<a href='/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&curr_seq=1&news_seq=1040'  class="btn-link">페이지가기</a>
+ 
+ 						</div>
+					</li>
+					
+ 
+			
+					<li>
+						<div class="banner">
+							<div class="banner-img" style="background-image:url(http://dept.galleria.co.kr/upload/main_visual/333fdd5f-af60-4135-a572-6c26e638cf4f.jpg);" title="2014 X-MAS POP-UP" alt="2014 X-MAS POP-UP"></div>
+
+							
+					
+							<a href='/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&curr_seq=1&news_seq=981'  class="btn-link">페이지가기</a>
+ 
+ 						</div>
+					</li>
+					
+ 
+			
+					<li>
+						<div class="banner">
+							<div class="banner-img" style="background-image:url(http://dept.galleria.co.kr/upload/main_visual/7f29abbd-18e6-4bb0-b40c-832dc8bde3ee.jpg);" title="바자 기프트북 " alt="바자 기프트북 "></div>
+
+							
+					
+							<a href='http://121.125.79.213/egalleria/free9/ecatalog.php?Dir=183' target='_blank' title='새창열림' class="btn-link">페이지가기</a>
+ 
+ 						</div>
+					</li>
+					
+ 
+			
+					<li>
+						<div class="banner">
+							<div class="banner-img" style="background-image:url(http://dept.galleria.co.kr/upload/main_visual/a1e55aec-3296-4a4b-987c-0445304e30d9.jpg);" title="BLACK DECEMBER" alt="BLACK DECEMBER"></div>
+
+							
+					
+							<a href='/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&curr_seq=1&news_seq=1001'  class="btn-link">페이지가기</a>
+ 
+ 						</div>
+					</li>
+					
+ 
+				</ul>
+				<i class="icon-scroll"><div class="anim-obj motion-scroll" frames="73" fps="30" img-height="71"><div class="frame sprite"></div></div></i>
+				<div class="slide-controls">
+					<button class="btn-pause">pause</button>
+					<button class="btn-play">play</button>
+					<button class="btn-prev">prev</button>
+					<ul class="indices">
+						<li class="active"><a href="#1">1</a></li>
+						<li><a href="#2">2</a></li>
+						<li><a href="#3">3</a></li>
+						<li><a href="#4">4</a></li>
+					</ul>
+					<button class="btn-next">next</button>
+				</div>
+
+			</div>
+
+			<div class="main-notice">
+				<h2>NOTICE</h2>
+				<ul class="notice-list">
+		
+				<li><a href="/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&news_seq=1080">갤러리아가 드리는 CHRISTMAS GIFT EVENT</a></li>
+		
+				<li><a href="/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&news_seq=1060">갤러리아 X-MAS KEY로 마음을 전하세요! 온라인 이벤트 당첨자 발표</a></li>
+		
+				<li><a href="/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&news_seq=1042">COLOR YOUR TASTY CHRISTMAS</a></li>
+		
+				<li><a href="/svc/shopping_news/web/kr/shoppingNewsView.do?curr_page=1&news_seq=1001">연말까지 30만원 이상 구매시 최대 12개월 무이자 할부</a></li>
+			
+				</ul>
+				<button class="nbtn-pause"><img src="/web/img/common/pause_btn.jpg" alt="일시정지"/></button>
+				<button class="nbtn-play"><img src="/web/img/common/play_btn.jpg" alt="play"/></button>
+			</div>
+
+			<!-- luxury-hall-info-container -->
+			<div class="luxury-hall-info-container">
+				<a href="#" class="btn-luxury-hall-info"><span class="label">luxury hall info</span><span class="anim-obj motion-hall2" frames="60" fps="15" img-height="57"><span class="frame sprite"></span></span><span class="over"></span></a>
+				<div class="luxury-hall-info">
+					<a href="#" class="btn-close" title="럭셔리 홀 인포 닫기">럭셔리 홀 인포 레이어 닫기</a>
+					<h1>LUXURY HALL</h1>
+					<div class="lhi-content">
+						<div class="today">
+							<strong>Today</strong>
+							<span class="date">2014.01.01 TUE</span>
+						</div>
+						<!-- current info -->
+						<div class="current-info">
+							<!-- time -->
+							<div class="time">
+								<!-- analog-watch -->
+								<div class="analog-watch">
+
+									<div class="widget front active" id="face">
+										<!-- design by janx, https://gist.github.com/janx/1188550 -->
+									    <!-- viewBox is coordinate system, width and height are on-screen size -->
+									    <svg id="clock" viewBox="0 0 100 100" width="60" height="60">
+									 
+									      <!-- <circle id="face" cx="50" cy="50" r="45"/> -->
+									 
+									      <g id="ticks">
+									        <!-- 12 hour tick marks -->
+									        <line x1='50' y1='10.000' x2='50.00' y2='15.00'/>
+									        <!-- <line x1='72.50' y1='11.03' x2='70.00' y2='15.36'/> -->
+									        <!-- <line x1='88.97' y1='27.50' x2='84.64' y2='30.00'/> -->
+									        <line x1='90.00' y1='50.00' x2='85.00' y2='50.00'/>
+									        <!-- <line x1='88.97' y1='72.50' x2='84.64' y2='70.00'/> -->
+									        <!-- <line x1='72.50' y1='88.97' x2='70.00' y2='84.64'/> -->
+									        <line x1='50.00' y1='90.00' x2='50.00' y2='85.00'/>
+									        <!-- <line x1='27.50' y1='88.97' x2='30.00' y2='84.64'/> -->
+									        <!-- <line x1='11.03' y1='72.50' x2='15.36' y2='70.00'/> -->
+									        <line x1='10.000' y1='50.00' x2='15.00' y2='50.00'/>
+									        <!-- <line x1='11.03' y1='27.50' x2='15.36' y2='30.00'/> -->
+									        <!-- <line x1='27.50' y1='11.03' x2='30.00' y2='15.36'/> -->
+									      </g>
+									 
+									      
+									 
+									      <!-- Draw hands pointing straight up. We rotate them in the code. -->
+									      <g id="hands"> <!-- Add shadows to the hands -->
+									        <line id="hourhand" x1="50" y1="50" x2="50" y2="30"/>
+									        <line id="minutehand" x1="50" y1="50" x2="50" y2="20"/>
+									        <line id="secondhand" x1="50" y1="50" x2="50" y2="12"/>
+									      </g>
+									    </svg>
+									</div>
+								</div><!-- analog-watch -->
+
+								<!-- digital-watch -->
+								<div class="digital-watch">
+									<span class="digit-0" id="hh1">1</span>
+									<span class="digit-0" id="hh2">2</span>
+									<span class="digit-0" id="mm1">1</span>
+									<span class="digit-0" id="mm2">2</span>
+								</div><!-- digital-watch -->
+							</div><!-- time -->
+							
+							<!-- weather -->
+							<div class="weather">
+								<div class="status">
+									<div class="anim-obj weather-clear" frames="10" fps="20" img-height="160"><div class="frame sprite"></div></div>
+								</div>
+								<strong class="temperature">
+									<span class="minus" style="display:none;">-</span>
+									<span class="digit-3" id="n1" style="display:none;">3</span>
+									<span class="digit-5" id="n2">5</span>
+									<i class="oc"><img src="/web/img/main/oc.png" alt="℃"/></i>
+								</strong>
+							</div><!-- weather -->
+							<div class="clear"></div>
+						</div><!-- current info -->
+
+						<div class="business-hours">
+							<h2>영업시간</h2>
+							<div class="hours_area">
+								<dl class="time_list">
+								
+									<dt>WEST / EAST</dt>
+									
+									<dd>
+										<p><span>월 - 목</span> 10:30 am - 20:00 pm</p>
+										<p><span>금 - 일</span> 10:30 am - 20:30 pm</p>
+									</dd>
+								</dl>
+									 
+																
+								<dl class="time_list">
+									<dt>고메이 494</dt>
+									<dd>
+										<p><span>월 - 일</span> 10:30 am - 21:00 pm	</p>
+									</dd>
+								</dl>
+									
+									
+							</div>
+									
+
+							
+
+								<!-- 휴점일 없을 경우 안보이게 -->
+								<p>
+								
+								
+									<em>* 휴점일 1월1일</em>
+			
+										
+								</p>
+							
+
+							
+							
+							
+						</div>
+
+						<div class="hall-info">
+							<p class="location">
+								<span><strong>WEST</strong> <a href="/web/luxury_contact.jsp">서울특별시 강남구 압구정로 343</a></span>
+								<span><strong>EAST</strong> <a href="/web/luxury_contact.jsp">서울특별시 강남구 압구정로 407</a></span>
+							</p>
+							<p class="phone">
+								<strong>02 - 3449 - 4114</strong>
+							</p>
+						</div>
+						
+						<!--lhi search 
+						<form action="" class="lhi-search-form">
+							<label for="keyword">Search</label>
+							<input type="text" id="keyword" name="keyword">
+							<button class="btn-search">search</button>
+						</form> lhi search -->
+					</div>
+				</div>
+			</div><!-- luxury-hall-info-container -->
+
+
+			<div class="show-window">
+				<div class="bg"></div>
+				<h2>Show Window</h2>
+				<div class="grid-by-slider active">
+					<div class="slider">
+						<div class="bar" title="좌우로 스크롤해 주세요!"><div class="anim-obj motion-drag2" frames="84" fps="30" img-height="45"><div class="frame sprite"></div></div></div>
+					</div>
+					<div class="slider-content-container">
+						<div class="slider-content">
+						
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232'><img src="http://dept.galleria.co.kr/upload/show_window/4d0f868f-f733-4d63-a613-bbac159581ec.jpg" alt="Crew Neck Sweater "><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/e1b15616-eeb0-418f-a93b-907da55b8f88.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188'><img src="http://dept.galleria.co.kr/upload/show_window/efb1d791-311a-42b9-b3b8-eda8352723c9.jpg" alt="Mustang Jacket"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/2df581a6-e5c3-4aba-8e54-30eddedf035d.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296'><img src="http://dept.galleria.co.kr/upload/show_window/48b642c6-ce14-4a1c-ac78-86787230c097.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/ff648ce5-6431-4ff8-8718-446d85b2b4a4.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290'><img src="http://dept.galleria.co.kr/upload/show_window/674a62ab-2c7d-427e-903f-76fa744c3a47.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/79920f59-3d90-468c-ab3e-5e0922bbecdc.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262'><img src="http://dept.galleria.co.kr/upload/show_window/16ddfafd-8709-4750-a371-5c9ceef984b4.jpg" alt="Minidress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/34bdd219-b0d3-4a6d-8f58-f5ebe086ee63.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233'><img src="http://dept.galleria.co.kr/upload/show_window/9e1a0775-f223-4b1f-9ec1-b6d120b1941b.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/d93ecd4d-a34f-4f2a-b8b4-494ada49ff91.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245'><img src="http://dept.galleria.co.kr/upload/show_window/58dbd003-f71b-4375-b870-5772039df344.jpg" alt="Concentrate"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/820c1c67-0383-44b2-9dd6-72c51d6f910a.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297'><img src="http://dept.galleria.co.kr/upload/show_window/69d1c6f1-a226-419f-97b3-6d9dd0a32e3e.jpg" alt="Shoes"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/bc1b210e-7669-4e89-968e-1ce200782ee9.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287'><img src="http://dept.galleria.co.kr/upload/show_window/2a1c006d-23ae-4477-9666-1b2ba3d2fb12.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/2bdb5271-cb1d-4f4e-840e-57e223d4cafe.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241'><img src="http://dept.galleria.co.kr/upload/show_window/5e8dd0d7-190c-4754-93a5-b87f469d4c6a.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/1ec88858-5c13-4e66-b929-9a15bcfb5c03.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300'><img src="http://dept.galleria.co.kr/upload/show_window/16e06a60-4f2c-4a09-b531-930c2dc86e7f.jpg" alt="Modern Muse"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/04794451-b057-4879-ae51-24359f53244b.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281'><img src="http://dept.galleria.co.kr/upload/show_window/182e3194-b402-4401-aa93-e32179d40a65.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/4ead83cc-19f2-4a34-ad9b-d24081263779.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295'><img src="http://dept.galleria.co.kr/upload/show_window/c20bec89-acd8-4c8b-9aec-e5c148f43a0f.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/162da54c-fac3-4046-b50d-f8948194d9ac.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280'><img src="http://dept.galleria.co.kr/upload/show_window/0e73ca94-9663-45a7-bf4d-679c32370d87.jpg" alt="Pumps"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/290c5c5f-1d46-4987-98a0-d070cf06330d.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235'><img src="http://dept.galleria.co.kr/upload/show_window/11242e4e-773d-42a3-bd54-4fe41cb8a8bc.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/9ccf695f-d515-47bd-b0ef-93644b1cccfd.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234'><img src="http://dept.galleria.co.kr/upload/show_window/0759f1d1-8b5e-4609-abb2-c5f957275513.jpg" alt="Skirt"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/9f3d4c8b-6817-44e5-ba2b-25197bece9f7.png" alt=""></a>
+							</div>
+							
+							<div class="good">
+								<div class="img-container">
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279'><img src="http://dept.galleria.co.kr/upload/show_window/af8a329b-d116-4d9c-b82d-e71802662522.jpg" alt="Court"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-name"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/97fd9c3e-825f-4737-9ab0-4b7fa9ae9665.png" alt=""></a>
+							</div>
+								
+							
+ 
+						</div>
+					</div>
+					<a href="#" class="slide-btn prev">이전</a>
+					<a href="#" class="slide-btn next">다음</a>
+				</div>
+
+				<div class="grid-by-list hide">
+					<ul class="good-list">
+					
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287'><img src="http://dept.galleria.co.kr/upload/show_window/2a1c006d-23ae-4477-9666-1b2ba3d2fb12.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-brand">MARC BY MARC JACOBS</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1287' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297'><img src="http://dept.galleria.co.kr/upload/show_window/69d1c6f1-a226-419f-97b3-6d9dd0a32e3e.jpg" alt="Shoes"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-brand">BRUNELLO CUCINELLI</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1297' class="good-name">Shoes</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241'><img src="http://dept.galleria.co.kr/upload/show_window/5e8dd0d7-190c-4754-93a5-b87f469d4c6a.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-brand">EDIE PARKER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1241' class="good-name">Minaudiere</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245'><img src="http://dept.galleria.co.kr/upload/show_window/58dbd003-f71b-4375-b870-5772039df344.jpg" alt="Concentrate"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-brand">LA MER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1245' class="good-name">Concentrate</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300'><img src="http://dept.galleria.co.kr/upload/show_window/16e06a60-4f2c-4a09-b531-930c2dc86e7f.jpg" alt="Modern Muse"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-brand">ESTEE LAUDER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1300' class="good-name">Modern Muse</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233'><img src="http://dept.galleria.co.kr/upload/show_window/9e1a0775-f223-4b1f-9ec1-b6d120b1941b.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233' class="good-brand">SERGIO ROSSI </a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1233' class="good-name">Boots</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281'><img src="http://dept.galleria.co.kr/upload/show_window/182e3194-b402-4401-aa93-e32179d40a65.jpg" alt="Minaudiere"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-brand">EDIE PARKER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1281' class="good-name">Minaudiere</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262'><img src="http://dept.galleria.co.kr/upload/show_window/16ddfafd-8709-4750-a371-5c9ceef984b4.jpg" alt="Minidress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262' class="good-brand">PROENZA SCHOULER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1262' class="good-name">Minidress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295'><img src="http://dept.galleria.co.kr/upload/show_window/c20bec89-acd8-4c8b-9aec-e5c148f43a0f.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-brand">CLAUDIE PIERLOT</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1295' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290'><img src="http://dept.galleria.co.kr/upload/show_window/674a62ab-2c7d-427e-903f-76fa744c3a47.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290' class="good-brand">G. STREET 494</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1290' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280'><img src="http://dept.galleria.co.kr/upload/show_window/0e73ca94-9663-45a7-bf4d-679c32370d87.jpg" alt="Pumps"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-brand">ROGER VIVIER</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1280' class="good-name">Pumps</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296'><img src="http://dept.galleria.co.kr/upload/show_window/48b642c6-ce14-4a1c-ac78-86787230c097.jpg" alt="Dress"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296' class="good-brand">CARVEN</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1296' class="good-name">Dress</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235'><img src="http://dept.galleria.co.kr/upload/show_window/11242e4e-773d-42a3-bd54-4fe41cb8a8bc.jpg" alt="Boots"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-brand">CHRISTIAN LOUBOUTIN</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1235' class="good-name">Boots</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188'><img src="http://dept.galleria.co.kr/upload/show_window/efb1d791-311a-42b9-b3b8-eda8352723c9.jpg" alt="Mustang Jacket"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188' class="good-brand">IRO</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1188' class="good-name">Mustang Jacket</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234'><img src="http://dept.galleria.co.kr/upload/show_window/0759f1d1-8b5e-4609-abb2-c5f957275513.jpg" alt="Skirt"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-brand">PUSH BUTTON</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1234' class="good-name">Skirt</a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232'><img src="http://dept.galleria.co.kr/upload/show_window/4d0f868f-f733-4d63-a613-bbac159581ec.jpg" alt="Crew Neck Sweater "><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232' class="good-brand">STELLA MCCARTNEY</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1232' class="good-name">Crew Neck Sweater </a>
+							</div>
+						</li>
+					 
+
+ 						<li>
+							<div class="good">
+								<div class="img-container">
+
+									<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279'><img src="http://dept.galleria.co.kr/upload/show_window/af8a329b-d116-4d9c-b82d-e71802662522.jpg" alt="Court"><span class="over"><i></i></span></a>
+								</div>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-brand">G. STREET 494</a>
+								<a href='/svc/show_window/web/kr/showWindowList.do?win_seq=1279' class="good-name">Court</a>
+							</div>
+						</li>
+					 
+								
+							
+
+						
+						
+						
+					 
+					</ul>
+					<a href="#prev" class="btn-prev">prev</a>
+					<a href="#next" class="btn-next">next</a>
+
+					<ul class="list-index">
+					
+						<li class="active"><a href="#">1</a></li>
+					
+						<li ><a href="#">2</a></li>
+					
+						<li ><a href="#">3</a></li>
+						
+		 
+					</ul>
+				</div>
+
+				<div class="btns">
+					<a href="#" class="btn-grid-1 active">슬라이드로보기</a>
+					<a href="#" class="btn-grid-2">전체보기</a>
+				</div>
+
+			</div>
+			<div class="fashion-n-style">
+				<div class="over-bg"></div>
+				<div class="bg"></div>
+				<h2>Style</h2>
+				
+				
+				<div class="style-post large-style block-1">
+								
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=510"  class="img-container">
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/ac35e812-f270-4a72-ad37-d71d8a22db40.jpg" alt="FOR CLASSY LADY">
+						<span class="over">
+							<strong class="desc">
+								<span>고급스러우면서도 세련된 취향을 두루 갖춘 그녀를 위한 선물을 제안한다</span>
+							</strong>
+						</span>
+					</a>
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=510"   class="style-title" >
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/8710d175-a3cc-4782-8313-01fed440ff65.png" alt="FOR CLASSY LADY">
+						<span class="anim-obj motion-more" frames="106" fps="30" img-height="51">
+							<span class="frame sprite"></span>
+						</span>
+					</a>
+
+				</div>
+				
+				<div class="style-post large-style block-2">
+								
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=498"  class="img-container">
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/09204c9e-eda5-406a-b0ad-9352002a04a7.jpg" alt="LOVE TO GIVE">
+						<span class="over">
+							<strong class="desc">
+								<span>남들보다 한발 앞서 연말을 준비하는 아티스트의 작업실에서 보는 것만으로도 마음이 달뜨는 홀리데이 리미티드 에디션을 만났다</span>
+							</strong>
+						</span>
+					</a>
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=498"   class="style-title" >
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/e5970b00-2088-4fdd-ab96-6cb5adb1a0fb.png" alt="LOVE TO GIVE">
+						<span class="anim-obj motion-more" frames="106" fps="30" img-height="51">
+							<span class="frame sprite"></span>
+						</span>
+					</a>
+
+				</div>
+				
+				<div class="style-post small-style block-1">
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=505" class="style-title"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/e7d32391-568e-40f3-b883-47682781e322.png" alt="WARM EXHIBITION"></a>
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=505" class="img-container">
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/4e533bbe-bbfa-4248-894a-97167144ff34.jpg" alt="WARM EXHIBITION">
+						<span class="over">
+							<span class="anim-obj motion-more" frames="106" fps="30" img-height="51"><span class="frame sprite"></span></span>
+						</span>
+					</a>
+				</div>
+				
+				<div class="style-post small-style block-2">
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=490" class="style-title"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/148c91a9-c3c2-4026-8192-33d87bde7927.png" alt="2014 X-MAS POP-UP"></a>
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=490" class="img-container">
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/1d313b8d-36d1-4f44-8315-18e151cd6c30.jpg" alt="2014 X-MAS POP-UP">
+						<span class="over">
+							<span class="anim-obj motion-more" frames="106" fps="30" img-height="51"><span class="frame sprite"></span></span>
+						</span>
+					</a>
+				</div>
+				
+				<div class="style-post small-style block-3">
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=503" class="style-title"><img src="http://dept.galleria.co.kr/upload/main_fashion_style/a73d7a1c-646f-40b4-85d3-63dec23a15cb.png" alt="FOR HOLIDAY"></a>
+					<a href="/svc/fashion_style/web/kr/fashionStyleView.do?fs_seq=503" class="img-container">
+						<img src="http://dept.galleria.co.kr/upload/main_fashion_style/56ef5654-627b-4db8-a5cb-e03da0ec4ab8.jpg" alt="FOR HOLIDAY">
+						<span class="over">
+							<span class="anim-obj motion-more" frames="106" fps="30" img-height="51"><span class="frame sprite"></span></span>
+						</span>
+					</a>
+				</div>
+				
+				
+				 
+				
+			</div>
+		</div><!-- #content -->
+<script language="javascript">
+function openPopup(){
+	var cookies = document.cookie;
+ 
+}
+openPopup();
+</script>		
+
+ 
+    
+
+
+
+ <!-- 영문인 경우-->
+   
+		<!-- #footer -->
+		<footer id="footer">
+			<div class="inner">
+
+				<!-- upside -->
+				<div class="upside">
+					<!-- about -->
+					<div class="the-galleria widget">
+						<div class="inner">
+							<h2>ABOUT</h2>
+							<ul>
+								<li class="m1"><a href="/web/about_1.jsp">WEST &amp; EAST</a></li>
+								<li class="m2"><a href="/web/about_2.jsp">HISTORY</a></li>
+								<li class="m3"><a href="/web/about_3.jsp">DESIGN COLLABORATION</a></li>
+							</ul>
+						</div>
+					</div><!-- //about -->
+					<!-- sns -->
+					<div class="gift-n-card widget">
+						<div class="inner">
+							<h2>FOLLOW US</h2>
+							<ul>
+								<li class="m1"><a href="https://www.facebook.com/galleria.luxury" target="_blank" title="facebook 새창열림">FACEBOOK</a></li>
+								<li class="m2"><a href="https://twitter.com/Galleria_Luxury" target="_blank" title="twitter 새창열림">TWITTER</a></li>
+								<li class="m3"><a href="http://blogdegalleria.tistory.com/" target="_blank" title="blog 새창열림">BLOG</a></li>
+							</ul>
+						</div>
+					</div><!-- //sns -->
+					<!-- etc -->
+					<div class="etc widget">
+						<ul class="etc-menu">
+							<li class="m1"><a href="/web/app.jsp">갤러리아APP</a></li>
+							<li class="m2"><a href="http://branch.galleria.co.kr/index.jsp" target="_blank" title="새창열림">지점보기</a></li>
+							<li class="m3"><a href="http://culture.galleria.co.kr/" target="_blank" title="새창열림">문화센터</a></li>
+							<li class="m4"><a href="http://wedding.galleria.co.kr" target="_blank" title="새창열림">웨딩</a></li>
+							<li class="m5"><a href="http://card.galleria.co.kr/" target="_blank" title="새창열림">갤러리아카드</a></li>
+							<li class="m6"><a href="http://www.galleria.co.kr/mallmain/initMallMain.do" target="_blank" title="새창열림">갤러리아몰</a></li>
+							<li class="m7"><a href="http://www.gourmet494.com/main/" target="_blank" title="새창열림">고메이 494</a></li>
+						</ul>
+					</div><!-- //etc -->
+					<div class="clear"></div>
+				</div><!-- upside -->
+				<!-- downside -->
+				<div class="downside">
+					<!--<h1 class="logo"><a href="/svc/main_page/web/kr/mainPage.do">한화갤러리아</a></h1> -->
+					<!-- site-infos -->
+					<div class="site-infos">
+						<ul class="footer-menu">
+							<li class="m1"><a href="http://www.hanwhagalleria.co.kr/" target="_blank" title="새창열림">회사소개</a></li>
+							<li class="m2"><a href="/web/member_my_terms.jsp">개인정보취급(처리)방침</a></li>
+							<li class="m3"><a href="/web/member_terms.jsp">이용약관</a></li>
+							<li class="m4"><a href="http://www.hanwhagalleria.co.kr/location/index.jsp" target="blank"  title="새창열림">입점안내</a></li>
+							<li class="m5"><a href="javascript:;" onclick="window.open('/web/pop_movie_info.html','m6','width=560, height=700, scrollbars=yes')"  title="새창열림">영상정보처리기기운영 관리방침</a></li>
+							<li class="m6"><a href="javascript:;" onclick="window.open('/web/pop_email_no.html','e6','width=550, height=500')"  title="새창열림">이메일수집금지</a></li>
+							<li class="m7">
+								<a href="#사회적책임">사회적책임</a>
+								<ul>
+									<li class="ms1"><a href="http://www.hanwhagalleria.co.kr/ethics/index.jsp" target="_blank" title="새창열림">윤리경영</a></li>
+									<li class="ms2"><a href="http://www.hanwhagalleria.co.kr/fair/index.jsp" target="_blank" title="새창열림">공정거래자율준수 </a></li>
+									<li class="ms3"><a href="http://www.hanwhagalleria.co.kr/responsibility/environment/main.jsp" target="_blank" title="새창열림">환경경영 </a></li>
+									<li class="ms4"><a href="http://www.hanwhagalleria.co.kr/responsibility/contribute/main.jsp" target="_blank" title="새창열림">사회공헌활동</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="clear"></div>
+						<!-- company-info -->
+						<div class="company-info">
+							<p class="info">
+								<span class="address">(주)한화갤러리아 대표이사 황용득 서울특별시 중구 세종대로 92(태평로 2가)</span>
+								<span class="registcode">사업자등록번호 : 219-81-00317</span>
+								<span class="tel">대표전화 : 02-410-7114</span>
+							</p>
+							<a href="mailto:galleria@hanwha.com" class="email">galleria@hanwha.com</a>
+						</div><!-- company-info -->
+						<div class="copy">
+							Copyright&copy; 2014 <strong>HANWHA GALLERIA</strong>. CO. LTD, ALL RIGHTS RESERVED.
+						</div>
+					</div><!-- site-infos -->
+					<!-- family-sites -->
+					<div class="family-sites toggle-menu">
+						<a href="#familysites" class="btn-fs">FAMILY SITES</a>
+						<ul class="site-list toggle-list">
+							<li><a href="http://www.hanwha.co.kr/index.jsp" target="_blank" title="새창열림">한화그룹</a></li>
+							<li><a href="http://ir.timeworld.co.kr/index.jsp" target="_blank" title="새창열림">한화타임월드</a></li>
+							<li><a href="http://www.hwrc.co.kr/index.asp" target="_blank" title="새창열림">한화호텔&리조트㈜</a></li>
+							<li><a href="http://www.63.co.kr/home/63CITY/main.do" target="_blank" title="새창열림">63스퀘어</a></li>
+							<li><a href="https://www.hoteltheplaza.com/eng/index.jsp" target="_blank" title="새창열림">THE PLAZA</a></li>
+							<li><a href="http://www.hanwhaeagles.co.kr" target="_blank" title="새창열림">한화이글스</a></li>
+						</ul>
+					</div><!-- family-sites -->
+					<div class="clear"></div>
+				</div><!-- downside -->
+				<p class="view_version"><a href="/svc/main_page/mob/kr/mainPage.do" >Mobile버전으로 보기</a></p>
+			</div>
+		</footer><!-- #footer -->
+
+	</div><!-- wrapper -->
+
+<!--  mobile ver -->
+<script type="text/javascript">
+	$('#footer .view_version').hide()
+	 if ((navigator.userAgent.match(/Android/i))) {
+			$('#footer').css('height','400px');
+			$('#footer .view_version').css({'display':'block'})
+	} else if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) )	{  // 아이폰, 아이팟
+			$('#footer').css('height','400px');
+			$('#footer .view_version').css({'display':'block'})
+	} else{
+			$('#footer .view_version').css({'display':'none'})
+	}
+</script>
+
+
+	<!-- *) 공통 분석스크립트  -->
+
+<!-- AceCounter Log Gathering Script V.72.2013010701 -->
+<script language='javascript'>
+
+if(typeof _GUL == 'undefined'){
+var _GUL = 'gtb1.acecounter.com';var _GPT='8080'; var _AIMG = new Image(); var _bn=navigator.appName; var _PR = location.protocol=="https:"?"https://"+_GUL:"http://"+_GUL+":"+_GPT;if( _bn.indexOf("Netscape") > -1 || _bn=="Mozilla"){ setTimeout("_AIMG.src = _PR+'/?cookie';",1); } else{ _AIMG.src = _PR+'/?cookie'; };
+document.writeln("<scr"+"ipt language='javascript' src='/web/js/acecounter_V70.js'></scr"+"ipt>");
+}
+</script>
+<noscript><img src='http://gtb1.acecounter.com:8080/?uid=AI4A3236706845&je=n&' border=0 width=0 height=0></noscript>
+<!-- AceCounter Log Gathering Script End -->
+</body>
+</html>
+
+
+ <!-- //국문인 경우-->
+	
+		 
+ 

@@ -1,4 +1,3 @@
-// 2014-03-09 start
 /* show window */
 function showHover() {
 	if (navigator.userAgent.indexOf("MSIE 8.0") == -1) {
@@ -18,7 +17,7 @@ function showHover() {
 	}
 }
 
-// fashion & style
+/* fashion & style
 function fashionHover() {
 	if (navigator.userAgent.indexOf("MSIE 8.0") == -1) {
 		$('.fashion_style .list-area ul li .thumb a').on('mouseenter', function(){
@@ -36,6 +35,7 @@ function fashionHover() {
 		});
 	}
 }
+*/
 
 /* luxury floor
 $(function(){
@@ -85,9 +85,9 @@ $(function(){
 		});
 	});
 });
-// 2014-03-09 end
 */
-/* luxury notice show hide */
+
+/* luxury notice show hide
 $(function(){
 	$('.brd .inner-detail').hide();
 	$('tr.subject, .close-bn').click(function() {
@@ -101,14 +101,11 @@ $(function(){
 			$(this).css({'background':'#f5f5f5','font-weight':'bold'});
 			$('.inner-detail .close-bn').css({'background':'#fff'});
 		}
-		/*var pos_n= $(this).next('tr').find('.inner-detail').position().top;
-		$("html, body").animate({scrollTop:pos_n},'slow'); */
 		$("html, body").scrollTop('.brd .inner-detail');
-		//$(this).find('a').before('<span class="selected-notice">[선택됨]</span>');
 		return false;
 	});
 });
-
+*/
 
 function styleShare() {
 	// 공유버튼 2014-04-22
@@ -130,7 +127,7 @@ function styleShare() {
 	});
 }
 
-/*
+
 	$('div.answer').hide();
 	$('a.question').before('<span class="faqplusminus dark nounderline">[+]</span>');
 	$('a.question').click(function() {
@@ -142,7 +139,7 @@ function styleShare() {
 		slidedownelement.parent().find('span.faqplusminus').html('[-]');
 		}
 	});
-*/
+
 
 
 

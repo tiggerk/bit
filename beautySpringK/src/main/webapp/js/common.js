@@ -245,7 +245,7 @@ var closeGnbLi = function(container) {
 };
 
 // todo : 개발에서 해당 url을 개발된 페이지로 바꿔야 함.
-var SEARCH_URL = "/svc/search/web/kr/searchList.do";	 //	   /svc/search/web/kr/searchList.do
+var SEARCH_URL = "../view/common/searchList.html";	 //	  var SEARCH_URL = "/svc/search/web/kr/searchList.do";
 
 
 var showSearch = function() {

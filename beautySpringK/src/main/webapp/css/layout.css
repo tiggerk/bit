@@ -50,6 +50,7 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 .skip-menu:focus,
 .skip-menu.active {top:0;}
 .skip-menu a {color:#202020; text-decoration:none; margin: 0 10px;}
+
 /*header*/
 #header {height: 70px; width: auto; position: fixed; top:0; left:0; right: 0; z-index: 1000;  }
 #header > .inner {margin: 0 auto;  min-width: 1050px; max-width:1920px; background: #161616; height: 70px; position: relative; z-index: 1002;   }
@@ -199,28 +200,29 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 
 
 .util-menu { float:right; margin-right: 8px;}
-.util-menu > li { height: 70px; line-height: 70px; float:left; background:url(/web/img/common/util-menu-split.png) 100% 50% no-repeat; position: relative; cursor: pointer;}
+.util-menu > li { height: 70px; line-height: 70px; float:left; background:url(../img/common/util-menu-split.png) 100% 50% no-repeat; position: relative; cursor: pointer;}
 .util-menu > li > a { height: 70px; vertical-align: middle; display: block; color: #e5e5e5; font-size: 11px; font-family: 'MyriadPro-Bold', Helvetica, sans-serif; text-transform: uppercase;text-decoration: none; padding: 0 18px; display: block; text-indent: -9999em; overflow: hidden;   }
 .util-menu > li:hover > a { text-decoration: underline;}
 
 
-.util-menu > li.login > a { background:url(/web/img/common/sm-login.png) 50% 0 no-repeat; width:18px; }
+.util-menu > li.login > a { background:url(../img/common/sm-login.png) 50% 0 no-repeat; width:18px; }
 .util-menu > li.login:hover > a,
 .util-menu > li.login > a:focus { background-position: 50% -70px; }
 
-.util-menu > li.logout > a { background:url(/web/img/common/sm-logout.png) 50% 0 no-repeat; width:22px; }
+.util-menu > li.logout > a { background:url(../img/common/sm-logout.png) 50% 0 no-repeat; width:22px; }
 .util-menu > li.logout:hover > a,
 .util-menu > li.logout > a:focus { background-position: 50% -70px; }
 
-.util-menu > li.join > a { background:url(/web/img/common/sm-join.png) 50% 0 no-repeat; width:10px; }
+.util-menu > li.join > a { background:url(../img/common/sm-join.png) 50% 0 no-repeat; width:10px; }
 .util-menu > li.join:hover > a,
 .util-menu > li.join > a:focus { background-position: 50% -70px; }
 
-.util-menu > li.mypage > a { background:url(/web/img/common/sm-mypage.png) 50% 0 no-repeat; width:22px; }
+.util-menu > li.mypage > a { background:url(../img/common/sm-mypage.png) 50% 0 no-repeat; width:22px; }
 .util-menu > li.mypage:hover > a,
 .util-menu > li.mypage > a:focus { background-position: 50% -70px; }
 
-.util-menu > li.sitemap > a { background:url(/web/img/common/sm-sitemap.png) 50% 0 no-repeat; width:23px; }
+/* 내가 주석 막음 
+.util-menu > li.sitemap > a { background:url(../img/common/sm-sitemap.png) 50% 0 no-repeat; width:23px; }
 .util-menu > li.sitemap:hover > a,
 .util-menu > li.sitemap > a:focus { background-position: 50% -70px; }
 
@@ -292,10 +294,10 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 .util-menu > li.share .share-list li.twitter a:focus { background-position:-50px -51px;}
 .util-menu > li.share .share-list li.blog a:focus { background-position:-50px -102px;}
 .util-menu > li.share .share-list li.app a:focus { background-position:-50px -153px;}
-
-
+ */
+ 
 .util-menu > li.search {background:none;}
-.util-menu > li.search > a { width:42px; padding: 0; text-indent: -9999em; overflow: hidden; background:url(/web/img/common/icon-search.png) no-repeat 50% 0;}
+.util-menu > li.search > a { width:42px; padding: 0; text-indent: -9999em; overflow: hidden; background:url(../img/common/icon-search.png) no-repeat 50% 0;}
 .util-menu > li.search:hover > a,
 .util-menu > li.search.active > a,
 .util-menu > li.search > a:focus { background-position: 50% -70px;} 
@@ -387,7 +389,7 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 
 
 /*content*/
-#content  {padding-top:70px; min-height: 100px; position: relative; z-index: 1;}
+#content  {min-height: 100px; position: relative; z-index: 1;}
 
 
 
@@ -397,10 +399,10 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 .under-1200 #header .btn-show-util-menu { display: block !important;}
 
 
-#header .btn-show-util-menu { display: block; width:28px; height:28px; background:url(/web/img/common/btn-plus.png) 50% 50%  no-repeat; position: absolute; top:21px; right: 21px;  text-indent: -9999em; overflow: hidden; }
+#header .btn-show-util-menu { display: block; width:28px; height:28px; background:url(../img/common/btn-plus.png) 50% 50%  no-repeat; position: absolute; top:21px; right: 21px;  text-indent: -9999em; overflow: hidden; }
 #header .btn-show-util-menu.active { background-image: url(/web/img/common/btn-util-menu-close.png) ;}
 
-.csstransforms #header .btn-show-util-menu { background-image: url(/web/img/common/btn-plus.png) ;
+.csstransforms #header .btn-show-util-menu { background-image: url(../img/common/btn-plus.png) ;
 -webkit-transition: all .25s ease-out;
    -moz-transition: all .25s ease-out;
     -ms-transition: all .25s ease-out;

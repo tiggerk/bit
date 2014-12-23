@@ -40,34 +40,41 @@ var HomeApp = {
 			/*FashionNStyle.play();*/
 		}
 
-		$(window).on('scroll', function(){
+		/* 안쓰는거임 메인 밑에 버튼 동작안하는거.
+		   $(window).on('scroll', function(){
 			if ( $('.motion-scroll').hasClass('stopped')) return;
 			if ( parseInt($(window).scrollTop()) > 10 ) {
 				$('.motion-scroll').addClass('stopped');
 				stopMotion($('.motion-scroll'));
 				console.log('motion-scroll stopped');
 			}
-		});
+		});*/
 	},
 
 	showIntro : function() {
 
 		$('html,body').css({'overflow':'auto', 'height':'auto'});
-		/*$('.wrapper').show(0).slideUp(0).slideDown(2000, 'easeOutQuad');
-		$('#content').css({'min-height':2000, 'background':'#fff'});*/
+		$('#content').slideUp(0).delay(100).slideDown(600, 'easeInOutQuint', function(){
+			HomeApp.checkShowWindowStart();
+			$(window).on('scroll resize', HomeApp.checkShowWindowStart);
+		});
+		$('.wrapper').show(0).slideUp(0).slideDown(2000, 'easeOutQuad'); /*화면 내려오는 효과*/
+		$('#content').css({'min-height':2000, 'background':'#fff'});	/*화면 올라오는 효과...이게 나중에 나오는거임*/
 		$('#header').slideUp(0).delay(200).slideDown(600, 'easeInOutQuint');
 
 		/*$('#content .featured-slide').slideUp(0).delay(700).slideDown(1000, 'easeInOutQuint');
 
 		$('#content .featured-slide .icon-scroll').css({'margin-bottom':-120}).delay(1400).animate({'margin-bottom':20}, 800, 'easeOutQuad');
 		$('#content .featured-slide .slide-controls').css({'margin-bottom':-120}).delay(1600).animate({'margin-bottom':0}, 600, 'easeOutQuad')
-
-		$('#content .main-notice').slideUp(0).delay(1400).slideDown(600, 'easeInOutQuint', function(){
+		 */
+		
+		/*화면 올라오는 효과...이게 나중에 나오는거임
+		$('#content').slideUp(0).delay(100).slideDown(600, 'easeInOutQuint', function(){
 			HomeApp.checkShowWindowStart();
 			$(window).on('scroll resize', HomeApp.checkShowWindowStart);
-
-		});
+		});*/
 		
+		/*
 		$('#content .luxury-hall-info-container').css({'left':300}).delay(2000).animate({'left':0}, 400, 'easeOutQuad', function(){
 			$('html,body').css({'overflow':'auto', 'height':'auto'});
 			HomeApp.checkFashionNStyleStart();
@@ -257,6 +264,7 @@ var FeaturedSlide = {
 	}
 };
 */
+
 /*
 var LuxuryHallInfo = {
 	init : function() {

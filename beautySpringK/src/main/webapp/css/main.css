@@ -46,7 +46,7 @@ html.home,body.home { background:#1f1f1f !important;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over i { display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; background:url(../img/main/210_over.png) 50% 50% no-repeat;}
 .grid-by-slider .slider-content-container .slider-content .good .good-name { position: absolute; width: 500px; text-align: center; display: block; left:50%; margin-left: -250px; top:332px; display: none; }
 .grid-by-slider .slider-content-container .slider-content .good .good-name img {zoom:0.7;}
-.grid-by-slider .slider-content-container .slider-content .good.active .img-container img { width: 470px; height: 470px; display:block; }
+.grid-by-slider .slider-content-container .slider-content .good.active .img-container img { /* width: 470px;  */height: 470px; display:block; }
 .grid-by-slider .slider-content-container .slider-content .good.active .good-name { top:450px !important; zoom:1; }
 .grid-by-slider .slider-content-container .slider-content .good.active .good-name img {zoom:1;}
 
@@ -63,7 +63,7 @@ html.home,body.home { background:#1f1f1f !important;}
 
 /*.grid-by-slider .slider-content-container .slider-content .good:hover .good-name { top:300px;}*/
 .grid-by-slider .slider { background: url(../img/main/slider-track.png) no-repeat; width: 1000px; height:17px; position: absolute; bottom: 62px; left: 50%; margin-left: -500px; }
-.grid-by-slider .slider .bar {background:#fff /*url(../img/main/slider-bar.png) no-repeat 50% 50%*/; width: 105px; height: 56px; display: block; text-indent: -9999em; overflow: hidden; position: absolute; top:50%; margin-top:-28px; }
+.grid-by-slider .slider .bar {/* background:#fff url(../img/main/slider-bar.png) no-repeat 50% 50%; */ width: 105px; height: 56px; display: block; text-indent: -9999em; overflow: hidden; position: absolute; top:50%; margin-top:-28px; }
 .grid-by-slider .slider .bar .anim-obj {position: absolute;top: 50%;left: 50%;margin-left: -36px;margin-top: -24px;}
 
 .grid-by-list { position: absolute; top:0; left:0; width: 100%; height: 800px;}
@@ -88,6 +88,40 @@ html.home,body.home { background:#1f1f1f !important;}
 .grid-by-list .list-index li { float:left; width: 9px; height: 9px;/* background: url(../img/main/icon-index.png);*/ margin-right: 14px; }
 .grid-by-list .list-index li.active { background: url(../img/main/icon-index.png); }
 .grid-by-list .list-index li a { display: block; width: 100%; height: 100%; text-indent: -9999em; overflow: hidden; }
+
+/* 반응형 스타일 같음
+.large-style { width: 950px; position: absolute; top:188px; left:50%; margin-left: -475px;}
+.large-style .img-container { position: absolute; top:0; left:0; width: 528px; height: 528px;display: block; text-decoration: none; color: #fff;}
+.large-style .img-container img { display: block; width:100%;}
+.large-style .img-container .over { position: absolute; top:3px; right: 3px; bottom: 3px; left: 3px; background: url(../img/main/style-over-bg.png); display: none;}
+.large-style .img-container:focus > .over {display:block;}  2014-04-22
+
+.large-style .img-container .over .desc {background:url(../img/main/style-desc-bg.png) no-repeat 50% 0; height: 136px; width:100%; text-align: center; position: absolute; top:50%; margin-top:-68px;}
+.large-style .img-container .over .desc span {  display: block; font-size: 12px; color: #fff; line-height: 18px; text-align: center; padding: 40px 0;}
+.large-style .style-title { display: block; position: absolute; top:175px; width: 422px; text-align: center; right: 0; margin-bottom: 44px;}
+.large-style .style-title .anim-obj {   position: absolute; bottom:-100px; left: 50%;  margin-left: -22px; }
+.large-style.block-2 { top:786px;}
+.large-style.block-2 .img-container { left:auto; right: 0;}
+.large-style.block-2 .style-title { left:0; right: auto; }
+
+.small-style { position: absolute; top:1520px; left:50%; margin-left: -500px; }
+.small-style .style-title { width: 310px; text-align: center; display: block; margin-bottom: 26px; }
+.small-style .img-container { width: 310px; height: 310px; display: block; position: relative; }
+.small-style .img-container:focus > .over {display:block;}  2014-04-22
+.small-style .img-container .over { position: absolute; top:3px; right: 3px; bottom: 3px; left: 3px; background: url(../img/main/style-over-bg.png); display: none;}
+.small-style .img-container .over .anim-obj { position: absolute; top:50%; left: 50%; margin-top:-22px; margin-left: -25px;}
+.small-style .img-container img{width:100%;}
+
+.small-style.block-2 { top:1440px; margin-left: -155px;}
+
+.small-style.block-3 { margin-left: 190px;}
+
+.style-post.active .icon-style { -webkit-animation-name: rotateThis;
+  -webkit-animation-duration:2s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+}
+ */
 
 /*digit*/
 .digit-0 { background-position: 0 0 !important; }
