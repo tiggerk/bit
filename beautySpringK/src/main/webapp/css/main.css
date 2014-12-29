@@ -40,13 +40,13 @@ html.home,body.home { background:#1f1f1f !important;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container a { display: block; position: relative; width: 332px; height:332px;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container a:focus .over {display:block;}  /* 2014-04-22 */
 .grid-by-slider .slider-content-container .slider-content .good.active .img-container a { width: 470px; height: 470px;}
-.grid-by-slider .slider-content-container .slider-content .good .img-container img { /* position: absolute; */ margin: 0 auto; /* width: 332px; height: 332px;*/ height: 320px; display: block; }
+.grid-by-slider .slider-content-container .slider-content .good .img-container img { /*내가 수정 position: absolute; */ margin: 0 auto; /* width: 332px; height: 332px;*/ height: 320px; display: block; }
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over { position: absolute; top:0; left:0; width: 100%; height:100%; display: block;background:url(../img/main/over-bg.png); display: none;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over .anim-obj { position: absolute; top:50%; left:50%; margin-left: -32px; margin-top: -35px;}
 .grid-by-slider .slider-content-container .slider-content .good .img-container .over i { display: block; position: absolute; width: 100%; height: 100%; top:0; left:0; background:url(../img/main/210_over.png) 50% 50% no-repeat;}
 .grid-by-slider .slider-content-container .slider-content .good .good-name { position: absolute; width: 500px; text-align: center; display: block; left:50%; margin-left: -250px; top:332px; display: none; }
 .grid-by-slider .slider-content-container .slider-content .good .good-name img {zoom:0.7;}
-.grid-by-slider .slider-content-container .slider-content .good.active .img-container img { /* width: 470px;  */height: 470px; display:block; }
+.grid-by-slider .slider-content-container .slider-content .good.active .img-container img { /* width: 470px;  height: 470px; */height: 430px; display:block; }
 .grid-by-slider .slider-content-container .slider-content .good.active .good-name { top:450px !important; zoom:1; }
 .grid-by-slider .slider-content-container .slider-content .good.active .good-name img {zoom:1;}
 

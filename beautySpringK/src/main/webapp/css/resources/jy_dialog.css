@@ -1,0 +1,190 @@
+.dialog,
+.dialog__overlay {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.dialog {
+	position: fixed;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+.dialog__overlay {
+	position: absolute;
+	z-index: 1;
+	background: url(../../img/search/pattern-bg.png);
+	/* background: rgba(55, 58, 71, 0.9); */
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+}
+
+.dialog--open .dialog__overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+
+.dialog__content {
+	width: 410px;
+	max-width: 560px;
+	min-width: 290px;
+	background: #fff;
+	padding: 4em;
+	/* padding-top:0; */
+	text-align: center;
+	position: relative;
+	z-index: 5;
+	opacity: 0;
+}
+
+.dialog--open .dialog__content {
+	pointer-events: auto;
+}
+
+/* Content */
+.dialog h2 {
+	margin: 0;
+	font-weight: 400;
+	font-size: 2em;
+	padding: 0 0 20px;
+	margin: 0;
+}
+
+
+/* login form css */
+.form-signin-heading { padding-bottom: 30px;}
+.sr-only { float: left;}
+.form-control-login { width: 255px; height: 25px; padding: 0 5px; /* font-size: 11px; */ }
+.login-line { margin: 15px 0px;}
+.checkbox { margin-top: 20px;}
+.checkbox-line { margin-left: -10px;}
+.btn-login { 
+	padding: 1em 2em;
+	font-weight: 600;
+	border: none;
+	color: #fff;
+	background : black;
+	margin-top: 50px; 
+	width: 410px; 
+	float: left;
+}
+.btn-login-close { margin: 0; float: right; padding: 0; margin-right: -65px;}
+.login-header-area { margin-bottom: 30px;}
+
+#inputEmail { margin-left: 40px;}
+#inputPassword { margin-left: 70px;}
+
+
+/* join form css */
+/* .dialog__content {width: 800px;} */
+/* .form-signup-heading { padding-bottom: 30px;}  */
+.btn-join-close { margin: 0; float: right; padding: 0; margin-right: -65px; margin-top: -85px;}
+.join-header-area { margin-bottom: 30px; margin-top: 30px;}
+.control-label {float: left;}
+.form-group {margin-bottom: 20px;}
+.form-control-join { width: 255px; margin-left: 95px; height: 25px; /* font-size: 11px; */ padding: 0 5px;}
+.btn-join-fin {
+	/* width: 354px; 
+	float: left; */
+	padding: 1em 2em;
+	font-weight: 600;
+	border: none;
+	color: #fff;
+	background : black;
+	margin: 20px 0;
+	width: 410px; 
+	float: left;
+}
+.register-alert {float: left;}
+/* .join {margin-left: 30px; margin-top: -30px;} */
+.alert-message {font-size: 13px; width: 410px;}
+
+#user_pw { margin-left: 81px;}
+#confirm_pw { margin-left: 46px;}
+
+
+
+
+.dialog {
+	-webkit-align-items: flex-start;
+  	align-items: flex-start;
+  	z-index: 500;
+}
+
+.dialog.dialog--open .dialog__content,
+.dialog.dialog--close .dialog__content {
+	margin-top: 10px;
+	opacity: 1;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.dialog.dialog--open .dialog__content {
+	-webkit-animation-name: anim-open;
+	animation-name: anim-open;
+}
+
+.dialog.dialog--close .dialog__content {
+	-webkit-animation-name: anim-close;
+	animation-name: anim-close;
+}
+
+.dialog.dialog--open h2,
+.dialog.dialog--open button {
+	-webkit-animation: anim-elem 0.3s both;
+	animation: anim-elem 0.3s both;
+}
+
+.dialog.dialog--open h2 {
+	-webkit-animation-delay: 0.15s;
+	animation-delay: 0.15s;
+}
+
+.dialog.dialog--open button {
+	-webkit-animation-delay: 0.05s;
+	animation-delay: 0.05s;
+}
+
+@-webkit-keyframes anim-open {
+	0% { -webkit-transform: translate3d(0, -100%, 0); }
+	100% { -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@keyframes anim-open {
+	0% { -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
+	100% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+}
+
+@-webkit-keyframes anim-close {
+	0% { -webkit-transform: translate3d(0, 0, 0); }
+	100% { -webkit-transform: translate3d(0, -100%, 0); }
+}
+
+@keyframes anim-close {
+	0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+	100% { -webkit-transform: translate3d(0, -100%, 0); transform: translate3d(0, -100%, 0); }
+}
+
+/* Inner elements animations */
+
+@-webkit-keyframes anim-elem {
+	0% { opacity: 0; -webkit-transform: translate3d(0, -100px, 0); }
+	100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@keyframes anim-elem {
+	0% { opacity: 0; -webkit-transform: translate3d(0, -100px, 0); transform: translate3d(0, -100px, 0); }
+	100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+}

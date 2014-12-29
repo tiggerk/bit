@@ -1,5 +1,5 @@
 @charset 'utf-8';
-html, body {margin:0; padding:0; font-family:'돋움','dotum','AppleSDGothic', 'AppleGothic','arial',sans-serif; min-width: 1050px;}  /*mod 20140304 */
+html, body {margin:0; padding:0; font-family:'Nanum Gothic','돋움','dotum','AppleSDGothic', 'AppleGothic','arial',sans-serif; min-width: 1050px;}  /*mod 20140304 */
 html { position: relative;}
 body { margin: 0 auto;  background: #1f1f1f;  }
 body.home .wrapper{background: #000;}  /* mod 20140304 */
@@ -122,7 +122,7 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 #nav .gnb > li.js-control > .good-list { display: block;}
 
 
-#nav .gnb > li > .sub-menu li > a { text-indent: -9999em; width: 160px; background:url(/web/img/common/sub-menu-2.png) no-repeat; height: 16px; overflow: hidden; display: block;  position: relative;}
+#nav .gnb > li > .sub-menu li > a { /*이미지 만들때까지 주석막음. text-indent: -9999em; */ width: 160px; /* background:url(../img/common/sub-menu-2.png) no-repeat; */ height: 16px; overflow: hidden; display: block;  position: relative;}
 #nav .gnb > li > .sub-menu li.m1 > a { background-position: 0 0;}
 #nav .gnb > li > .sub-menu li.m2 > a { background-position: 0 -28px;}
 #nav .gnb > li > .sub-menu li.m3 > a { background-position: 0 -56px;}
@@ -160,15 +160,19 @@ body.home .wrapper{background: #000;}  /* mod 20140304 */
 #nav .gnb > li > .sub-menu li.m7.active > a { background-position: -160px -168px;}
 #nav .gnb > li > .sub-menu li.m8.active > a { background-position: -160px -196px;}
 
+/* 메뉴 이미지 적용 */
+/* 메뉴 이미지 만들때까지 주석막음! 
 #nav .gnb > li.m1 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
 #nav .gnb > li.m2 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
 #nav .gnb > li.m3 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
 #nav .gnb > li.m4 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
 #nav .gnb > li.m5 > .sub-menu li > a  {background-image:url(../img/common/sub-menu-2.png);}
+ */
+
 /*메뉴 추가*/
-#nav .gnb > li.m3 > .sub-menu li.m6 > a  {background-image:url(/web/img/common/sub-menu-3_02.png);}
-#nav .gnb > li.m5 > .sub-menu li.m7 > a  {background-image:url(/web/img/common/sub-menu-5_02.png);}
-#nav .gnb > li.m4 > .sub-menu li.m3_02 > a  {background-image:url(/web/img/common/sub-menu-4_02.png);}
+#nav .gnb > li.m3 > .sub-menu li.m6 > a  {background-image:url../img/common/sub-menu-3_02.png);}
+#nav .gnb > li.m5 > .sub-menu li.m7 > a  {background-image:url(../img/common/sub-menu-5_02.png);}
+#nav .gnb > li.m4 > .sub-menu li.m3_02 > a  {background-image:url(../img/common/sub-menu-4_02.png);}
 #nav .gnb > li > .sub-menu li.m3_02 > a { background-position: 0 -56px;}
 #nav .gnb > li > .sub-menu li.m3_02:hover > a { background-position: -160px -56px;}
 #nav .gnb > li > .sub-menu li.m3_02:focus > a { background-position: -160px -56px;}

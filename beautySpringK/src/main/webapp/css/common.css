@@ -2,7 +2,7 @@
 /* Copyright 2011 ROUNDED. All Rights Reserved. */
 
 /* ***************  global *************** */
-html, body {margin:0; padding:0; font-family:'돋움','dotum','arial';/*overflow-x:hidden; overflow-y:hidden*/ -webkit-overflow-scrolling:touch}/* */
+html, body {margin:0; padding:0; font-family:'Nanum Gothic', '돋움','dotum','arial';/*overflow-x:hidden; overflow-y:hidden*/ -webkit-overflow-scrolling:touch}/* */
 body{min-height:500px; background:#f1f1f1}
 /*body {overflow-y:hidden} */
 
@@ -68,7 +68,7 @@ form label, label {cursor:default;}
 select {vertical-align:middle; letter-spacing:0px}
 legend {display:none;}
 fieldset {margin:0; padding:0; border:none;}
-input {margin:0}
+input {margin:0; border: 1px solid #ccc;}
 
 table {margin:0px; padding:0px; border-spacing:0;}
 td {margin:0px; padding:0px; font-size:100%;}

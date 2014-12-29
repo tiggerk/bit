@@ -59,7 +59,7 @@ var HomeApp = {
 			$(window).on('scroll resize', HomeApp.checkShowWindowStart);
 		});
 		$('.wrapper').show(0).slideUp(0).slideDown(2000, 'easeOutQuad'); /*화면 내려오는 효과*/
-		$('#content').css({'min-height':2000, 'background':'#fff'});	/*화면 올라오는 효과...이게 나중에 나오는거임*/
+		$('#content').css({'min-height':2000, 'background':'#fff'});	/*화면 올라오는 효과...이게 나중에 나오는거임 main 높이지정*/
 		$('#header').slideUp(0).delay(200).slideDown(600, 'easeInOutQuint');
 
 		/*$('#content .featured-slide').slideUp(0).delay(700).slideDown(1000, 'easeInOutQuint');
