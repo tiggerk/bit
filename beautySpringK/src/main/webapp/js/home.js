@@ -34,13 +34,10 @@ var HomeApp = {
 			},startDelay);
 		} else {
 			$('.wrapper').css('display','block');
-			/*FeaturedSlide.play();
-			MainNotice.play();*/
 			ShowWindow.play();
-			/*FashionNStyle.play();*/
 		}
 
-		/* 안쓰는거임 메인 밑에 버튼 동작안하는거.
+		/* 안쓰는거임 메인 밑에 버튼 동작안하는거. */
 		   $(window).on('scroll', function(){
 			if ( $('.motion-scroll').hasClass('stopped')) return;
 			if ( parseInt($(window).scrollTop()) > 10 ) {
@@ -48,7 +45,7 @@ var HomeApp = {
 				stopMotion($('.motion-scroll'));
 				console.log('motion-scroll stopped');
 			}
-		});*/
+		});
 	},
 
 	showIntro : function() {
@@ -60,19 +57,24 @@ var HomeApp = {
 		});
 		$('.wrapper').show(0).slideUp(0).slideDown(1000, 'easeOutQuad'); /*화면 내려오는 효과*/
 		$('#content').css({'min-height':1000, 'background':'#fff'});	/*화면 올라오는 효과...이게 나중에 나오는거임 main 높이지정*/
-		$('#header').slideUp(0).delay(200).slideDown(600, 'easeInOutQuint');
+		$('#header').slideUp(0).delay(100).slideDown(600, 'easeInOutQuint');
 
-		/*$('#content .featured-slide').slideUp(0).delay(700).slideDown(1000, 'easeInOutQuint');
-
+		$('#content .show-window').slideUp(0).delay(700).slideDown(1000, 'easeInOutQuint');
+		/*
 		$('#content .featured-slide .icon-scroll').css({'margin-bottom':-120}).delay(1400).animate({'margin-bottom':20}, 800, 'easeOutQuad');
 		$('#content .featured-slide .slide-controls').css({'margin-bottom':-120}).delay(1600).animate({'margin-bottom':0}, 600, 'easeOutQuad')
 		 */
 		
-		/*화면 올라오는 효과...이게 나중에 나오는거임
+		$('#content .show-window > .bg').slideUp(0);
+		$('#content .show-window > h2').css({'opacity':0});
+		$('#content .show-window > .grid-by-slider').hide();
+		$('#content .show-window .btns').hide();
+		
+		/*화면 올라오는 효과...이게 나중에 나오는거임*/
 		$('#content').slideUp(0).delay(100).slideDown(600, 'easeInOutQuint', function(){
 			HomeApp.checkShowWindowStart();
 			$(window).on('scroll resize', HomeApp.checkShowWindowStart);
-		});*/
+		});
 		
 		/*
 		$('#content .luxury-hall-info-container').css({'left':300}).delay(2000).animate({'left':0}, 400, 'easeOutQuad', function(){
@@ -87,12 +89,10 @@ var HomeApp = {
 
 
 		}); 
-
+		*/
 
 		
 
-
-		$('#content .fashion-n-style').slideUp(0).delay(2000).slideDown(800); */
 		$('#footer').slideUp(0).delay(2000).slideDown(600, 'easeInOutQuint');
 	},
 
@@ -104,7 +104,7 @@ var HomeApp = {
 		if ( visibleArea > top + 50 ) {
 			$('.show-window').addClass('activated');
 			$('.show-window .btns').stop().fadeIn(500);
-			$('.show-window > .bg').stop().slideDown(1500, 'easeInQuad');
+			$('.show-window > .bg').stop().slideDown(500, 'easeInQuad');
 			$('.show-window > h2').css({'margin-top':30, 'opacity':0}).stop().animate({'margin-top':0, 'opacity':1}, 600, 'easeOutQuad', function(){
 
 			});

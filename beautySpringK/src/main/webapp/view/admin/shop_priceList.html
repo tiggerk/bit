@@ -38,7 +38,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>Beauty_Chu Admin</b></a>
+            <a href="#" class="logo"><b>Beauty_Chu Admin</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -125,7 +125,7 @@
                                 <p class="green">You have 5 new messages</p>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
@@ -137,7 +137,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-divya.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Divya Manian</span>
@@ -149,7 +149,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-danro.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dan Rogers</span>
@@ -161,7 +161,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">
+                                <a href="#">
                                     <span class="photo"><img alt="avatar" src="assets/img/ui-sherman.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Dj Sherman</span>
@@ -173,7 +173,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html#">See all messages</a>
+                                <a href="#">See all messages</a>
                             </li>
                         </ul>
                     </li>
@@ -200,11 +200,11 @@
               
               	  <p class="centered"><a href="#"><img src="assets/img/ui-zac.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">박준 뷰티랩</h5>
-              	  <h6 class="centered">매장이름/전화</h6>
-              	  <h6 class="centered">주소</h6>
+              	  <h6 class="centered">서울시 강남구 삼성로 725</h6>
+              	  <h6 class="centered">02-511-1414</h6>
               	  	
                   <li class="mt">
-                      <a href="index.html">
+                      <a href="#">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span> 
                       </a>
@@ -216,9 +216,9 @@
                           <span>Style</span>
                       </a>
                       <ul class="sub">
-                          <li><a href="style_register.html">스타일 등록</a></li>
+                          <li><a  href="style_register.html">스타일 등록</a></li>
                           <li><a  href="style_cut.html">Cut</a></li>
-                          <li><a  href="panels.html">Perm</a></li>
+                          <li><a  href="#">Perm</a></li>
                           <li><a  href="#">Color</a></li>
                           <li><a  href="#">Care</a></li>
                           <li><a  href="#">ETC</a></li>
@@ -231,8 +231,8 @@
                           <span>Shop</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="#">Shop Info</a></li>
-                          <li><a  href="#">Price List</a></li>
+                          <li><a  href="shop_info.html">Shop Info</a></li>
+                          <li class="active"><a  href="shop_priceList.html">Price List</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -267,7 +267,7 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Shop Info</h3>
+          	<h3><i class="fa fa-angle-right"></i> Price List</h3>
           	
           	<!-- SORTABLE TO DO LIST -->
 			
@@ -275,82 +275,104 @@
                   <div class="col-md-12">
                       <section class="task-panel tasks-widget">
 	                	<div class="panel-heading">
-	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Todo List - Sortable Style</h5></div>
+	                        <div class="pull-left"><h5><i class="fa fa-tasks"></i> Price List</h5></div>
 	                        <br>
 	                 	</div>
                           <div class="panel-body">
                               <div class="task-content">
+                              <table class="table table-bordered table-striped table-condensed" style="margin-bottom: 0">
+	                        	<thead>
+	                        	<tr>
+	                        	<th style="width: 31%">분류</th>
+	                        	<th style="width: 22%">스타일</th>
+	                        	<th>가격</th>
+	                        	</tr>
+	                        	</thead>
+	                        </table>
                                   <ul id="sortable" class="task-list">
-                                      <li class="list-primary">
-                                          <i class=" fa fa-ellipsis-v"></i>
-                                          <div class="task-checkbox">
-                                              <input type="checkbox" class="list-child" value=""  />
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">Dashgum - Admin Panel Theme</span>
-                                              <span class="badge bg-theme">Done</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-
-                                      <li class="list-danger">
-                                          <i class=" fa fa-ellipsis-v"></i>
-                                          <div class="task-checkbox">
-                                              <input type="checkbox" class="list-child" value=""  />
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">Extensive collection of plugins</span>
-                                              <span class="badge bg-warning">Cool</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li class="list-success">
-                                          <i class=" fa fa-ellipsis-v"></i>
-                                          <div class="task-checkbox">
-                                              <input type="checkbox" class="list-child" value=""  />
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">Free updates always, no extra fees.</span>
-                                              <span class="badge bg-success">2 Days</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
-                                      <li class="list-warning">
-                                          <i class=" fa fa-ellipsis-v"></i>
-                                          <div class="task-checkbox">
-                                              <input type="checkbox" class="list-child" value=""  />
-                                          </div>
-                                          <div class="task-title">
-                                              <span class="task-title-sp">More features coming soon</span>
-                                              <span class="badge bg-info">Tomorrow</span>
-                                              <div class="pull-right hidden-phone">
-                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
-                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
-                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
-                                              </div>
-                                          </div>
-                                      </li>
+                                  
                                       <li class="list-info">
                                           <i class=" fa fa-ellipsis-v"></i>
                                           <div class="task-checkbox">
                                               <input type="checkbox" class="list-child" value=""  />
                                           </div>
                                           <div class="task-title">
-                                              <span class="task-title-sp">Hey, seriously, you should buy this Dashboard</span>
-                                              <span class="badge bg-important">Now</span>
-                                              <div class="pull-right hidden-phone">
+                                              <div class="form-group">
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="컷">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="스타일 컷">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="10,000">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="20,000">
+					                              </div>
+                                              </div>
+                                              <div class="pull-right hidden-phone" style="margin-top: 10px;">
+                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                              </div>
+                                          </div>
+                                      </li>
+                                      
+                                      <li class="list-primary">
+                                          <i class=" fa fa-ellipsis-v"></i>
+                                          <div class="task-checkbox">
+                                              <input type="checkbox" class="list-child" value=""  />
+                                          </div>
+                                          <div class="task-title">
+	                                          <div class="form-group">
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="컷">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="스타일 컷">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="10,000">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="20,000">
+					                              </div>
+					                              <!-- <div class="col-xs-3">
+					                                 <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                  	<button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                  	<button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+					                              </div> -->
+					                          </div>
+                                              <div class="pull-right hidden-phone" style="margin-top: 10px;">
+                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                              </div>
+                                          </div>
+                                      </li>
+                                      
+                                      <li class="list-danger">
+                                          <i class=" fa fa-ellipsis-v"></i>
+                                          <div class="task-checkbox">
+                                              <input type="checkbox" class="list-child" value=""  />
+                                          </div>
+                                          <div class="task-title">
+	                                          <div class="form-group">
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="펌">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="스타일 펌">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="100,000">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="300,000">
+					                              </div>
+					                          </div>
+                                              <div class="pull-right hidden-phone" style="margin-top: 10px;">
                                                   <button class="btn btn-success btn-xs fa fa-check"></button>
                                                   <button class="btn btn-primary btn-xs fa fa-pencil"></button>
                                                   <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
@@ -358,25 +380,82 @@
                                           </div>
                                       </li>
 
+                                      <li class="list-success">
+                                          <i class=" fa fa-ellipsis-v"></i>
+                                          <div class="task-checkbox">
+                                              <input type="checkbox" class="list-child" value=""  />
+                                          </div>
+                                          <div class="task-title">
+	                                          <div class="form-group">
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="염색">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="브라운 컬러">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="40,000">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="50,000">
+					                              </div>
+					                          </div>
+                                              <div class="pull-right hidden-phone" style="margin-top: 10px;">
+                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                              </div>
+                                          </div>
+                                      </li>
+                                      
+                                      <li class="list-warning">
+                                          <i class=" fa fa-ellipsis-v"></i>
+                                          <div class="task-checkbox">
+                                              <input type="checkbox" class="list-child" value=""  />
+                                          </div>
+                                          <div class="task-title">
+	                                          <div class="form-group">
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="케어">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="무코타 케어">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="40,000">
+					                              </div>
+					                              <div class="col-xs-3">
+					                                  <input type="text" class="form-control round-form text-center" placeholder="90,000">
+					                              </div>
+					                          </div>
+                                              <div class="pull-right hidden-phone" style="margin-top: 10px;">
+                                                  <button class="btn btn-success btn-xs fa fa-check"></button>
+                                                  <button class="btn btn-primary btn-xs fa fa-pencil"></button>
+                                                  <button class="btn btn-danger btn-xs fa fa-trash-o"></button>
+                                              </div>
+                                          </div>
+                                      </li>
+                                      
+
                                   </ul>
                               </div>
                               <div class=" add-task-row">
-                                  <a class="btn btn-success btn-sm pull-left" href="todo_list.html#">Add New Tasks</a>
-                                  <a class="btn btn-default btn-sm pull-right" href="todo_list.html#">See All Tasks</a>
+                                  <a class="btn btn-success btn-sm pull-left" href="l#">Add New Price List</a>
+                                  <a class="btn btn-default btn-sm pull-right" href="#">See All Price List</a>
                               </div>
                           </div>
                       </section>
                   </div><!--/col-md-12 -->
               </div><!-- /row -->
 			
-		</section><! --/wrapper -->
+		</section><!--/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              2014 beauty chu
               <a href="todo_list.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
