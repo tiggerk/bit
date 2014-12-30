@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" href="../css/resources/starrr.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/yun/button.min.css">
+
+<!-- 공통 스크립트 -->
+<link rel="stylesheet" type="text/css" href="../css/basic.css"/>
+<script type="text/javascript" src="../js/modernizr.min.js"></script>
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/jquery.easing.js"></script>
+<script type="text/javascript" src="../js/jquery-scrolltofixed-min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/motion.js"></script> 
+<script type="text/javascript" src="../js/jquery.motio.min.js"></script>
+
+	<script>
+			window.intro = 'yes';
+	</script>
+		
+	<!-- page가 home일 경우에만 로드하는 js -->
+	<script type="text/javascript" src="../js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag-2.2.js"></script>
+	<script type="text/javascript" src="../js/jquery.event.drag.live-2.2.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../js/home.show-window.js"></script>
+<!-- 공통 스크립트 -->
+
+
+
+<style type="text/css">
+
+/* 스타일 적용 공간! */
+
+/* ============================================================== */
+.yun-container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.yun-info-bg {
+	width: 1150px;
+	height: 600px;
+	float: left;
+	position: relative;
+	margin: 5px;
+	margin-top: 10px;
+	display: none;
+}
+
+.yun-info-cl {
+	height: 100%;
+}
+
+.yun-box {
+	position: relative;
+	width: 280px;
+	height: 410px;
+	background-color: grey;
+	float: left;
+	margin: 5px;
+	font-size: 40px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.yun-edge {
+	background-color: yellow;
+}
+
+.yun-selected {
+	background-color: red;
+}
+
+.yun-boximage {
+	width: 280px;
+	height: 410px;
+}
+
+.kh-basic {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 60px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.kh-detail {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.yun-shop-button .yun-shoppricelist {
+	float: left;
+}
+
+.get-coupon {
+	float: right;
+}
+
+/* ============================================================== */
+/* yun-test.html css */
+#changediv {
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.yun-div {
+	position: absolute;
+	background-color: #DCDBD9;
+}
+
+#yun-div1 {
+	/* 	background-image: url("../images/yun-test/shopimg.png"); */
+	z-index: 1;
+}
+/* ============================================================== */
+\
+
+/* ============================================================== */
+/* yun-shoppricelist.html css */
+#yun-shopdetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-shopcontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+.yun-shopstyle {
+	width: 168px;
+	height: 178px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+#yun-buttondiv {
+	height: 50px;
+	float: right;
+}
+
+#yun-pricelistsection {
+	height: 500px;
+}
+
+.yun-shopstyleimage {
+	width: 168px;
+	height: 178px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+/* ============================================================== */
+/* yun-styledetail.html css */
+#yun-styledetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-stylecontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+#yun-buttondiv {
+	height: 50px;
+	float: right;
+}
+
+.yun-stylephotobig {
+	width: 520px;
+	height: 500px;
+	float: left;
+	margin-bottom: 3px;
+}
+
+.yun-stylephotosmall {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-left: 3px;
+}
+
+#yun-styletitle {
+	height: 50px;
+}
+
+#yun-stylecontentdetail {
+	height: 130px;
+}
+
+.yun-stylecomment {
+	width: 100%;
+}
+
+/* ============================================================== */
+/* yun-shopdetail.html css */
+#yun-shopdetailcontainer {
+	width: 1150px;
+	height: 600px;
+}
+
+.yun-shopcontainerdiv {
+	width: 528px;
+	height: 560px;
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+#yun-buttondiv {
+	height: 50px;
+	float: right;
+}
+
+.yun-shopphotobig {
+	width: 520px;
+	height: 500px;
+	float: left;
+	margin-bottom: 3px;
+}
+
+.yun-shopphotosmall {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-left: 3px;
+}
+
+#yun-shoptitle {
+	height: 50px;
+}
+
+#yun-shopcontentdetail {
+	height: 130px;
+}
+
+.yun-shopcomment {
+	width: 100%;
+}
+
+/* ============================================================== */
+/* ==============================버튼 스타일================================ */
+</style>
+
+</head>
+<body>
+
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
+
+
+	<!--	<div id=changediv >
+			<div id=div1>1 <button class='yun-pricelist' type="button">price list</button>
+			</div>
+
+		</div> -->
+
+
+	<div id="wrap-chu" class="wrap-chu">
+
+		<div class="yun-container">
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (1).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (2).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (3).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (4).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (5).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (6).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (7).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (8).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (9).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (10).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (11).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (12).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (13).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (14).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+			<div class="yun-box">
+				<img class="yun-boximage" src="../images/main/woman (15).png">
+				<div class='kh-basic'>Celebrity</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+	<script type="text/javascript"
+		src='../js/resources/jquery-2.1.1.min.js'></script>
+	<script src="../js/resources/starrr.js"></script>
+
+	<script type="text/javascript">
+	<!-- header, footer 로드 스크립트!! -->
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+
+		
+		<!-- 썸네일 로드 스크립트!! -->		
+		var container = $('.yun-container');
+		var elements = container.children();
+		var oldWrapPos = -1;
+		var pagebtnnum ;
+		
+		$('.yun-box').click(function() {
+			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
+			$(this).addClass('yun-selected'); //누른 div에 selected 표시
+			var selectedPos = $(this).index(); // 누른 div의 index값 저장
+			var elementsInRow = 4; // 너비 4칸으로 고정
+		 	var row = Math.floor(selectedPos / elementsInRow) + 1;
+			//floor는 버리는 함수 누른인덱스/너비 4칸 +1해서 몇번째 줄인지 구함
+			var wrapPos = (row * elementsInRow);
+			// 만약 마지막 줄을 선택했다면 마지막 엘리먼트를 이용한다. 
+			var size = elements.length; //총 div의 갯수
+			if (wrapPos >= size) {
+				wrapPos = size;
+			}
+			//wrapPos 끝인덱스를 저장한다.
+			wrapPos = wrapPos - 1;
+			//인덱스는 0부터 시작하므로 -1을 해준다.
+			
+			if (selectedPos == oldWrapPos) {
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				oldWrapPos = -1;
+			} else {
+				oldWrapPos = selectedPos;
+				elements.removeClass('yun-edge');
+				$(elements[wrapPos]).addClass('yun-edge');
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				$('.yun-edge').after('<div id=changediv class="yun-info-bg"><div id=yun-div1 class=yun-div><div></div>');
+				$('#yun-div1').load('templates/yun-styledetail.html');
+				$('.yun-info-bg').slideDown();
+				setTimeout(function () {  $('html, body').animate({scrollTop:$('.yun-info-bg').position().top}, 'slow');  });
+				pagebtnnum=2;
+			}
+		});
+		
+		
+
+		<!--썸네일 상세페이지 앞뒤이동 &오버레이 스크립트 -->		
+
+
+		
+		
+	/* 	$(document).ready(function(){
+			
+			if(pagebtnnum<2){
+				$('.yun-back').css('display','none')
+			}	
+			
+		});
+		 */
+		
+		
+
+		$('div').on("click",".yun-shop-button",function() {
+			event.stopPropagation();
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+			.css("z-index",pagebtnnum);
+			$('#yun-div'+pagebtnnum).load('templates/yun-shopdetail.html');
+			pagebtnnum++;
+
+		});
+		
+		
+
+		$('div').on("click",".yun-shoppricelist",function() {
+			event.stopPropagation();
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+			.css("z-index",pagebtnnum);
+			$('#yun-div'+pagebtnnum).load('templates/yun-shoppricelist.html');
+			pagebtnnum++;
+		});
+
+		
+		$('div').on("click",".yun-back",function(){
+			event.stopPropagation();
+			pagebtnnum--;
+			if(pagebtnnum!='1'){
+			$('#yun-div'+pagebtnnum).remove();
+			}
+		});
+		
+		$('div').on("click",".yun-exit",function(){
+			event.stopPropagation();
+			$('.yun-info-bg').slideUp(function() {
+				$(this).remove();
+			});
+		});
+		
+		$('div').on("click",".yun-shopstyle",function() {
+			event.stopPropagation();
+			$('<div>').fadeIn('fast').appendTo("#changediv").attr({"id":"yun-div"+pagebtnnum,"class":"yun-div"})
+			.css("z-index",pagebtnnum);
+			$('#yun-div'+pagebtnnum).load('templates/yun-styledetail.html');
+			pagebtnnum++;
+
+		});
+		
+		
+		
+		
+		$(".yun-box").hover(
+				  function () {
+					  $(this).find(".kh-basic").remove();
+					  $(this).append("<div class='kh-detail'></div>");
+					  $(".kh-detail").load("kh-star.html");
+					  
+				  },
+				  function () {
+					  $(this).append("<div class='kh-basic'>Celebrity</div>");
+					  $(this).find(".kh-detail").remove();
+				  }
+		);
+
+		
+		$('div').on("click",".get-coupon",function(){
+			event.stopPropagation();
+			alert("쿠폰이 발급되었습니다!");
+		});
+		
+	</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

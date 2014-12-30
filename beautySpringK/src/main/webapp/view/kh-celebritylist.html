@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="">
+<meta name="author" content="ink, cookbook, recipes">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<title>Beauty Chu~♥</title>
+
+<link rel="shortcut icon" href="../images/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+
+
+<!-- 슬라이드 이미지 -->
+<link rel="apple-touch-icon"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/touch-icon-ipad-retina.png">
+<link rel="apple-touch-startup-image"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/splash.320x460.png"
+	media="screen and (min-device-width: 200px) and (max-device-width: 320px) and (orientation:portrait)">
+<link rel="apple-touch-startup-image"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/splash.768x1004.png"
+	media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+<link rel="apple-touch-startup-image"
+	href="http://cdn.ink.sapo.pt/3.1.1/img/splash.1024x748.png"
+	media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+
+<!-- load Ink's css from the cdn -->
+<link rel="stylesheet" type="text/css"
+	href="http://cdn.ink.sapo.pt/3.1.1/css/ink-flex.min.css">
+<link rel="stylesheet" type="text/css"
+	href="http://cdn.ink.sapo.pt/3.1.1/css/font-awesome.min.css">
+
+<!-- load Ink's css for IE8 -->
+<!--[if lt IE 9 ]>
+            <link rel="stylesheet" href="http://cdn.ink.sapo.pt/3.1.1/css/ink-ie.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <![endif]-->
+
+<!-- test browser flexbox support and load legacy grid if unsupported -->
+<script type="text/javascript"
+	src="http://cdn.ink.sapo.pt/3.1.1/js/modernizr.js"></script>
+<script type="text/javascript">
+            Modernizr.load({
+              test: Modernizr.flexbox,
+              nope : 'http://cdn.ink.sapo.pt/3.1.1/css/ink-legacy.min.css'
+            });
+        </script>
+
+<!-- load Ink's javascript files from the cdn -->
+<script type="text/javascript"
+	src="http://cdn.ink.sapo.pt/3.1.1/js/ink-all.min.js"></script>
+<script type="text/javascript"
+	src="http://cdn.ink.sapo.pt/3.1.1/js/autoload.js"></script>
+<!--  슬라이드  -->
+	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+    
+	<!-- 별 -->
+<link rel="stylesheet" href="../css/resources/starrr.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+	
+	
+<style type="text/css">
+/* 스타일 적용 공간! */
+
+
+
+.yun-container {
+	/* width: 1200px; */
+	margin: 0 auto;
+}
+
+.yun-info-bg {
+	width: 570px;
+	height: 830px;
+	background-color: #ededed;
+	float: left;
+	position: relative;
+	margin: 5px;
+	margin-top: 5px;
+	display: none;
+	padding : 23px 44px;
+	border-radius: 10px;
+}
+
+.yun-info-cl {
+	height: 100%;
+}
+
+.yun-box {
+	width: 280px;
+	height: 410px;
+	float: left;
+	margin: 5px;
+	font-size: 40px;
+	overflow: hidden;
+	border-radius: 10px;
+}
+
+
+
+
+/* 슬라이드 이미지 CSS */
+/*  * {
+	border: 1px solid blue;
+}   */
+
+
+.panel {
+	border-radius: 2px;
+	-webkit-box-shadow: #dddddd 0 1px 1px 0;
+	-moz-box-shadow: #dddddd 0 1px 1px 0;
+	box-shadow: #dddddd 0 1px 1px 0;
+	padding: 1em;
+	border: 1px solid #BBB;
+	background-color: #FFF;
+	height: 480px;
+}
+
+#thumbs_carousel .slide {
+	opacity: 0.6;
+}
+
+#thumbs_carousel .slide.active {
+	opacity: 1;
+}
+
+.vertical-space {
+	width: 400px;
+	text-align: center;
+	margin-left: 0px;
+}
+
+.column-group.gutters {
+	margin-left: -16px;
+}
+
+
+/* .ink-carousel {
+	height: 390px;
+} */
+
+.kh-small-shop {
+	height: 60px;
+}
+
+
+#thumbs_carousel {
+	height: 60px;
+}
+.all-20 {
+	width: 120px;
+	height: 100px;
+}
+.kh-big-img {
+ 	height: 360px;
+}
+.kh-small-img {
+	height: 60px;
+}
+.ink-carousel .ink-navigation {
+margin: 6px;
+}
+
+.demo-wrap {
+	float: right;
+	width: 583px;
+}
+.demo-wrap .DG-wrapper {
+	width: 520px;
+	position: relative;
+	margin-left: 0px;
+}
+.kh-shopInfo {
+		float: right;
+		width: 573px;
+		margin-top: 29px;
+		margin-bottom: 12px;
+}
+p {
+	margin-bottom: 7px;
+}
+
+#modal_carousel {
+height: 1000px;
+}
+
+/* hover */
+
+
+.kh-cellist {
+	position: relative;
+	width: 280px;
+	height: 410px;
+	overflow: hidden;
+	border-radius: 10px;
+	
+}
+
+.kh-celimg {
+	width: 280px;
+	height: 410px;	
+	overflow: hidden;
+	border-radius: 10px;
+	
+	/* FILTER: alpha(opacity=90, style=3, finishopacity=0); */
+	
+}
+.kh-basic {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 60px;
+	background-color: rgba(0,0,0,1);
+	color: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.kh-detail {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0,0,0,1);
+	color: white;
+	border-radius: 0px 0px 10px 10px;
+}	
+
+.kh-gradation {
+	position: absolute;
+	top: 0px;
+	width: 280px;
+	height: 310px;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+	border-radius: 10px 10px 0px 0px;
+}
+.kh-row {
+	height: 430px;
+}
+
+
+/* 슬라이더 */
+
+            /* jssor slider arrow navigator skin 05 css */
+            /*
+            .jssora05l              (normal)
+            .jssora05r              (normal)
+            .jssora05l:hover        (normal mouseover)
+            .jssora05r:hover        (normal mouseover)
+            .jssora05ldn            (mousedown)
+            .jssora05rdn            (mousedown)
+            */
+            .jssora05l, .jssora05r, .jssora05ldn, .jssora05rdn
+            {
+            	position: absolute;
+            	cursor: pointer;
+            	display: block;
+                background: url(../images/kh-slider/a21.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora05l { background-position: -10px -40px; }
+            .jssora05r { background-position: -70px -40px; }
+            .jssora05l:hover { background-position: -130px -40px; }
+            .jssora05r:hover { background-position: -190px -40px; }
+            .jssora05ldn { background-position: -250px -40px; }
+            .jssora05rdn { background-position: -310px -40px; }
+            
+            
+                            /* jssor slider thumbnail navigator skin 01 css */
+                /*
+                .jssort01 .p           (normal)
+                .jssort01 .p:hover     (normal mouseover)
+                .jssort01 .pav           (active)
+                .jssort01 .pav:hover     (active mouseover)
+                .jssort01 .pdn           (mousedown)
+                */
+                .jssort01 .w {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .jssort01 .c {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 72px;
+                    height: 72px;
+                    border: #000 2px solid;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c, .jssort01 .pav .c {
+                    background: url(../images/kh-slider/t01.png) center center;
+                    border-width: 0px;
+                    top: 2px;
+                    left: 2px;
+                    width: 68px;
+                    height: 68px;
+                }
+
+                .jssort01 .p:hover .c, .jssort01 .pav:hover .c {
+                    top: 0px;
+                    left: 0px;
+                    width: 70px;
+                    height: 70px;
+                    border: #fff 1px solid;
+                }
+                
+                .starrr{
+                	position: absolute;
+                	top: 40px;
+                	left: 90px;
+                }
+                
+					
+</style>
+
+</head>
+<body>
+
+	<header>
+		<!-- header 건들지 말긔! -->
+	</header>
+
+
+
+	<div id="wrap-chu" class="wrap-chu">
+
+		<div class="yun-container">
+		<!-- <div class="kh-row"> -->
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel2.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel3.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel4.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<!-- </div> -->
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel5.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel6.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel7.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel8.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel9.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel10.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+			<div class="yun-box">
+				<div class="kh-cellist">
+					<img class="kh-celimg" src="../images/kh-celebrity/cel1.jpg"/>
+					<div class="kh-basic"><p>Celebrity</p></div>
+					<div class="kh-detail"><div>Celebrity</div><div class="starrr"></div></div>
+					<div class="kh-gradation"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<!-- footer 건들지 말긔! -->
+	</footer>
+
+	<script type="text/javascript"
+		src='../js/resources/jquery-2.1.1.min.js'></script>
+	<script type="text/javascript">
+	<!-- header, footer 로드 스크립트!! -->
+		$('header').load('common/header.html');
+		$('footer').load('common/footer.html');
+
+		var container = $('.yun-container');
+		var elements = container.children();
+		var oldWrapPos = -1;
+
+		$('.yun-box').click(function() {
+			container.children().removeClass('yun-selected'); // 기존에 selected 된 클레스를 리셋
+			$(this).addClass('yun-selected'); //누른 div에 selected 표시
+			var selectedPos = $(this).index(); // 누른 div의 index값 저장
+			var elementsInRow = 4; // 너비 4칸으로 고정
+		 	var row = Math.floor(selectedPos / elementsInRow) + 1;
+			//floor는 버리는 함수 누른인덱스/너비 4칸 +1해서 몇번째 줄인지 구함
+			var wrapPos = (row * elementsInRow);
+			// 만약 마지막 줄을 선택했다면 마지막 엘리먼트를 이용한다. 
+			var size = elements.length; //총 div의 갯수
+			if (wrapPos >= size) {
+				wrapPos = size;
+			}
+			//wrapPos 끝인덱스를 저장한다.
+			wrapPos = wrapPos - 1;
+			//인덱스는 0부터 시작하므로 -1을 해준다.
+			if (selectedPos == oldWrapPos) {
+				$('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				oldWrapPos = 0;
+			} else {
+				oldWrapPos = selectedPos;
+				elements.removeClass('yun-edge');
+				$(elements[wrapPos]).addClass('yun-edge');
+				$('.yun-info-bg').remove();
+				
+				/* $('.yun-info-bg').slideUp(function() {
+					$(this).remove();
+				});
+				 */
+				$('.yun-edge').after('<div class="yun-info-bg"></div>');
+				$('.yun-info-bg').load('templates/kh-image-gallery.source.html');
+				$('.yun-info-bg').slideDown();
+				setTimeout(
+						function () {
+							$('html, body').animate(
+									{scrollTop:$('.yun-info-bg').position().top},	'slow');
+							});
+/* 				setTimeout(
+						function () {
+							$('.kh-row').animate(
+									{height: 860px;},	'slow');
+							}); */
+				
+			}
+		});
+		
+	</script>
+	<!-- hover -->
+	<script>
+	$( document ).ready(function() {
+		$(".kh-detail").css("display", "none");
+	$(".kh-cellist").hover(
+			  function () {
+				  $(this).find(".kh-basic").css("display", "none");
+				  $(this).find(".kh-detail").css("display", "block");
+				  $(this).find(".kh-gradation").css("display", "block");
+				 /*  $(this).find(".kh-basic").remove();
+				  $(this).append("<div class='kh-detail'></div>");
+				  $(".kh-detail").load("kh-star.html"); */
+			  },
+			  function () {
+				  $(this).find(".kh-basic").css("display", "block");
+				  $(this).find(".kh-detail").css("display", "none");
+				  $(this).find(".kh-gradation").css("display", "none");
+				  /* $(this).append($("<div class='kh-basic'><p>Celebrity</p></div>"));
+				  $(this).find(".kh-detail").remove(); */
+			  }
+			);
+	});
+
+	</script>
+	
+<!-- 별 -->    
+	<script
+		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+	<script src="../js/resources/starrr.js"></script>
+
+
+</body>
+</html>
