@@ -16,7 +16,7 @@
 <link rel="shortcut icon" href="../images/favicon.ico"
 	type="image/x-icon">
 <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/common_chu2.css">
 
 
 <!-- 슬라이드 이미지 -->
@@ -64,10 +64,7 @@
 	src="http://cdn.ink.sapo.pt/3.1.1/js/ink-all.min.js"></script>
 <script type="text/javascript"
 	src="http://cdn.ink.sapo.pt/3.1.1/js/autoload.js"></script>
-<!--  슬라이드  -->
-	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
-    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
+
     
 	<!-- 별 -->
 <link rel="stylesheet" href="../css/resources/starrr.css">
@@ -78,11 +75,10 @@
 <style type="text/css">
 /* 스타일 적용 공간! */
 
-
-
 .yun-container {
 	/* width: 1200px; */
 	margin: 0 auto;
+	padding-top: 100px;
 }
 
 .yun-info-bg {
@@ -449,7 +445,7 @@ height: 1000px;
 		src='../js/resources/jquery-2.1.1.min.js'></script>
 	<script type="text/javascript">
 	<!-- header, footer 로드 스크립트!! -->
-		$('header').load('common/header.html');
+		$('header').load('common/header.html')
 		$('footer').load('common/footer.html');
 
 		var container = $('.yun-container');
@@ -488,18 +484,19 @@ height: 1000px;
 				});
 				 */
 				$('.yun-edge').after('<div class="yun-info-bg"></div>');
-				$('.yun-info-bg').load('templates/kh-image-gallery.source.html');
+				 $('.yun-info-bg').load('templates/kh-image-gallery.source.html');
 				$('.yun-info-bg').slideDown();
 				setTimeout(
 						function () {
 							$('html, body').animate(
-									{scrollTop:$('.yun-info-bg').position().top},	'slow');
+									{scrollTop:$('.yun-info-bg').position().top-75},	'slow');
 							});
 /* 				setTimeout(
 						function () {
 							$('.kh-row').animate(
 									{height: 860px;},	'slow');
 							}); */
+							
 				
 			}
 		});
@@ -529,11 +526,17 @@ height: 1000px;
 	});
 
 	</script>
+	<!--  슬라이드  -->
+	<script type="text/javascript" src="../js/resources/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.js"></script>
+    <script type="text/javascript" src="../js/resources/kh/jssor.slider.js"></script>
 	
 <!-- 별 -->    
 	<script
 		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 	<script src="../js/resources/starrr.js"></script>
+	
+	
 
 
 </body>

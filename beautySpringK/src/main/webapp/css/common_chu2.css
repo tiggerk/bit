@@ -1,0 +1,19 @@
+/* �젅�� �넀��吏� 留먭쾬!!!!!!!!!!!!!!! �듅�엳 湲고쁽�씠!!! */
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+
+* {
+	font-family: "Nanum Gothic", "nanum gothic", "Gulim", sans-serif;
+}
+
+.wrap-chu {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	/* margin-top: 50px; */
+}
+
+.div-clear {
+	clear: both;
+}

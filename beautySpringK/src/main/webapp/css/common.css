@@ -3,7 +3,7 @@
 
 /* ***************  global *************** */
 html, body {margin:0; padding:0; font-family:'Nanum Gothic', '돋움','dotum','arial';/*overflow-x:hidden; overflow-y:hidden*/ -webkit-overflow-scrolling:touch}/* */
-body{min-height:500px; background:#f1f1f1}
+body{ min-height:500px; background:#f1f1f1}
 /*body {overflow-y:hidden} */
 
 /*

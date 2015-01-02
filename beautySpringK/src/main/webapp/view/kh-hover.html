@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+* {
+	border: 1px blue solid;
+	
+}
+
+.kh-cellist {
+	position: relative;
+	width: 280px;
+	height: 330px;
+}
+
+.kh-celimg {
+	width: 280px;
+	height: 330px;
+}
+
+.kh-basic {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 100px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+
+.kh-detail {
+	position: absolute;
+	bottom: 0px;
+	width: 280px;
+	text-align: center;
+	height: 180px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+</style>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+</head>
+
+
+
+<body>
+
+
+<div class="kh-cellist">
+ 	<img class="kh-celimg" src="../images/shop/shop1.jpg"/>
+	<div class="kh-basic"><p>JUNO Hair</p></div> 
+</div>
+
+
+<script type="text/javascript">
+$(".kh-cellist").hover(
+		  function () {
+			  $(this).find(".kh-basic").remove();
+			  $(this).prepend("<div class='kh-detail'><p>JUNO Hair <br>☆☆☆☆☆</p></div>");
+		  },
+		  function () {
+			  $(this).append($("<div class='kh-basic'><p>JUNO Hair</p></div> "));
+			  $(this).find(".kh-detail").remove();
+		  }
+		);
+
+
+</script>
+</body>
+</html>
