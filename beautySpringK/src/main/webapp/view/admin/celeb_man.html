@@ -13,12 +13,13 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="assets/js/bootstrap-daterangepicker/daterangepicker.css" />
-        
+    <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+
+    <script src="assets/js/jquery.js"></script>
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -39,7 +40,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="#" class="logo"><b>Beauty_Chu Admin</b></a>
+            <a href="coupon.html#" class="logo"><b>Beauty_Chu Admin</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -116,7 +117,7 @@
                     
                     <!-- inbox dropdown start-->
                     <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge bg-theme">5</span>
                         </a>
@@ -199,30 +200,33 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="#"><img src="assets/img/ui-zac.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="shop_info.html#"><img src="assets/img/ui-zac.jpg" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">박준 뷰티랩</h5>
               	  <h6 class="centered">서울시 강남구 삼성로 725</h6>
               	  <h6 class="centered">02-511-1414</h6>
               	  	
-                  <li class="mt">
-                      <a href="#">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span> 
+                  <li class="mt sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-credit-card"></i>
+                          <span>Coupon</span>
                       </a>
+                      <ul class="sub">
+                          <li><a  href="coupon.html">Coupon Management</a></li>
+                      </ul>
                   </li>
 
                   <li class="sub-menu">
-                      <a class="active"  href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-edit"></i>
                           <span>Style</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a href="style_register.html">스타일 등록</a></li>
+                          <li><a href="style_addStyle.html">Add Style</a></li>
                           <li><a  href="style_cut.html">Cut</a></li>
-                          <li><a  href="#">Perm</a></li>
-                          <li><a  href="#">Color</a></li>
-                          <li><a  href="#">Care</a></li>
-                          <li><a  href="#">ETC</a></li>
+                          <li><a  href="style_perm.html#">Perm</a></li>
+                          <li><a  href="style_color.html#">Color</a></li>
+                          <li><a  href="style_care.html#">Care</a></li>
+                          <li><a  href="style_etc.html#">ETC</a></li>
                       </ul>
                   </li>
 
@@ -237,24 +241,16 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active"  href="javascript:;" >
                           <i class="fa fa-star-o"></i>
                           <span>Celebrity</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="#">Celebrity Man</a></li>
-                          <li><a  href="#">Celebrity Woman</a></li>
+                          <li class="active"><a  href="Celeb_man.html#">Celebrity Man</a></li>
+                          <li><a  href="Celeb_woman.html#">Celebrity Woman</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-credit-card"></i>
-                          <span>Coupon</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="#">쿠폰? 예약?</a></li>
-                      </ul>
-                  </li>
+                  
 
               </ul>
               <!-- sidebar menu end-->
@@ -267,165 +263,183 @@
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> 스타일 등록</h3>
-          	
-          	<!-- BASIC FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Style Register</h4>
-                  	  
-                      <form class="form-horizontal style-form" method="get">
-                      
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">제목</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">머리 기장</label>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">short</p>
-                              </div>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">medium</p>
-                              </div>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">long</p>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">시술 시간</label>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              <!-- <div class="col-xs-10" style="margin-left: 17%">
-                              	<span class="help-block">기장에 따른 시술 시간을 입력하세요!</span>
-                              </div> -->
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">가격</label>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">사진</label>
-                              <div class="col-xs-5">
-                                  <input type="text" class="form-control round-form">
-                              </div>
-                              	<button type="submit" class="btn btn-theme">Browse...</button>
-                          </div>
-                          
-                          <div class="form-group">
-                          	<div class="col-lg-12">
-                          		<button type="button" class="btn btn-theme btn-block btn-lg">Register</button>
-                          	</div>
-                       	  </div>
-                          	
-                      </form>
-                  </div>
-                  
-          		</div><!-- col-lg-12-->      	
-          	</div><!-- /row -->
-          	
-          	
-          	
-          	
-          	<!-- STYLE FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Style Cut</h4>
-                      <form class="form-horizontal style-form" role="form">
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">머리 기장</label>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">short</p>
-                              </div>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">medium</p>
-                              </div>
-                              <div class="col-xs-3">
-                                  <p class="form-control-static text-center">long</p>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">시술 시간</label>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="35분">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="40분">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="45분">
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">가격</label>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="15,000원">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="20,000원">
-                              </div>
-                              <div class="col-xs-3">
-                                  <input type="text" class="form-control round-form text-center" placeholder="23,000원">
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <label class="col-lg-2 col-sm-2 control-label">사진</label>
-                              <div class="col-xs-3">
-                              	<img class="img-responsive" src="assets/img/s3.jpg" alt>
-                              </div>
-                              <div class="col-xs-3">
-                              	<img class="img-responsive" src="assets/img/s2.png" alt>
-                              </div>
-                              <div class="col-xs-3">
-                              	<img class="img-responsive" src="assets/img/s1.png" alt>
-                              </div>
-                          </div>
-                          <button type="submit" class="btn btn-theme"><i class="fa fa-cog"></i> 수정</button>
-                          <button type="button" class="btn">취소</button>
-                          
-                      </form>
-          			</div><!-- /form-panel -->
-          		</div><!-- /col-lg-12 -->
-          	</div><!-- /row -->
-          	
+          <section class="wrapper site-min-height">
+          	<h3><i class="fa fa-angle-right"></i> Celebrity Man</h3>
+          	<hr>
+				<div class="row mt">
+				
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+				
+				
+				<div class="row mt">
+				
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+
+				<div class="row mt">
+				
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 desc">
+						<div class="project-wrapper">
+		                    <div class="project">
+		                        <div class="photo-wrapper">
+		                            <div class="photo">
+		                            	<a class="fancybox" href="assets/img/s3.jpg"><img class="img-responsive" src="assets/img/s3.jpg" alt=""></a>
+		                            </div>
+		                            <div class="overlay"></div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div><!-- col-lg-4 -->
+				</div><!-- /row -->
+
 		</section><!--/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
-      
-      
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 beauty chu
+              2015 Beauty Chu~♥
               <a href="#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -435,7 +449,7 @@
   </section>
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+	<script src="assets/js/fancybox/jquery.fancybox.js"></script>    
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
@@ -446,31 +460,20 @@
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+  
+  <script type="text/javascript">
+      $(function() {
+        //    fancybox
+          jQuery(".fancybox").fancybox();
+      });
 
-	<!--custom switch-->
-	<script src="assets/js/bootstrap-switch.js"></script>
-	
-	<!--custom tagsinput-->
-	<script src="assets/js/jquery.tagsinput.js"></script>
-	
-	<!--custom checkbox & radio-->
-	
-	<script type="text/javascript" src="assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/date.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
-	
-	<script type="text/javascript" src="assets/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
-	
-	
-	<script src="assets/js/form-component.js"></script>    
-    
-    
+  </script>
+  
   <script>
       //custom select box
 
       $(function(){
-          $('select.styled').customSelect();
+          $("select.styled").customSelect();
       });
 
   </script>
