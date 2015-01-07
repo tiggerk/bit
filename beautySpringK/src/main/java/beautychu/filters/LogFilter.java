@@ -1,4 +1,4 @@
-package beautyChu.filters;
+package beautychu.filters;
 
 import java.io.IOException;
 

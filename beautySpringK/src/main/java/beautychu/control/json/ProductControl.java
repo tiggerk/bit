@@ -1,5 +1,6 @@
-package beautyChu.control.json;
+package beautychu.control.json;
 
+/*
 import java.io.File;
 import java.util.HashMap;
 
@@ -26,7 +27,7 @@ public class ProductControl {
   @Autowired MakerService       makerService;
   @Autowired ProductService     productService;
   @Autowired ServletContext 	servletContext;
- /*
+ 
   @RequestMapping(value="/add", method=RequestMethod.POST)
   public Object add(Product product) throws Exception {  
     
@@ -101,9 +102,10 @@ public class ProductControl {
     resultMap.put("product", product);
     resultMap.put("photos", product.getPhotoList());
     return resultMap;
-  }*/
+  }
 }
 
+*/
 
 
 

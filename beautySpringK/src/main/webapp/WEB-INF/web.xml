@@ -25,6 +25,7 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
+	
 	<filter>
 		<filter-name>AuthFilter</filter-name>
 		<filter-class>beautyChu.filters.AuthFilter</filter-class>
@@ -36,28 +37,40 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!-- <filter-mapping> <filter-name>AuthFilter</filter-name> <url-pattern>*.do</url-pattern> 
-		</filter-mapping> -->
+	<!-- <filter-mapping>
+		<filter-name>AuthFilter</filter-name> <url-pattern>*.do</url-pattern> 
+	</filter-mapping> -->
 
+	<!-- 서블릿 클래스를 서블릿으로 등록 -->
 	<servlet>
+		<!-- 해당 서블릿을 참조할 때 사용할 이름 -->
 		<servlet-name>dispatcher</servlet-name>
+		<!-- 서블릿으로 사용할 서블릿 클래스의 완전한 이름 -->
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
 		<!-- 스프링 설정 파일을 만들 때 다음의 규칙으로 만들면 굳이 
 		     init-param 태그로 그 위치를 설정할 필요가 없다.
 		     
 		     예) /WEB-INF/서블릿이름-servlet.xml
-		<init-param>
-	    <param-name>contextConfigLocation</param-name>
-	    <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
-	  </init-param>
-	  -->
+		     
+	  	<init-param>  => 초기화 파라미터라고 불리는 설정 값을 지정
+	  	  <param-name>contextConfigLocation</param-name>  => 초기화 파라미터의 이름을 지정 
+	      <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>  => 초기화 파라미터의 값을 지정
+	    </init-param> -->
+	    
+		<!-- 웹 어플리케이션이 초기화될 때 서블릿 객체를 생성(로딩)하고 초기화하는 방법 -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+	
+	<!-- 해당 서블릿이 어떤 URL을 처리할 지에 대한 매핑정보 -->
 	<servlet-mapping>
+		<!-- 매핑할 서블릿의 이름 지정 -->
 		<servlet-name>dispatcher</servlet-name>
+		<!-- 매핑할 URL의 패턴 지정 -->
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
+	
+	
 </web-app>
 
 

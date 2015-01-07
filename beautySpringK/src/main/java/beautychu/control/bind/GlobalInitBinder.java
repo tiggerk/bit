@@ -1,4 +1,4 @@
-package beautyChu.control.bind;
+package beautychu.control.bind;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

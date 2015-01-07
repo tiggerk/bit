@@ -1,4 +1,4 @@
-package beautyChu.filters;
+package beautychu.filters;
 
 import java.io.IOException;
 
@@ -10,7 +10,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 public class AuthFilter implements Filter {
 
