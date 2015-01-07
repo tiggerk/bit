@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="beautychu.dao.MemberDao">
+
+  <resultMap type="Member" id="memberMap">
+    <id column="EMAIL" property="email"/>
+    <result column="PHONE" property="phone"/>
+    <result column="ADDR" property="address"/>
+    <result column="NAME" property="name"/>
+    <result column="PASSWORD" property="password"/>
+
+  </resultMap>
+  
+  <select id="existUser" parameterType="map" resultMap="memberMap">
+    SELECT EMAIL,PHONE,ADDR,NAME 
+    FROM MEMBER
+    WHERE EMAIL=#{email} AND PASSWORD=#{password}
+  </select>
+  
+  <select id="insertUser" parameterType="Member" >
+    INSERT INTO MEMBER (EMAIL,NAME,PASSWORD)
+    VALUES (#{email},#{name},#{password})
+  </select>
+  	 
+  
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

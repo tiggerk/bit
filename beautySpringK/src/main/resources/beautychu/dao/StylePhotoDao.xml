@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="beautychu.dao.StylePhotoDao">
+
+  <resultMap type="StylePhoto" id="stylePhotoMap">
+    <id column="STYLEPHOTONO" property="stylePhotoNumber"/>
+    <result column="STYLENO" property="styleNumber"/>
+    <result column="STYLEPHOTO" property="stylePhoto"/>
+
+  </resultMap>
+  
+  <select id="getList" parameterType="map" resultMap="stylePhotoMap">
+    SELECT STYLEPHOTONO,STYLENO,STYLEPHOTO
+    FROM STYLEPHOTO
+    WHERE STYLENO=#{styleNumber}
+  </select>
+ 
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 	int styleNumber;
+	String people;
+	String gender;
+	String styleLength;
+	String styleName;
+	String styleIntro;
+	int SkillTime;
+	int price;
+	String email; -->
+
+<mapper namespace="beautychu.dao.StyleDao">
+
+  <resultMap type="Style" id="styleMap">
+    <id column="STYLENO" property="styleNumber"/>
+    <result column="PEOPLE" property="people"/>
+    <result column="GENDER" property="gender"/>
+    <result column="STYLELENGTH" property="styleLength"/>
+    <result column="STYLENAME" property="styleName"/>
+    <result column="STYLEINTRO" property="styleIntro"/>    
+    <result column="SKILLTIME" property="SkillTime"/>
+    <result column="PRICE" property="price"/>
+    <result column="EMAIL" property="email"/>
+
+  </resultMap>
+  
+  <select id="getList" parameterType="map" resultMap="styleMap">
+    SELECT STYLENO,PEOPLE,GENDER,STYLELENGTH,STYLENAME,STYLEINTRO,SKILLTIME,PRICE,EMAIL 
+    FROM STYLE
+  </select>
+ 
+  
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
